@@ -1,0 +1,30 @@
+/* style.css */
+    INPUT:-webkit-autofill,
+    SELECT:-webkit-autofill,
+    TEXTAREA:-webkit-autofill{animation-name:onautofillstart}
+    INPUT:not(:-webkit-autofill),
+    SELECT:not(:-webkit-autofill),
+    TEXTAREA:not(:-webkit-autofill){animation-name:onautofillcancel}@keyframes onautofillstart{}@keyframes onautofillcancel{}
+
+		body {
+		    background: #333954;
+    		background-size: 400% 400%;
+    		height: 100vh;
+		}
+		.divider:after, .divider:before {
+			content: "";
+			flex: 1;
+			height: 1px;
+			background: #eee;
+			opacity: 50px;
+		}
+
+		body {
+			font-family: "Century Gothic", sans-serif;
+		}
+
+		.info-span {
+			font-family: "Century Gothic", sans-serif;
+		}
+
+		
