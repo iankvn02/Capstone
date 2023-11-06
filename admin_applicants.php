@@ -24,22 +24,14 @@ if (!$result) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> eSPES | Applicants' List </title>
-    <!-- Bootstrap -->
+    <title>eSPES | Applicants' List</title>
     <link href="bootstrap.css" rel="stylesheet">
-    <!-- Emmet -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/emmet/2.3.4/emmet.cjs.js" integrity="sha512-/0TtlmFaP6kPAvDm5nsVp86JQQ1QlfFXaLV9svYbZNtGUSSvi7c3FFSRrs63B9j6iM+gBffFA3AcL4V3mUxycw==" crossorigin="anonymous"></script>
-    <!-- Custom Theme Style -->
     <link href="custom.css" rel="stylesheet">
-    <!-- jQuery UI -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="style.css" rel="stylesheet">
+    <link rel="shortcut icon" type="x-icon" href="spes_logo.png">
 </head>
 
 <?php include('header.php'); ?>
@@ -65,11 +57,11 @@ if (!$result) {
                     <div class="menu_section">
                         <h3>SPES Admin Menu</h3>
                         <ul class="nav side-menu">
-                            <li><a href="http://localhost/Capstone/admin_homepage.php"><i class="fa fa-bars"></i>
+                            <li><a href="admin_homepage.php"><i class="fa fa-bars"></i>
                                     Applicants</a></li>
-                            <li><a href="http://localhost/Capstone/admin_applicants.php"><i class="fa fa-bars"></i>
+                            <li><a href="admin_applicants.php"><i class="fa fa-bars"></i>
                                     Applicants' List</a></li>
-                            <li><a href="http://localhost/Capstone/admin_list.php"><i class="fa fa-bars"></i>
+                            <li><a href="admin_list.php"><i class="fa fa-bars"></i>
                                     Approved Applicants</a></li>
                         </ul>
                     </div>
@@ -90,18 +82,15 @@ if (!$result) {
                      </div>
         <!-- /top navigation -->
 
-        <div id="loader"></div>
+              <div id="loader"></div>
 
- <!-- page content -->
- 
- <div id="mainContent" class="right_col" role="main">
-			  <h2> SPES Admin </h2>
-<br />
-<br />
+      <!-- page content -->
+            <div id="mainContent" class="right_col" role="main">
+              <h2> SPES Admin </h2>
 
-<!-- Box Container Rows with Table -->
-<div class="box-container row box-b"> 
-<?php if ($result->num_rows > 0) : ?>
+      <!-- Box Container Rows with Table -->
+      <div class="box-container row box-b"> 
+      <?php if ($result->num_rows > 0) : ?>
         <table class="content-table">
         <thead>
                 <tr>
@@ -111,24 +100,88 @@ if (!$result) {
                   <th>Email</th>
                   <th>Status</th>
                   <th>Action</th>
+                  <th>Applicants Details</th>
 
                 </tr>
             </thead>
             <tbody>
                 <?php 
                 while ($row = $result->fetch_assoc()) : ?>
-                  <tr class="table-row">
+                  <tr class="table-row" data-applicant-id="<?= $row['id'] ?>">
                     <td><?= $row['id'] ?></td>
                     <td><?= $row['type_Application'] ?></td>
                     <td><?= $row['first_Name'] .' '.$row['middle_Name'] .' '.$row['last_Name'] ?></td>
                     <td><?= $row['email'] ?></td>
                     <td><?= $row['status'] ?></td>
-                
                     <td>
-                    <a href="#details<?php echo $row['user_id']; ?>" data-toggle="modal" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span> View </a>
-							    
-<!-- Applicants Details -->
+                    <form onsubmit="sendEmail(); reset(); return false;">
+                      <button class="approve-button btn btn-success btn-sm">Approve</button>
+                </form>
+                    <button class="decline-button btn btn-danger btn-sm">Decline</button>
+                    </td>
+                    
+                    <td>
+                      <a href="#details<?php echo $row['user_id']; ?>" data-toggle="modal" class="btn btn-primary btn-sm">
+                          <span class="glyphicon glyphicon-search"></span>  Details
+                      </a>
+                      <a href="#details2<?php echo $row['user_id']; ?>" data-toggle="modal" class="btn btn-primary btn-sm">
+                          <span class="glyphicon glyphicon-search"></span>  Documents
+                      </a>
+                                             
 
+<!-- Applicants Documents -->
+<div class="modal fade" id="details2<?php echo $row['user_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center><h4 class="modal-title" id="myModalLabel">Applicants Documents</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Applicant Number</th>
+                                <th>Birth Certificate</th>
+                                <th>Other Document</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            include("conn.php");
+                            // Create a connection to the database
+                            $conn = new mysqli($databaseHost, $databaseUsername, $databasePassword, $dbname);
+
+                            // Query to select documents for a specific user
+                            $user_id = $row['user_id'];
+                            $sql = "SELECT * FROM applicant_documents WHERE user_id = $user_id";
+                            $query = $conn->query($sql);
+
+                            while ($doc_row = $query->fetch_array()) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $doc_row['user_id']; ?></td>
+                                    <td><a href="<?php echo $doc_row['birth_certificate']; ?>">View PDF</a></td>
+                                    <td><a href="<?php echo $doc_row['birth_certificate']; ?>">View PDF</a></td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Applicants Details -->
+<form>
 <div class="modal fade" id="details<?php echo $row['user_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -156,7 +209,7 @@ while($row=$query->fetch_array()){
 					?>
 			</div>
 		  <div class="x_content">
-		  		
+</div>
 			<br/> 
     
 <br></br>
@@ -355,42 +408,36 @@ while($row=$query->fetch_array()){
 			  	<label class="control-label col-md-3 col-sm-3 col-xs-12">How many times have you been a SPES beneficiary?:</label>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<input class="form-control" id='spes_times' name="spes_times" value="<?php echo $row['spes_times']; ?>"disabled>
-	
+          </td>
+                      </tr>
 					<br><br>
 				</div>
-					
-			  </div>	
-</form>			
-					<?php
-				}	?>
-          
-    
-                    </table>
+              
+            </div>	
+          </form>			
+              <?php
+              }	
+            ?>
+              
+        
+                        </table>
 
+                    </div>
+          </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
                 </div>
-			</div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
             </div>
-        </div>
-     
-    </div>
-  
-</div>
+        
 
-                    <form onsubmit="sendEmail(); reset(); return false;">
-                        <button class="approve-button" >Approve</button>
-                </form>
-                        <button class="decline-button">Decline</button>
-                    </td>
-                    </tr>
+              
                 <?php endwhile; ?>
             </tbody>
         </table>
 <?php endif; ?>
 
 </div>
-
+            </form>
 <script src="https://smtpjs.com/v3/smtp.js"> </script>
 <script>
 
@@ -403,18 +450,17 @@ while($row=$query->fetch_array()){
     From : "iankvnlising@gmail.com",
     Subject : "ESPES APPLICANT UPDATE",
     Body : "we are happy to inform you that you passed the espes application"
-}).then(
-  message => alert(message)
-);
-  }
+    }).then(
+      message => alert(message)
+    );
+      }
   </script>
 
         <!-- footer content -->
-        <footer id="mainFooter">
-          <div class="pull-right">
-             &copy; Copyright 2023 | Online Special Program for Employment of Student (SPES) 
-          <div class="clearfix"></div>
+        <footer id="mainFooter" style="position: fixed; bottom: 0; left: 0; width: 85%">
+            &copy; Copyright 2023 | Online Special Program for Employment of Student (SPES)
         </footer>
+
         <!-- /footer content -->
       </div>
     </div>
@@ -469,6 +515,76 @@ while($row=$query->fetch_array()){
             // You can implement the "Decline" action here, e.g., updating the status to "Declined."
             // Replace the following alert with your custom code.
             alert('Decline clicked for Applicant Number: ' + applicantNumber);
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        // Approve Button Click Event
+        $('.approve-button').click(function () {
+            var row = $(this).closest('tr');
+            var applicantID = row.data('applicant-id');
+
+            // Send an AJAX request to update the status to 'Approved'
+            $.ajax({
+                url: 'update_status.php', // Create a PHP script to handle the update
+                method: 'POST',
+                data: {
+                    applicantID: applicantID,
+                    newStatus: 'Approved'
+                },
+                success: function (response) {
+                    // Check if the update was successful
+                    if (response === 'success') {
+                        // Update the status in the table
+                        row.find('td:eq(4)').text('Approved');
+                    } else {
+                        alert('Failed to update status.');
+                    }
+                },
+                error: function () {
+                    alert('An error occurred while updating the status.');
+                }
+            });
+        });
+
+        // Decline Button Click Event
+        $('.decline-button').click(function () {
+            // Handle the decline action here (similar to the approve action).
+            // You can send another AJAX request to update the status to 'Declined' if needed.
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        // Decline Button Click Event
+        $('.decline-button').click(function () {
+            var row = $(this).closest('tr');
+            var applicantID = row.data('applicant-id');
+
+            // Send an AJAX request to update the status to 'Declined'
+            $.ajax({
+                url: 'update_status.php', // Create a PHP script to handle the update
+                method: 'POST',
+                data: {
+                    applicantID: applicantID,
+                    newStatus: 'Declined'
+                },
+                success: function (response) {
+                    // Check if the update was successful
+                    if (response === 'success') {
+                        // Update the status in the table
+                        row.find('td:eq(4)').text('Declined');
+                    } else {
+                        alert('Failed to update status.');
+                    }
+                },
+                error: function () {
+                    alert('An error occurred while updating the status.');
+                }
+            });
         });
     });
 </script>

@@ -5,7 +5,7 @@ include 'createdb.php';
 $databaseHost = 'localhost';
 $databaseUsername = 'root';
 $databasePassword = '';
-$dbname = 'spes_db';
+$dbname = "spes_db";
 
 // Create a connection to the database
 $conn = new mysqli($databaseHost, $databaseUsername, $databasePassword, $dbname);
@@ -63,15 +63,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: spes_profile.php");
             exit();
         }
+    }
+    // Add this condition for admin login
+    elseif ($email === "admin" && $password === "admin") {
+        // Admin login, proceed to admin_homepage.php
+        session_start();
+        $_SESSION['admin'] = true;
+        header("Location: admin_homepage.php");
+        exit();
     } else {
-        echo '<script>alert("Invalid email or password.");</script>';
+        echo '<script>alert("Invalid email or password for admin.");</script>';
     }
 }
 
 // Close the database connection
 $conn->close();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -83,7 +90,10 @@ $conn->close();
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.js"></script>
+    <link rel="shortcut icon" type="x-icon" href="spes_logo.png">
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
@@ -107,20 +117,18 @@ $conn->close();
                             <!-- Login form -->
                             <form method="POST">
                                 <!-- Email input -->
-                                <div class="form-outline mb-4">
-                                    <i class="fas fa-user-alt trailing"></i>
+                                <div class="input-box">
+                                <div class="icon"><i class="fas fa-user-alt trailing"></i></div>
                                     <input type="text" id="email" name="email" class="form-control form-control-lg border form-icon-trailing" required>
                                     <label class="form-label" for="email">Username</label>
                                 </div>
                                 <!-- Password input -->
-                                <div class="form-outline mb-4">
-                                    <i class="fas fa-lock trailing"></i>
+                                <div class="input-box">
+                                <div class="icon"><i class="fas fa-lock trailing"></i></div>
                                     <input type="password" id="password" name="password" class="form-control form-control-lg border form-icon-trailing" required>
                                     <label class="form-label" for="password">Password</label>
                                 </div>
-                                <div class="d-flex justify-content-around align-items-center mb-4">
-                                    Forgot password?
-                                </div>
+                                
                                 <!-- Submit button -->
                                 <button class="btn btn-primary btn-lg btn-block" type="submit" style="background-color: #1054d4">
                                     Login

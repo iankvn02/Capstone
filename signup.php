@@ -3,7 +3,7 @@
 $databaseHost = 'localhost';
 $databaseUsername = 'root';
 $databasePassword = '';
-$dbname = 'spes_db';
+$dbname = "spes_db";
 
 // Create a connection to the database
 $conn = new mysqli($databaseHost, $databaseUsername, $databasePassword, $dbname);
@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Execute the SQL statement
         if ($conn->query($sql) === TRUE) {
-            echo '<script>alert("User registered successfully");</script>';
+            echo '<script>alert("You have successfully registered for the SPES program.");</script>';
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
@@ -73,27 +73,11 @@ $conn->close();
     <meta name="description" content="Online Special Program for Employment of Student">
     <meta name="keywords" content="Online SPES, DOLE, Department of Labor and Employment">
     <title>eSPES | Sign up</title>
-    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
-    <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.css" rel="stylesheet">
-    <style>
-        body {
-            background: #333954;
-            background-size: 400% 400%;
-            height: 100vh;
-        }
-        .divider:after,
-        .divider:before {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: #eee;
-        }
-    </style>
-    <style src="signupstyle.css" type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe"></style>
+    <link rel="shortcut icon" type="x-icon" href="spes_logo.png">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body data-new-gr-c-s-check-loaded="14.1121.0" data-gr-ext-installed="">
 <div class="container py-5 h-100">
@@ -113,51 +97,45 @@ $conn->close();
                                     <img src="dole-logo.png" class="img-fluid" style="width: 100px !important;" alt="Phone image">
                                     <span class="h1 fw-bold mb-0">Register</span>
                                 </div>
-                                <div class="form-outline mb-4">
-                                    <i class="fas fa-user-alt trailing"></i>
+                                <div class="input-box">
+                                    <div class="icon"><i class="fas fa-user-alt trailing"></i></div>
                                     <input type="text" id="username" name="username" class="form-control form-control-lg border form-icon-trailing" required="">
                                     <label class="form-label" for="username">Username</label>
                                 </div>
-                                <div class="form-outline mb-4">
-                                    <i class="fas fa-lock trailing"></i>
+                                <div class="input-box">
+                                <div class="icon"><i class="fas fa-lock trailing"></i></div>
                                     <input type="password" id="password" name="password" class="form-control form-control-lg border form-icon-trailing" required="">
                                     <label class="form-label" for="password">Password</label>
                                 </div>
                                 <hr>
-                                <div class="form-outline mb-4">
-                                    <i class="fas fa-align-left trailing"></i>
+                                <div class="input-box">
+                                <div class="icon"><i class="fas fa-align-left trailing"></i></div>
                                     <input type="text" id="first_Name" name="first_Name" class="form-control form-control-lg border form-icon-trailing" required="">
                                     <label class="form-label" for="first_Name">First Name</label>
                                 </div>
-                                <div class="form-outline mb-4">
-                                    <i class="fas fa-align-center trailing"></i>
+                                <div class="input-box">
+                                <div class="icon"><i class="fas fa-align-center trailing"></i></div>
                                     <input type="text" id="middle_Name" name="middle_Name" class="form-control form-control-lg border form-icon-trailing" required="">
                                     <label class="form-label" for="middle_Name">Middle Name</label>
                                 </div>
-                                <div class="form-outline mb-4">
-                                    <i class="fas fa-align-right trailing"></i>
+                                <div class="input-box">
+                                <div class="icon"><i class="fas fa-align-right trailing"></i></div>
                                     <input type="text" id="last_Name" name="last_Name" class="form-control form-control-lg border form-icon-trailing" required="">
                                     <label class="form-label" for="last_Name">Last Name</label>
                                 </div>
-                                <div class="form-outline mb-4">
-                                    <div class="">
-                                        <i class="fas fa-caret-down trailing"></i>
+                                <div class="input-box">
+                                    <div class="icon"><i class="fas fa-caret-down trailing"></i></div>
                                         <select id="sex" name="sex" class="required form-control form-control-lg border form-icon-trailing">
                                             <option value="" selected="" disabled="">Sex:</option>
                                             <option value="male">Male</option>
                                             <option value="female">Female</option>
                                         </select>
-                                    </div>
+                                    
                                 </div>
-                                <div class="form-outline mb-4">
-                                    <i class="fas fa-envelope trailing"></i>
+                                <div class="input-box">
+                                <div class="icon"><i class="fas fa-envelope trailing"></i></div>
                                     <input type="email" id="email" name="email" class="form-control form-control-lg border form-icon-trailing" required="">
                                     <label class="form-label" for="email">Email Address</label>
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <i class="fas fa-mobile-alt trailing"></i>
-                                    <input type="text" id="mobile_no" name="mobile_no" class="form-control form-control-lg border form-icon-trailing" required="">
-                                    <label class="form-label" for="mobile_no">Mobile Number</label>
                                 </div>
                                 <!-- Submit button -->
                                 <input type="submit" id="register_butt" class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" value="Sign Up">

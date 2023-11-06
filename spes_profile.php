@@ -6,7 +6,7 @@ session_start();
 $databaseHost = 'localhost';
 $databaseUsername = 'root';
 $databasePassword = '';
-$dbname = 'spes_db';
+$dbname = "spes_db";
 
 // Create a new MySQLi connection
 $conn = new mysqli($databaseHost, $databaseUsername, $databasePassword, $dbname);
@@ -21,6 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["next"])) {
     // Validate form data
     $validationError = validateFormData($_POST);
 
+	$_SESSION['user_data'] = $_POST;
+
     if (!$validationError) {
         // Get the user_id from the session if it exists
         $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
@@ -30,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["next"])) {
 
         if ($inserted) {
             // Data inserted successfully, store it in the session
-            $_SESSION['user_data'] = $_POST;
+			unset($_SESSION['user_data']); // Unset the user_data session variable
 
             // Redirect to pre_emp_doc.php
             header("Location: pre_emp_doc.php");
@@ -48,6 +50,7 @@ function validateFormData($formData) {
     // Implement your validation logic here
     // Return an error message as a string if validation fails, or return false if it passes
 }
+
 // Function to insert data into the database using prepared statements
 function insertApplicantData($connection, $formData, $user_id) {
     // Assuming 'user_id' is a field in your 'applicants' table
@@ -96,19 +99,9 @@ function insertApplicantData($connection, $formData, $user_id) {
     return $result;
 }
 
-// ...
-
-// Data inserted successfully, store it in the session
-$_SESSION['user_data'] = $_POST;
-
 // Close the database connection
 $conn->close();
-
 ?>
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -117,20 +110,15 @@ $conn->close();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>eSPES | Applicant Home Page</title>
-    <!-- Bootstrap -->
     <link href="bootstrap.css" rel="stylesheet">
-    <!-- Emmet -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/emmet/2.3.4/emmet.cjs.js" integrity="sha512-/0TtlmFaP6kPAvDm5nsVp86JQQ1QlfFXaLV9svYbZNtGUSSvi7c3FFSRrs63B9j6iM+gBffFA3AcL4V3mUxycw==" crossorigin="anonymous"></script>
-    <!-- Custom Theme Style -->
     <link href="custom.css" rel="stylesheet">
-    <!-- jQuery UI -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link href="style.css" rel="stylesheet">
+    <link rel="shortcut icon" type="x-icon" href="spes_logo.png">
 	<style>
         body {
             font-family: "Century Gothic", sans-serif;
         }
+		
     </style>
   </head>
 
@@ -179,18 +167,16 @@ $conn->close();
                  </ul>
                </nav>
                </div> 
-                     </div>
+         </div>
         <!-- /top navigation -->
-
 
         <div id="loader"></div>
 
         <!-- page content -->
-        <div id="mainContent" class="right_col" role="main">
-			
+        <div id="mainContent2" class="right_col" role="main">
 <div class="">
 	<div class="page-title">
-		<div class="alert alert-danger alert-dismissible fade in" role="alert" style="margin-top: 50px";>
+		<div class="alert alert-danger alert-dismissible fade in" role="alert" style="margin-top: 10px";>
 			<b>The My Profile and Required Docs. section should be both 100%.</b>		</div>
 	  <div class="title_left">
 		<h3 style="font-size: 25px;">SPES Application Form</h3>
@@ -244,39 +230,47 @@ $conn->close();
 			  <div class="form-group">
 				<label for="middle_Name" class="control-label col-md-3 col-sm-3 col-xs-12">Middle Name:</label>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-				  <input id="middle_Name" class="form-control col-md-7 col-xs-12" type="text" required="required" name="middle_Name" value="" />
+				  <input id="middle_Name" class="form-control col-md-7 col-xs-12" type="text" required="required" name="middle_Name" 
+				  value="<?php echo isset($_SESSION['user_data']['middle_Name']) ? $_SESSION['user_data']['middle_Name'] : ''; ?>" />
 				</div>
 			  </div>
 
 			  <div class="form-group">
 				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last_Name">Last Name:<span class="required">*</span></label>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-				  <input type="text" id="last_Name" name="last_Name" required="required" class="form-control col-md-7 col-xs-12" required="required" value="" />
+				  <input type="text" id="last_Name" name="last_Name" required="required" class="form-control col-md-7 col-xs-12" required="required" 
+				  value="<?php echo isset($_SESSION['user_data']['last_Name']) ? $_SESSION['user_data']['last_Name'] : ''; ?>" />
 				</div>
 			  </div>
 
 			  <div class="form-group">
 				<label class="control-label col-md-3 col-sm-3 col-xs-12">Date of Birth: <span class="required">*</span></label>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="form-control col-md-7 col-xs-12" required="required" type="date" name="birthday" id="birthday" placeholder="Date of Birth" value="" data-toggle="tooltip" data-placement="left" title="format: Month/Day/Year e.g. 02/21/2000" />
+				  <input class="form-control col-md-7 col-xs-12" required="required" type="date" name="birthday" id="birthday" placeholder="Date of Birth" 
+				  value="<?php echo isset($_SESSION['user_data']['birthday']) ? $_SESSION['user_data']['birthday'] : ''; ?>"
+				   data-toggle="tooltip" data-placement="left" title="format: Month/Day/Year e.g. 02/21/2000" />
 				</div>
 
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="form-control col-md-7 col-xs-12" required="required" type="text" name="place_of_birth" id="Place of Birth" placeholder="Place of Birth" value="" />
+				  <input class="form-control col-md-7 col-xs-12" required="required" type="text" name="place_of_birth" id="Place of Birth" placeholder="Place of Birth"
+				  value="<?php echo isset($_SESSION['user_data']['place_of_birth']) ? $_SESSION['user_data']['place_of_birth'] : ''; ?>" />
 				</div>
 
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="form-control col-md-7 col-xs-12" required="required" type="text" name="citizenship" placeholder="Citizenship" value="" />
+				  <input class="form-control col-md-7 col-xs-12" required="required" type="text" name="citizenship" placeholder="Citizenship" 
+				  value="<?php echo isset($_SESSION['user_data']['citizenship']) ? $_SESSION['user_data']['citizenship'] : ''; ?>" />
 				</div>
 			  </div>
-			  			  <div class="ln_solid"></div>	
+			  	<div class="ln_solid"></div>	
 			  <div class="form-group">
 				<label class="control-label col-md-3 col-sm-3 col-xs-12">Contact: <span class="required">*</span></label>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="form-control col-md-7 col-xs-12" required="required" type="text" name="mobile_no" placeholder="Mobile No." value="" />
+				  <input class="form-control col-md-7 col-xs-12" required="required" type="text" name="mobile_no" placeholder="Mobile No." 
+				  value="<?php echo isset($_SESSION['user_data']['mobile_no']) ? $_SESSION['user_data']['mobile_no'] : ''; ?>" />
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-12">
-				  <input class="form-control col-md-7 col-xs-12" type="text" required="required" id="email" name="email" placeholder="Email" value="" onblur="validate();"/>
+				  <input class="form-control col-md-7 col-xs-12" type="text" required="required" id="email" name="email" placeholder="Email" 
+				  value="<?php echo isset($_SESSION['user_data']['email']) ? $_SESSION['user_data']['email'] : ''; ?>" onblur="validate();"/>
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-12">				
 					<p id="result"></p>
@@ -288,17 +282,33 @@ $conn->close();
 				<label class="control-label col-md-3 col-sm-3 col-xs-12">Civil Status: *</label>
 				<div class="col-md-6 col-sm-6 col-xs-12">
 				  <div id="gender" class="btn-group" data-toggle="buttons">
-					<div class="radio">
-						<label><input type="radio" class="flat" name="civil_status" value="Single" required="required" /> Single </label>
-					  </div>
-					  <div class="radio">
-						<label><input type="radio" class="flat" name="civil_status" value="Married" /> Married </label>
-					  </div>
-					  <div class="radio">
-						<label><input type="radio" class="flat" name="civil_status" value="Widow/er" /> Widow/er </label>
-					  </div>
-					  <div class="radio">
-						<label><input type="radio" class="flat" name="civil_status" value="Separated" /> Separated </label>
+				  <div class="radio">
+                <label>
+                    <input type="radio" class="flat" name="civil_status" value="Single" required="required"
+                           <?php echo isset($_SESSION['user_data']['civil_status']) && $_SESSION['user_data']['civil_status'] === 'Single' ? 'checked' : ''; ?> />
+                    Single
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" class="flat" name="civil_status" value="Married"
+                           <?php echo isset($_SESSION['user_data']['civil_status']) && $_SESSION['user_data']['civil_status'] === 'Married' ? 'checked' : ''; ?> />
+                    Married
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" class="flat" name="civil_status" value="Widow/er"
+                           <?php echo isset($_SESSION['user_data']['civil_status']) && $_SESSION['user_data']['civil_status'] === 'Widow/er' ? 'checked' : ''; ?> />
+                    Widow/er
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" class="flat" name="civil_status" value="Separated"
+                           <?php echo isset($_SESSION['user_data']['civil_status']) && $_SESSION['user_data']['civil_status'] === 'Separated' ? 'checked' : ''; ?> />
+                    Separated
+                </label>
 					  </div>
 				  </div>
 				</div>
@@ -307,172 +317,225 @@ $conn->close();
 			  <div class="form-group">
 				<label class="control-label col-md-3 col-sm-3 col-xs-12">Sex: *</label>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-				  <div id="sex" class="btn-group" data-toggle="buttons">
-					<div class="radio">
-						<label><input type="radio" class="flat" name="sex" class="sex" value="Male" required="required"  /> Male </label>
-					  </div>
-					  <div class="radio">
-						<label><input type="radio" class="flat" name="sex" class="sex" value="Female" /> Female </label>
-					  </div>
-				  </div>
+					<div id="sex" class="btn-group" data-toggle="buttons">
+						<div class="radio">
+							<label>
+								<input type="radio" class="flat" name="sex" class="sex" value="Male" required="required" 
+								<?php echo isset($_SESSION['user_data']['sex']) && $_SESSION['user_data']['sex'] === 'Male' ? 'checked' : ''; ?> /> Male
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" class="flat" name="sex" class="sex" value="Female"
+								<?php echo isset($_SESSION['user_data']['sex']) && $_SESSION['user_data']['sex'] === 'Female' ? 'checked' : ''; ?> /> Female
+							</label>
+						</div>
+					</div>
 				</div>
-			  </div>
-			  
-			  <div class="form-group">
+			</div>
+
+			<div class="form-group">
 				<label class="control-label col-md-3 col-sm-3 col-xs-12">SPES Type: *</label>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-				  <div id="gender" class="btn-group" data-toggle="buttons">
-					<div class="radio">
-						<label><input type="radio" class="flat" name="spes_type" value="Student" required="required"  /> Student </label>
-					  </div>
-					  <div class="radio">
-						<label><input type="radio" class="flat" name="spes_type" value="ALS Student" /> ALS Student </label>
-					  </div>
-					  <div class="radio">
-						<label><input type="radio" class="flat" name="spes_type" value="Out of School Youth" /> Out of School Youth (OSY) </label>
-					  </div>
-				  </div>
+					<div id="gender" class="btn-group" data-toggle="buttons">
+						<div class="radio">
+							<label>
+								<input type="radio" class="flat" name="spes_type" value="Student" required="required"
+								<?php echo isset($_SESSION['user_data']['spes_type']) && $_SESSION['user_data']['spes_type'] === 'Student' ? 'checked' : ''; ?> /> Student
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" class="flat" name="spes_type" value="ALS Student"
+								<?php echo isset($_SESSION['user_data']['spes_type']) && $_SESSION['user_data']['spes_type'] === 'ALS Student' ? 'checked' : ''; ?> /> ALS Student
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" class="flat" name="spes_type" value="Out of School Youth"
+								<?php echo isset($_SESSION['user_data']['spes_type']) && $_SESSION['user_data']['spes_type'] === 'Out of School Youth' ? 'checked' : ''; ?> /> Out of School Youth (OSY)
+							</label>
+						</div>
+					</div>
 				</div>
-			  </div>
-			 
-			  <div class="form-group">
+			</div>
+
+			<div class="form-group">
 				<label class="control-label col-md-3 col-sm-3 col-xs-12">Parent Status: *</label>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-				  <div id="gender" class="btn-group" data-toggle="buttons">
-					<div class="radio">
-						<label><input type="radio" class="flat" name="parent_status" value="Living Together" required="required"  /> Living Together </label>
-					  </div>
-					  <div class="radio">
-						<label><input type="radio" class="flat" name="parent_status" value="Solo Parent" /> Solo Parent </label>
-					  </div>
-					  <div class="radio">
-						<label><input type="radio" class="flat" name="parent_status" value="Separated" /> Separated </label>
-					  </div>
-				  </div>
+					<div id="gender" class="btn-group" data-toggle="buttons">
+						<div class="radio">
+							<label>
+								<input type="radio" class="flat" name="parent_status" value="Living Together" required="required"
+								<?php echo isset($_SESSION['user_data']['parent_status']) && $_SESSION['user_data']['parent_status'] === 'Living Together' ? 'checked' : ''; ?> /> Living Together
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" class="flat" name="parent_status" value="Solo Parent"
+								<?php echo isset($_SESSION['user_data']['parent_status']) && $_SESSION['user_data']['parent_status'] === 'Solo Parent' ? 'checked' : ''; ?> /> Solo Parent
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" class="flat" name="parent_status" value="Separated"
+								<?php echo isset($_SESSION['user_data']['parent_status']) && $_SESSION['user_data']['parent_status'] === 'Separated' ? 'checked' : ''; ?> /> Separated
+							</label>
+						</div>
+					</div>
 				</div>
-			  </div>
-			  
-			  <div class="form-group">
+			</div>
+
+			<div class="form-group">
 				<label class="control-label col-md-3 col-sm-3 col-xs-12">Parent is displaced worker/s?: *</label>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-				  <div id="gender" class="btn-group" data-toggle="buttons">
-					  <div class="radio">
-						<label><input type="radio" class="flat" name="parents_displaced" value="No" /> No </label>
-					  </div>				  
-					  <div class="radio">
-						<label><input type="radio" class="flat" name="parents_displaced" value="Yes, Local" /> Yes, Local </label>
-					  </div>
-					  <div class="radio">
-						<label><input type="radio" class="flat" name="parents_displaced" value="Yes, Abroad/OFW" /> Yes, Abroad/OFW </label>
-					  </div>
-				  </div>
+					<div id="gender" class="btn-group" data-toggle="buttons">
+						<div class="radio">
+							<label>
+								<input type="radio" class="flat" name="parents_displaced" value="No"
+								<?php echo isset($_SESSION['user_data']['parents_displaced']) && $_SESSION['user_data']['parents_displaced'] === 'No' ? 'checked' : ''; ?> /> No
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" class="flat" name="parents_displaced" value="Yes, Local"
+								<?php echo isset($_SESSION['user_data']['parents_displaced']) && $_SESSION['user_data']['parents_displaced'] === 'Yes, Local' ? 'checked' : ''; ?> /> Yes, Local
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" class="flat" name="parents_displaced" value="Yes, Abroad/OFW"
+								<?php echo isset($_SESSION['user_data']['parents_displaced']) && $_SESSION['user_data']['parents_displaced'] === 'Yes, Abroad/OFW' ? 'checked' : ''; ?> /> Yes, Abroad/OFW
+							</label>
+						</div>
+					</div>
 				</div>
-			  </div>
+			</div>
+
 			  <div class="ln_solid"></div>			  
 			  <div class="form-group">
 			  	<label class="control-label col-md-3 col-sm-3 col-xs-12">Present Address St./Sitio: *</label>
 				<div class="col-md-4 col-sm-3 col-xs-12">
-				  <input class="form-control col-md-7 col-xs-12" type="text" name="no_street" placeholder="House No., Street/Sitio" value="" />
+				  <input class="form-control col-md-7 col-xs-12" type="text" name="no_street" placeholder="House No., Street/Sitio" 
+				  value="<?php echo isset($_SESSION['user_data']['no_street']) ? $_SESSION['user_data']['no_street'] : ''; ?>" />
 				</div>
 			  </div>
 			  <div class="form-group">
 			  	<label class="control-label col-md-3 col-sm-3 col-xs-12">Province/City/Municipality/Barangay: *</label>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="form-control" type="text" name="province_id"  required="required" value="">
-					<option value="0">Province</option>
+				  <input class="form-control" type="text" name="province_id"  required="required" 
+				  value="<?php echo isset($_SESSION['user_data']['province_id']) ? $_SESSION['user_data']['province_id'] : ''; ?>">
+					<option value="<?php echo isset($_SESSION['user_data']['province_id']) ? $_SESSION['user_data']['province_id'] : ''; ?>">Province</option>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="form-control" type="text" name="city_municipality_id"  required="required" value="">
-				  		<option value=""> City/Municipality</option>				  </select>
+				  <input class="form-control" type="text" name="city_municipality_id"  required="required" 
+				  value="<?php echo isset($_SESSION['user_data']['city_municipality_id']) ? $_SESSION['user_data']['city_municipality_id'] : ''; ?>">
+				  		<option value="<?php echo isset($_SESSION['user_data']['city_municipality_id']) ? $_SESSION['user_data']['city_municipality_id'] : ''; ?>"> City/Municipality</option>				  </select>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="form-control" type="text" name="barangay_id"  required="required" value="">
-				  		<option value=""> Barangay</option>				  </select>
+				  <input class="form-control" type="text" name="barangay_id"  required="required" 
+				  value="<?php echo isset($_SESSION['user_data']['barangay_id']) ? $_SESSION['user_data']['barangay_id'] : ''; ?>">
+				  		<option value="<?php echo isset($_SESSION['user_data']['barangay_id']) ? $_SESSION['user_data']['barangay_id'] : ''; ?>"> Barangay</option>				  </select>
 				</div>
 			  </div>
 			  
 			  <div class="form-group">
 			  	<label class="control-label col-md-3 col-sm-3 col-xs-12">Permanent Address St./Sitio: *</label>
 				<div class="col-md-4 col-sm-3 col-xs-12">
-				  <input class="form-control col-md-7 col-xs-12" type="text" name="no_street2" placeholder="House No., Street/Sitio" value="" />
+				  <input class="form-control col-md-7 col-xs-12" type="text" name="no_street2" placeholder="House No., Street/Sitio" 
+				  value="<?php echo isset($_SESSION['user_data']['no_street2']) ? $_SESSION['user_data']['no_street2'] : ''; ?>" />
 				</div>
 			  </div>
 			  <div class="form-group">
 			  	<label class="control-label col-md-3 col-sm-3 col-xs-12">Province/City/Municipality/Barangay: *</label>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="form-control" type="text" name="province_id2"  required="required" value="">
-					<option value=" "> Province</option>                                  
+				  <input class="form-control" type="text" name="province_id2"  required="required" 
+				  value="<?php echo isset($_SESSION['user_data']['province_id2']) ? $_SESSION['user_data']['province_id2'] : ''; ?>">
+					<option value="<?php echo isset($_SESSION['user_data']['province_id2']) ? $_SESSION['user_data']['province_id2'] : ''; ?>"> Province</option>                                  
 				  </select>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="form-control" type="text" name="city_municipality_id2"  required="required" value="">
-				  		<option value=""> City/Municipality</option>				  </select>
+				  <input class="form-control" type="text" name="city_municipality_id2"  required="required" 
+				  value="<?php echo isset($_SESSION['user_data']['city_municipality_id2']) ? $_SESSION['user_data']['city_municipality_id2'] : ''; ?>">
+				  		<option value="<?php echo isset($_SESSION['user_data']['city_municipality_id2']) ? $_SESSION['user_data']['city_municipality_id2'] : ''; ?>"> City/Municipality</option>				  </select>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="form-control" type="text" name="barangay_id2"  required="required" value="">
-				  		<option value=""> Barangay</option>				  </select>
+				  <input class="form-control" type="text" name="barangay_id2"  required="required" 
+				  value="<?php echo isset($_SESSION['user_data']['barangay_id2']) ? $_SESSION['user_data']['barangay_id2'] : ''; ?>">
+				  		<option value="<?php echo isset($_SESSION['user_data']['barangay_id2']) ? $_SESSION['user_data']['barangay_id2'] : ''; ?>"> Barangay</option>				  </select>
 				</div>
 			  </div>	
 			  <div class="ln_solid"></div>
 			  <div class="form-group">
 				<label class="control-label col-md-3 col-sm-3 col-xs-12">Father's Name: <span class="required">*</span></label>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" name="father_first_name" placeholder="First Name" value="" />
+				  <input class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" name="father_first_name" placeholder="First Name" 
+				  value="<?php echo isset($_SESSION['user_data']['father_first_name']) ? $_SESSION['user_data']['father_first_name'] : ''; ?>" />
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="form-control col-md-7 col-xs-12" required="required" type="text" name="father_middle_name" placeholder="Middle Name" value="" />
+				  <input class="form-control col-md-7 col-xs-12" required="required" type="text" name="father_middle_name" placeholder="Middle Name" 
+				  value="<?php echo isset($_SESSION['user_data']['father_middle_name']) ? $_SESSION['user_data']['father_middle_name'] : ''; ?>" />
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="form-control col-md-7 col-xs-12" required="required" type="text" name="father_last_name" placeholder="Last Name" value="" />
+				  <input class="form-control col-md-7 col-xs-12" required="required" type="text" name="father_last_name" placeholder="Last Name" 
+				  value="<?php echo isset($_SESSION['user_data']['father_last_name']) ? $_SESSION['user_data']['father_last_name'] : ''; ?>" />
 				</div>
 			  </div>
 			  <div class="form-group">
 				<label class="control-label col-md-3 col-sm-3 col-xs-12">Father's Contact No.: <span class="required">*</span></label>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" name="father_contact_no" placeholder="Mobile No." value=""/>
+				  <input class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" name="father_contact_no" placeholder="Mobile No." 
+				  value="<?php echo isset($_SESSION['user_data']['father_contact_no']) ? $_SESSION['user_data']['father_contact_no'] : ''; ?>"/>
 				</div>
 			  </div>				  
 			  <div class="form-group">
 				<label class="control-label col-md-3 col-sm-3 col-xs-12">Mother's Name: <span class="required">*</span></label>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" name="mother_first_name" placeholder="First Name" value="" />
+				  <input class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" name="mother_first_name" placeholder="First Name" 
+				  value="<?php echo isset($_SESSION['user_data']['mother_first_name']) ? $_SESSION['user_data']['mother_first_name'] : ''; ?>" />
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="form-control col-md-7 col-xs-12" required="required" type="text" name="mother_middle_name" placeholder="Middle Name" value="" />
+				  <input class="form-control col-md-7 col-xs-12" required="required" type="text" name="mother_middle_name" placeholder="Middle Name" 
+				  value="<?php echo isset($_SESSION['user_data']['mother_middle_name']) ? $_SESSION['user_data']['mother_middle_name'] : ''; ?>" />
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="form-control col-md-7 col-xs-12" required="required" type="text" name="mother_last_name" placeholder="Last Name" value="" />
+				  <input class="form-control col-md-7 col-xs-12" required="required" type="text" name="mother_last_name" placeholder="Last Name" 
+				  value="<?php echo isset($_SESSION['user_data']['mother_last_name']) ? $_SESSION['user_data']['mother_last_name'] : ''; ?>" />
 				</div>
 			  </div>
 			  <div class="form-group">
 				<label class="control-label col-md-3 col-sm-3 col-xs-12">Mother's Contact No.: *</label>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="date-picker form-control col-md-7 col-xs-12" type="text" name="mother_contact_no" placeholder="Mobile No." value="" />
+				  <input class="date-picker form-control col-md-7 col-xs-12" type="text" name="mother_contact_no" placeholder="Mobile No." 
+				  value="<?php echo isset($_SESSION['user_data']['mother_contact_no']) ? $_SESSION['user_data']['mother_contact_no'] : ''; ?>" />
 				</div>
 			  </div>			  
 			  <div class="ln_solid"></div>
 			  			  <div class="form-group">
 				<label class="control-label col-md-2 col-sm-2 col-xs-6">Elementary:<span class="required"> *</span></label>
 				<div class="col-md-4 col-sm-2 col-xs-12">
-				<input class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" id="elem_name" name="elem_name" placeholder="Elementary School Name" value="" />
+				<input class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" id="elem_name" name="elem_name" placeholder="Elementary School Name" 
+				value="<?php echo isset($_SESSION['user_data']['elem_name']) ? $_SESSION['user_data']['elem_name'] : ''; ?>" />
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12">
 				  <input class="form-control col-md-7 col-xs-12" type="text" id="elem_degree" ame="elem_degree" placeholder="Degree" disabled />
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <select class="form-control" name="year_grade_level" id="year_grade_level" required="required">
+				<select class="form-control" name="year_grade_level" id="year_grade_level" required="required">
 					<option value="">Select Grade</option>
-					<option value="Grade 1">Grade 1</option>
-					<option value="Grade 2">Grade 2</option>
-					<option value="Grade 3">Grade 3</option>
-					<option value="Grade 4">Grade 4</option>
-					<option value="Grade 5">Grade 5</option>
-					<option value="Grade 6/Graduating">Grade 6/Graduating</option>
-					<option value="Graduate">Graduate</option>					
-				  </select>
+					<option value="Grade 1" <?php echo isset($_SESSION['user_data']['year_grade_level']) && $_SESSION['user_data']['year_grade_level'] === 'Grade 1' ? 'selected' : ''; ?>>Grade 1</option>
+					<option value="Grade 2" <?php echo isset($_SESSION['user_data']['year_grade_level']) && $_SESSION['user_data']['year_grade_level'] === 'Grade 2' ? 'selected' : ''; ?>>Grade 2</option>
+					<option value="Grade 3" <?php echo isset($_SESSION['user_data']['year_grade_level']) && $_SESSION['user_data']['year_grade_level'] === 'Grade 3' ? 'selected' : ''; ?>>Grade 3</option>
+					<option value="Grade 4" <?php echo isset($_SESSION['user_data']['year_grade_level']) && $_SESSION['user_data']['year_grade_level'] === 'Grade 4' ? 'selected' : ''; ?>>Grade 4</option>
+					<option value="Grade 5" <?php echo isset($_SESSION['user_data']['year_grade_level']) && $_SESSION['user_data']['year_grade_level'] === 'Grade 5' ? 'selected' : ''; ?>>Grade 5</option>
+					<option value="Grade 6/Graduating" <?php echo isset($_SESSION['user_data']['year_grade_level']) && $_SESSION['user_data']['year_grade_level'] === 'Grade 6/Graduating' ? 'selected' : ''; ?>>Grade 6/Graduating</option>
+					<option value="Graduate" <?php echo isset($_SESSION['user_data']['year_grade_level']) && $_SESSION['user_data']['year_grade_level'] === 'Graduate' ? 'selected' : ''; ?>>Graduate</option>
+				</select>
+
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="form-control col-md-7 col-xs-12" required="required" type="text" id="elem_date_attendance" name="elem_date_attendance" placeholder="Year Ended" data-toggle="tooltip" data-placement="left" value="" />
+				  <input class="form-control col-md-7 col-xs-12" required="required" type="text" id="elem_date_attendance" name="elem_date_attendance" placeholder="Year Ended" data-toggle="tooltip" data-placement="left" 
+				  value="<?php echo isset($_SESSION['user_data']['elem_date_attendance']) ? $_SESSION['user_data']['elem_date_attendance'] : ''; ?>" />
 				</div>
 			  </div>	
 				<script>
@@ -482,25 +545,35 @@ $conn->close();
 			  <div class="form-group">
 				<label class="control-label col-md-2 col-sm-2 col-xs-6">High School: *</label>
 				<div class="col-md-4 col-sm-2 col-xs-12">
-				  <input class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" id="hs_name" name="hs_name" placeholder="High School Name" value=""  />
+				  <input class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" id="hs_name" name="hs_name" placeholder="High School Name" 
+				  value="<?php echo isset($_SESSION['user_data']['hs_name']) ? $_SESSION['user_data']['hs_name'] : ''; ?>" />
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="form-control col-md-7 col-xs-12" type="text" id="hs_degree" name="hs_degree" placeholder="Degree, 'n/a' if None"  required="required" value="" />
+				  <input class="form-control col-md-7 col-xs-12" type="text" id="hs_degree" name="hs_degree" placeholder="Degree, 'n/a' if None"  required="required" 
+				  value="<?php echo isset($_SESSION['user_data']['hs_degree']) ? $_SESSION['user_data']['hs_degree'] : ''; ?>" />
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12">
 				  <select class="form-control" name="hs_year_level" id="hs_year_level" required="required">
 				  	<option value="">Select Year</option>
-					<option value="Grade 7/First Year">Grade 7/First Year</option>
-					<option value="Grade 8/Second Year">Grade 8/Second Year</option>
-					<option value="Grade 9/Third Year">Grade 9/Third Year</option>
-					<option value="Grade 10/Fourth Year">Grade 10/Fourth Year</option>
-					<option value="Grade 11/Senior High">Grade 11/Senior High 1</option>
-					<option value="Grade 12/Senior High/Graduating">Grade 12/Senior High 2/Graduating</option>
-					<option value="Graduate">Graduate</option>					
+					<option value="Grade 7/First Year" <?php echo (isset($_SESSION['user_data']['hs_year_level']) && $_SESSION['user_data']['hs_year_level'] === 'Grade 7/First Year') ? 'selected' : ''; ?>>
+					Grade 7/First Year</option>
+					<option value="Grade 8/Second Year" <?php echo (isset($_SESSION['user_data']['hs_year_level']) && $_SESSION['user_data']['hs_year_level'] === 'Grade 8/Second Year') ? 'selected' : ''; ?>>
+					Grade 8/Second Year</option>
+					<option value="Grade 9/Third Year"<?php echo (isset($_SESSION['user_data']['hs_year_level']) && $_SESSION['user_data']['hs_year_level'] === 'Grade 9/Third Year') ? 'selected' : ''; ?>>
+					Grade 9/Third Year</option>
+					<option value="Grade 10/Fourth Year" <?php echo (isset($_SESSION['user_data']['hs_year_level']) && $_SESSION['user_data']['hs_year_level'] === 'Grade 10/Fourth Year') ? 'selected' : ''; ?>>
+					Grade 10/Fourth Year</option>
+					<option value="Grade 12/Senior High/Graduating"<?php echo (isset($_SESSION['user_data']['hs_year_level']) && $_SESSION['user_data']['hs_year_level'] === 'Grade 12/Senior High/Graduating') ? 'selected' : ''; ?>>
+					Grade 11/Senior High 1</option>
+					<option value="Grade 12/Senior High/Graduating"<?php echo (isset($_SESSION['user_data']['hs_year_level']) && $_SESSION['user_data']['hs_year_level'] === 'Grade 12/Senior High/Graduating') ? 'selected' : ''; ?>>
+					Grade 12/Senior High 2/Graduating</option>
+					<option value="Graduate"<?php echo (isset($_SESSION['user_data']['hs_year_level']) && $_SESSION['user_data']['hs_year_level'] === 'Graduate') ? 'selected' : ''; ?>>
+					Graduate</option>					
 				  </select>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="form-control col-md-7 col-xs-12" required="required" type="text" id="hs_date_attendance" name="hs_date_attendance" placeholder="Year Ended" data-toggle="tooltip" data-placement="left" value="" />
+				  <input class="form-control col-md-7 col-xs-12" required="required" type="text" id="hs_date_attendance" name="hs_date_attendance" placeholder="Year Ended" 
+				  data-toggle="tooltip" data-placement="left" value="<?php echo isset($_SESSION['user_data']['hs_date_attendance']) ? $_SESSION['user_data']['hs_date_attendance'] : ''; ?>" />
 				</div>
 			  </div>
 			  	<script>
@@ -510,7 +583,8 @@ $conn->close();
 			  <div class="form-group">
 				<label class="control-label col-md-2 col-sm-2 col-xs-6">College: </label>
 				<div class="col-md-4 col-sm-2 col-xs-12">
-				  <input class="date-picker form-control col-md-7 col-xs-12" type="text" id="suc_name" name="suc_name" placeholder="College Name (Leave as Blank if None)" value=""  />
+				  <input class="date-picker form-control col-md-7 col-xs-12" type="text" id="suc_name" name="suc_name" placeholder="College Name (Leave as Blank if None)" 
+				  value="<?php echo isset($_SESSION['user_data']['suc_name']) ? $_SESSION['user_data']['suc_name'] : ''; ?>"  />
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12">
 				  <input class="form-control" name="suc_course" id="suc_course">
@@ -519,17 +593,25 @@ $conn->close();
 				<div class="col-md-2 col-sm-2 col-xs-12">
 				  <select class="form-control" name="suc_year_level" id="suc_year_level">
 					<option value="">Select Year</option>
-					<option value="First Year">First Year</option>
-					<option value="Second Year">Second Year</option>
-					<option value="Third Year">Third Year</option>
-					<option value="Fourth Year">Fourth Year</option>					
-					<option value="Fourth Year/Graduating">Fourth Year/Graduating</option>
-					<option value="Fifth Year/Graduating">Fifth Year/Graduating</option>
-					<option value="Graduate">Graduate</option>					
+					<option value="First Year" <?php echo (isset($_SESSION['user_data']['suc_year_level']) && $_SESSION['user_data']['suc_year_level'] === 'First Year') ? 'selected' : ''; ?>>
+					First Year</option>
+					<option value="Second Year"<?php echo (isset($_SESSION['user_data']['suc_year_level']) && $_SESSION['user_data']['suc_year_level'] === 'Second Year') ? 'selected' : ''; ?>>
+					Second Year</option>
+					<option value="Third Year"<?php echo (isset($_SESSION['user_data']['suc_year_level']) && $_SESSION['user_data']['suc_year_level'] === 'Third Year') ? 'selected' : ''; ?>>
+					Third Year</option>
+					<option value="Fourth Year"<?php echo (isset($_SESSION['user_data']['suc_year_level']) && $_SESSION['user_data']['suc_year_level'] === 'Fourth Year') ? 'selected' : ''; ?>>
+					Fourth Year</option>					
+					<option value="Fourth Year/Graduating" <?php echo (isset($_SESSION['user_data']['suc_year_level']) && $_SESSION['user_data']['suc_year_level'] === 'Fourth Year/Graduating') ? 'selected' : ''; ?>>
+					Fourth Year/Graduating</option>
+					<option value="Fifth Year/Graduating"<?php echo (isset($_SESSION['user_data']['suc_year_level']) && $_SESSION['user_data']['suc_year_level'] === 'Fifth Year/Graduating') ? 'selected' : ''; ?>>
+					Fifth Year/Graduating</option>
+					<option value="Graduate"<?php echo (isset($_SESSION['user_data']['suc_year_level']) && $_SESSION['user_data']['suc_year_level'] === 'Graduate') ? 'selected' : ''; ?>>
+					Graduate</option>					
 				  </select>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12">
-				  <input class="form-control col-md-7 col-xs-12" type="text" id="suc_date_attendance" name="suc_date_attendance" placeholder="Year Ended" data-toggle="tooltip" data-placement="left" value="" />
+				  <input class="form-control col-md-7 col-xs-12" type="text" id="suc_date_attendance" name="suc_date_attendance" placeholder="Year Ended" 
+				  data-toggle="tooltip" data-placement="left" value="<?php echo isset($_SESSION['user_data']['suc_date_attendance']) ? $_SESSION['user_data']['suc_date_attendance'] : ''; ?>" />
 				</div>
 			  </div>	
 			  
@@ -542,15 +624,19 @@ $conn->close();
 					
 			  </div>			
 			  <div class="form-group">
-			  	<label class="control-label col-md-3 col-sm-3 col-xs-12">How many times have you been a SPES beneficiary?:</label>
-				<div class="col-md-3 col-sm-6 col-xs-12">
-					<select class="form-control" id='spes_times' name="spes_times">
-						<option name="spes_times" value="0" selected>0 (First Time)</option>
-						<option name="spes_times" value="1">1</option>
-						<option name="spes_times" value="2">2</option>
-						<option name="spes_times" value="3">3</option>
-						<option name="spes_times" value="4">4</option>
-											</select>
+					<label class="control-label col-md-3 col-sm-3 col-xs-12">How many times have you been a SPES beneficiary?:</label>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<select class="form-control" id='spes_times' name="spes_times">
+							<option name="spes_times" value="0" <?php echo isset($_SESSION['user_data']['spes_times']) && $_SESSION['user_data']['spes_times'] === '0' ? 'selected' : ''; ?>>0 (First Time)</option>
+							<option name="spes_times" value="1" <?php echo isset($_SESSION['user_data']['spes_times']) && $_SESSION['user_data']['spes_times'] === '1' ? 'selected' : ''; ?>>1</option>
+							<option name="spes_times" value="2" <?php echo isset($_SESSION['user_data']['spes_times']) && $_SESSION['user_data']['spes_times'] === '2' ? 'selected' : ''; ?>>2</option>
+							<option name="spes_times" value="3" <?php echo isset($_SESSION['user_data']['spes_times']) && $_SESSION['user_data']['spes_times'] === '3' ? 'selected' : ''; ?>>3</option>
+							<option name="spes_times" value="4" <?php echo isset($_SESSION['user_data']['spes_times']) && $_SESSION['user_data']['spes_times'] === '4' ? 'selected' : ''; ?>>4</option>
+						</select>
+						<br><br>
+					</div>
+				</div>s
+				</select>
 					<br><br>
 				</div>
 					
@@ -625,9 +711,7 @@ $conn->close();
 
         <!-- footer content -->
         <footer id="mainFooter">
-          <div class="pull-right">
-             &copy; Copyright 2023 | Online Special Program for Employment of Student (SPES) 
-          <div class="clearfix"></div>
+            &copy; Copyright 2023 | Online Special Program for Employment of Student (SPES)
         </footer>
         <!-- /footer content -->
       </div>

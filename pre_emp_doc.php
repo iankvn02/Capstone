@@ -96,21 +96,111 @@ $conn->close();
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>eSPES | Applicant Home Page</title>
-    <!-- Bootstrap -->
     <link href="bootstrap.css" rel="stylesheet">
-    <!-- Emmet -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/emmet/2.3.4/emmet.cjs.js" integrity="sha512-/0TtlmFaP6kPAvDm5nsVp86JQQ1QlfFXaLV9svYbZNtGUSSvi7c3FFSRrs63B9j6iM+gBffFA3AcL4V3mUxycw==" crossorigin="anonymous"></script>
-    <!-- Custom Theme Style -->
+    <link href="style.css" rel="stylesheet">
     <link href="custom.css" rel="stylesheet">
-    <!-- jQuery UI -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="jquery.js"></script>
+    <script src="parsley.js"></script>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="x-icon" href="spes_logo.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pica/5.1.0/pica.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/image-similarity/2.2.0/image-similarity.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // Function to check image blurriness
+        function isImageBlurred(img) {
+            // Create a canvas to draw the image
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            context.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+            // Convert canvas data to base64
+            const dataUrl = canvas.toDataURL('image/jpeg', 0.1); // Lower quality may amplify blurriness
+
+            // Check if the image is too blurry
+            const image = new Image();
+            image.src = dataUrl;
+            const diffThreshold = 10; // Adjust this value for your specific needs
+
+            return new Promise((resolve) => {
+                image.onload = function () {
+                    const imgData = context.getImageData(0, 0, canvas.width, canvas.height);
+                    const diff = pixelDiff(imgData.data, this.width, this.height);
+                    resolve(diff <= diffThreshold);
+                };
+            });
+        }
+
+        // Function to calculate pixel difference
+        function pixelDiff(data, width, height) {
+            let diff = 0;
+
+            for (let i = 0; i < data.length; i += 4) {
+                const r1 = data[i];
+                const g1 = data[i + 1];
+                const b1 = data[i + 2];
+
+                const r2 = data[i + 4];
+                const g2 = data[i + 5];
+                const b2 = data[i + 6];
+
+                diff += Math.abs(r1 - r2) + Math.abs(g1 - g2) + Math.abs(b1 - b2);
+            }
+
+            return diff / (width * height);
+        }
+
+        // Function to handle file input change
+        function handleFileInputChange(inputId) {
+            const fileInput = document.getElementById(inputId);
+            const warningMessage = document.getElementById('warningMessage');
+            const submitButton = document.getElementById('submitBtn');
+
+            if (fileInput.files.length === 0) {
+                warningMessage.innerText = '';
+                submitButton.disabled = false;
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const img = new Image();
+            const URL = window.URL || window.webkitURL;
+            img.src = URL.createObjectURL(file);
+
+            img.onload = function () {
+                if (img.width <= 800 || img.height <= 600) {
+                    warningMessage.innerText = 'Image dimensions should be at least 800x600 pixels.';
+                    submitButton.disabled = true;
+                } else {
+                    isImageBlurred(this).then(function (blurred) {
+                        if (blurred) {
+                            warningMessage.innerText = 'The uploaded image is too blurry.';
+                            submitButton.disabled = true;
+                        } else {
+                            warningMessage.innerText = '';
+                            submitButton.disabled = false;
+                        }
+                    });
+                }
+            };
+        }
+
+        // Attach event listeners to file input elements
+        document.getElementById('photo_id').addEventListener('change', () => handleFileInputChange('photo_id'));
+        document.getElementById('photo_birthcert').addEventListener('change', () => handleFileInputChange('photo_birthcert'));
+        document.getElementById('photo_esign').addEventListener('change', () => handleFileInputChange('photo_esign'));
+        document.getElementById('photo_grades').addEventListener('change', () => handleFileInputChange('photo_grades'));
+        document.getElementById('photo_itr').addEventListener('change', () => handleFileInputChange('photo_itr'));
+    });
+</script>
     <style>
         body {
             font-family: "Century Gothic", sans-serif;
@@ -159,12 +249,13 @@ $conn->close();
 <div class="nav_menu">
     <nav>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="http://localhost/Capstone/index.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+            <li><a href="index.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
         </ul>
     </nav>
 </div>
 </div>
 <!-- /top navigation -->
+
 
 <div id="loader"></div>
 
@@ -191,17 +282,11 @@ $conn->close();
 
                 <div hidden id="alertMessage" class="alert alert-success alert-dismissible fade in"><i class="glyphicon glyphicon-question-sign"></i> </div>
                 <form id="formPhoto" data-parsley-validate class="form-horizontal form-label-left" method="POST" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="photo_id">School ID (Scanned Image):<span class="required">*</span></label>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                        <input type="file" name="school_id_photo" id="photo_id" style="margin-top: 7px;" accept=".jpg,.jpeg,.png,.pdf" />
-                        </div>
-                        <div id="uploaded_image_school_id" class="col-md-3 col-sm-6 col-xs-12">
-                        </div>
-                    </div>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="photo_esign"> PDF Files Only<span class="required">*</span></label>
+                    <br></br>
 
                     <div class="form-group" style="margin-top: 30px;">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="photo_birthcert">Birth Certificate/Gov. issued ID (PDF File / Scanned Image):<span class="required">*</span></label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="photo_birthcert">Birth Certificate/Gov. issued ID (PDF File):<span class="required">*</span></label>
                         <div class="col-md-3 col-sm-6 col-xs-12">
                         <input type="file" name="birth_certificate" id="photo_birthcert" style="margin-top: 7px;" accept=".jpg,.jpeg,.pdf" />
                         </div>
@@ -209,14 +294,7 @@ $conn->close();
                         </div>
                     </div>
 
-                    <div class="form-group" style="margin-top: 30px;">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="photo_esign"> 3E-Signature (Scanned Image):<span class="required">*</span></label>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                        <input type="file" name="e_signature" id="photo_esign" style="margin-top: 7px;" accept=".jpg,.jpeg,.png,.pdf" />
-                        </div>
-                        <div id="uploaded_image_signature" class="col-md-3 col-sm-6 col-xs-12">
-                        </div>
-                    </div>
+                   
 
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="photo_grades">Grades/Cert. OSY:<span class="required">*</span></label>
@@ -235,13 +313,35 @@ $conn->close();
                         <div id="uploaded_image_itr" class="col-md-3 col-sm-6 col-xs-12">
                         </div>
                     </div>
+
+
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="photo_esign"> Images Only<span class="required">*</span></label>
+                    <br></br>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="photo_id">School ID (Scanned Image):<span class="required">*</span></label>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                        <input type="file" name="school_id_photo" id="photo_id" style="margin-top: 7px;" accept=".jpg,.jpeg,.png,.pdf" />
+                        </div>
+                        <div id="uploaded_image_school_id" class="col-md-3 col-sm-6 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 30px;">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="photo_esign"> 3E-Signature (Scanned Image):<span class="required">*</span></label>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                        <input type="file" name="e_signature" id="photo_esign" style="margin-top: 7px;" accept=".jpg,.jpeg,.png,.pdf" />
+                        </div>
+                        <div id="uploaded_image_signature" class="col-md-3 col-sm-6 col-xs-12">
+                        </div>
+                    </div>
   
                     <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                             <br><br>
+                            <div id="warningMessage" class="alert alert-warning" role="alert"></div>
                             <button class="btn btn-primary" type="button" onclick="cancelEditProfile()">Cancel</button>
                             <button class="btn btn-warning" onclick="goBack()">Back</button>
-                            <button class="btn btn-success" type="submit" name="next">Submit</button>
+                            <button class="btn btn-success" type="submit" name="next" id="submitBtn">Submit</button>
                             <br><br><br><br><br><br><br><br>
                         </div>
                     </div>
@@ -275,11 +375,8 @@ $conn->close();
 
     <!-- footer content -->
     <footer id="mainFooter">
-        <div class="pull-right">
             &copy; Copyright 2023 | Online Special Program for Employment of Student (SPES)
-        </div>
-        <div class="clearfix"></div>
-    </footer>
+        </footer>
     <!-- /footer content -->
 </div>
 </div>
