@@ -1,23 +1,17 @@
 /* These styles affect the appearance of certain elements */
-
 .x_title h2,
 table.tile_info td p {
-    white-space: nowrap;
-    /* Prevent text from wrapping */
-    text-overflow: ellipsis;
-    /* Add an ellipsis (...) when text overflows its container */
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; /* Add an ellipsis (...) when text overflows its container */
 }
 
 .site_title,
 .x_title h2,
 table.tile_info td p {
-    text-overflow: ellipsis;
-    /* Apply ellipsis to these elements */
+    text-overflow: ellipsis; /* Apply ellipsis to these elements */
 }
 
-
 /* These styles remove text decoration (usually underlines) from links and other elements */
-
 .detail a,
 .expand,
 .jqstooltip,
@@ -27,224 +21,160 @@ table.tile_info td p {
 a,
 a:focus,
 a:hover {
-    text-decoration: none;
-    /* Remove text decoration */
+    text-decoration: none; /* Remove text decoration */
 }
 
 .byline,
 .main_menu .fa {
-    -webkit-font-smoothing: antialiased;
-    /* Improve font rendering for readability */
+    -webkit-font-smoothing: antialiased; /* Improve font rendering for readability */
 }
 
-
 /* These styles affect the appearance of date range picker elements */
-
 .daterangepicker .ranges li {
-    color: #73879C;
-    /* Set text color */
+    color: #73879C; /* Set text color */
 }
 
 .daterangepicker .ranges li.active,
 .daterangepicker .ranges li:hover {
-    background: #536A7F;
-    /* Background color for active/hovered items */
-    border: 1px solid #536A7F;
-    /* Border color for active/hovered items */
-    color: #fff;
-    /* Text color for active/hovered items */
+    background: #536A7F; /* Background color for active/hovered items */
+    border: 1px solid #536A7F; /* Border color for active/hovered items */
+    color: #fff; /* Text color for active/hovered items */
 }
 
-
 /* These styles affect the appearance of input fields within the date range picker */
-
 .daterangepicker .input-mini {
-    background-color: #eee;
-    /* Set background color */
-    border: 1px solid #ccc;
-    /* Set border */
-    box-shadow: none!important;
-    /* Remove any box shadow */
+    background-color: #eee; /* Set background color */
+    border: 1px solid #ccc; /* Set border */
+    box-shadow: none!important; /* Remove any box shadow */
 }
 
 .daterangepicker .input-mini.active {
-    border: 1px solid #ccc;
-    /* Set border for active input */
+    border: 1px solid #ccc; /* Set border for active input */
 }
 
-
 /* These styles affect the appearance of select elements within the date range picker */
-
 .daterangepicker select.ampmselect,
 .daterangepicker select.hourselect,
 .daterangepicker select.minuteselect,
 .daterangepicker select.monthselect,
 .daterangepicker select.secondselect,
 .daterangepicker select.yearselect {
-    font-size: 12px;
-    /* Set font size */
-    padding: 1px;
-    /* Set padding */
-    margin: 0;
-    /* Set margin */
-    cursor: default;
-    /* Set cursor type */
-    height: 30px;
-    /* Set height */
-    border: 1px solid #ADB2B5;
-    /* Set border */
-    line-height: 30px;
-    /* Set line height */
-    border-radius: 0!important;
-    /* Remove border-radius */
+    font-size: 12px; /* Set font size */
+    padding: 1px; /* Set padding */
+    margin: 0; /* Set margin */
+    cursor: default; /* Set cursor type */
+    height: 30px; /* Set height */
+    border: 1px solid #ADB2B5; /* Set border */
+    line-height: 30px; /* Set line height */
+    border-radius: 0!important; /* Remove border-radius */
 }
 
-
 /* Adjust margin-right for the select element with class 'monthselect' */
-
 .daterangepicker select.monthselect {
     margin-right: 2%;
 }
 
-
 /* Define styles for table cells within the date range picker */
-
 .daterangepicker td.in-range {
     background: #E4E7EA;
     color: #73879C;
 }
 
-
 /* Define styles for active table cells and their hover state within the date range picker */
-
 .daterangepicker td.active,
 .daterangepicker td.active:hover {
     background-color: #536A7F;
     color: #fff;
 }
 
-
 /* Define styles for available date header cells on hover within the date range picker */
-
 .daterangepicker th.available:hover {
     background: #eee;
     color: #34495E;
 }
 
-
 /* Remove pseudo-elements (before and after) from the date range picker */
-
 .daterangepicker:after,
 .daterangepicker:before {
     content: none;
 }
 
-
 /* Adjust margin for single-calendar mode within the date range picker */
-
 .daterangepicker .calendar.single {
     margin: 0 0 4px;
 }
 
-
 /* Define styles for the single-calendar table within the date range picker */
-
 .daterangepicker .calendar.single .calendar-table {
     width: 224px;
     padding: 0 0 4px!important;
 }
 
-
 /* Define styles for the table header row within the single-calendar table */
-
 .daterangepicker .calendar.single .calendar-table thead tr:first-child th {
     padding: 8px 5px;
 }
 
-
 /* Remove border-radius from table header cells within the single-calendar table */
-
 .daterangepicker .calendar.single .calendar-table thead th {
     border-radius: 0;
 }
 
-
 /* Define styles for the date range picker with class 'picker_1' */
-
 .daterangepicker.picker_1 {
     color: #fff;
     background: #34495E;
 }
 
-
 /* Define styles for the table within 'picker_1' date range picker */
-
 .daterangepicker.picker_1 .calendar-table {
     background: #34495E;
 }
 
-
 /* Define styles for the table header row within 'picker_1' date range picker */
-
 .daterangepicker.picker_1 .calendar-table thead tr {
     background: #213345;
 }
 
-
 /* Define styles for the first row of the table header within 'picker_1' date range picker */
-
 .daterangepicker.picker_1 .calendar-table thead tr:first-child {
     background: #1ABB9C;
 }
 
-
 /* Define styles for 'off' table cells within 'picker_1' date range picker */
-
 .daterangepicker.picker_1 .calendar-table td.off {
     background: #34495E;
     color: #999;
 }
 
-
 /* Define styles for 'available' table cells on hover within 'picker_1' date range picker */
-
 .daterangepicker.picker_1 .calendar-table td.available:hover {
     color: #34495E;
 }
 
-
 /* Define styles for the table header row within 'picker_2' date range picker */
-
 .daterangepicker.picker_2 .calendar-table thead tr {
     color: #1ABB9C;
 }
 
-
 /* Define styles for the first row of the table header within 'picker_2' date range picker */
-
 .daterangepicker.picker_2 .calendar-table thead tr:first-child {
     color: #73879C;
 }
 
-
 /* Define styles for the first row of the table header within 'picker_3' date range picker */
-
 .daterangepicker.picker_3 .calendar-table thead tr:first-child {
     color: #fff;
     background: #1ABB9C;
 }
 
-
 /* Define styles for the first row of the table header within 'picker_4' date range picker */
-
 .daterangepicker.picker_4 .calendar-table thead tr:first-child {
     color: #fff;
     background: #34495E;
 }
 
-
 /* Define styles for 'off' and 'available' table cells within 'picker_4' date range picker */
-
 .daterangepicker.picker_4 .calendar-table td,
 .daterangepicker.picker_4 .calendar-table td.off {
     background: #ECF0F1;
@@ -252,16 +182,12 @@ a:hover {
     border-radius: 0;
 }
 
-
 /* Define styles for 'active' table cells within 'picker_4' date range picker */
-
 .daterangepicker.picker_4 .calendar-table td.active {
     background: #34495E;
 }
 
-
 /* Define styles for the calendar exhibit */
-
 .calendar-exibit .show-calendar {
     float: none;
     display: block;
@@ -273,37 +199,27 @@ a:hover {
     overflow: hidden;
 }
 
-
 /* Define styles for the calendar within the calendar exhibit */
-
 .calendar-exibit .show-calendar .calendar {
     margin: 0 0 4px;
 }
 
-
 /* Define styles for 'picker_1' mode within the calendar exhibit */
-
 .calendar-exibit .show-calendar.picker_1 {
     background: #34495E;
 }
 
-
 /* Define styles for the calendar table within the calendar exhibit */
-
 .calendar-exibit .calendar-table {
     padding: 0 0 4px;
 }
 
-
 /* Define background color for 'left_col' element */
-
 .left_col {
     background: #2A3F54;
 }
 
-
 /* Adjust styling for the navigation column in small screen mode */
-
 .nav-sm .container.body .col-md-3.left_col {
     min-height: 100%;
     width: 70px;
@@ -312,25 +228,19 @@ a:hover {
     position: absolute;
 }
 
-
 /* Fix the navigation column in small screen mode */
-
 .nav-sm .container.body .col-md-3.left_col.menu_fixed {
     position: fixed;
     height: 100%;
 }
 
-
 /* Adjust overflow property for specific elements */
-
 .nav-sm .container.body .col-md-3.left_col .mCSB_container,
 .nav-sm .container.body .col-md-3.left_col .mCustomScrollBox {
     overflow: visible;
 }
 
-
 /* Set overflow property to 'hidden' for specific elements */
-
 .overflow_hidden,
 .sidebar-widget,
 .site_title,
@@ -341,65 +251,49 @@ table.tile_info td p {
     overflow: hidden;
 }
 
-
 /* Hide elements with class 'hidden-small' in small screen mode */
-
 .nav-sm .hidden-small {
     visibility: hidden;
 }
 
-
 /* Adjust padding and margin for the right column in small screen mode */
-
 .nav-sm .container.body .right_col {
     padding: 10px 20px;
     margin-left: 70px;
     z-index: 2;
 }
 
-
 /* Set the width of the navbar with class 'nav_title' to 70px in small screen mode */
-
 .nav-sm .navbar.nav_title {
     width: 70px;
 }
 
-
 /* Hide the text content of 'nav_title' anchor elements */
-
 .nav-sm .navbar.nav_title a span {
     display: none;
 }
 
-
 /* Style the icons within 'nav_title' anchor elements */
-
 .nav-sm .navbar.nav_title a i {
     font-size: 27px;
     margin: 13px 0 0 3px;
 }
 
-
 /* Style the icon within elements with class 'site_title' */
-
 .site_title i {
     border: 1px solid #EAEAEA;
     padding: 5px 6px;
     border-radius: 50%;
 }
 
-
 /* Display the top navigation bar below the fixed sidebar */
-
 .nav-sm .main_container .top_nav {
     display: block;
     margin-left: 70px;
     z-index: 2;
 }
 
-
 /* Style the links within the side menu */
-
 .nav-sm .nav.side-menu li a {
     text-align: center!important;
     font-weight: 400;
@@ -407,17 +301,13 @@ table.tile_info td p {
     padding: 10px 5px;
 }
 
-
 /* Highlight active menu items with a right border color */
-
 .nav-sm .nav.child_menu li.active,
 .nav-sm .nav.side-menu li.active-sm {
     border-right: 5px solid #1ABB9C;
 }
 
-
 /* Adjust positioning and background for sub-menus in small screen mode */
-
 .nav-sm .nav.side-menu li.active-sm ul ul,
 .nav-sm ul.nav.child_menu ul {
     position: static;
@@ -425,32 +315,24 @@ table.tile_info td p {
     background: 0 0;
 }
 
-
 /* Set the color for active menu items in small screen mode */
-
 .nav-sm>.nav.side-menu>li.active-sm>a {
     color: #1ABB9C!important;
 }
 
-
 /* Hide the 'toggle-up' icons within the side menu */
-
 .nav-sm .nav.side-menu li a i.toggle-up {
     display: none!important;
 }
 
-
 /* Hide various elements in small screen mode */
-
 .nav-sm .menu_section h3,
 .nav-sm .profile,
 .nav-sm span.fa {
     display: none;
 }
 
-
 /* Adjust the size and alignment of icons within the side menu */
-
 .nav-sm .nav.side-menu li a i {
     font-size: 25px!important;
     text-align: center;
@@ -458,9 +340,7 @@ table.tile_info td p {
     margin-bottom: 5px;
 }
 
-
 /* Style sub-menus in small screen mode */
-
 .nav-sm ul.nav.child_menu {
     left: 100%;
     position: absolute;
@@ -471,30 +351,22 @@ table.tile_info td p {
     display: none;
 }
 
-
 /* Style list items within sub-menus */
-
 .nav-sm ul.nav.child_menu li {
     padding: 0 10px;
 }
 
-
 /* Adjust text alignment within sub-menu links */
-
 .nav-sm ul.nav.child_menu li a {
     text-align: left!important;
 }
 
-
 /* Style the 'menu_section' element */
-
 .menu_section {
     margin-bottom: 35px;
 }
 
-
 /* Style the heading within the 'menu_section' element */
-
 .menu_section h3 {
     padding-left: 15px;
     color: #fff;
@@ -507,24 +379,18 @@ table.tile_info td p {
     text-shadow: 1px 1px #000;
 }
 
-
 /* Set margin-top for 'ul' elements within 'menu_section' */
-
 .menu_section>ul {
     margin-top: 10px;
 }
 
-
 /* Style the profile picture */
-
 .profile_pic {
     width: 35%;
     float: left;
 }
 
-
 /* Style the circular profile image */
-
 .img-circle.profile_img {
     width: 70%;
     background: #fff;
@@ -536,27 +402,21 @@ table.tile_info td p {
     padding: 4px;
 }
 
-
 /* Style the profile information */
-
 .profile_info {
     padding: 25px 10px 10px;
     width: 65%;
     float: left;
 }
 
-
 /* Style text within the profile information */
-
 .profile_info span {
     font-size: 13px;
     line-height: 30px;
     color: #BAB8B8;
 }
 
-
 /* Style the heading within the profile information */
-
 .profile_info h2 {
     font-size: 14px;
     color: #ECF0F1;
@@ -564,31 +424,23 @@ table.tile_info td p {
     font-weight: 300;
 }
 
-
 /* Style the profile image in a different layout */
-
 .profile.img_2 {
     text-align: center;
 }
 
-
 /* Style the profile picture within the different layout */
-
 .profile.img_2 .profile_pic {
     width: 100%;
 }
 
-
 /* Style the circular profile image within the different layout */
-
 .profile.img_2 .profile_pic .img-circle.profile_img {
     width: 50%;
     margin: 10px 0 0;
 }
 
-
 /* Adjust the floating position and styling for icons in the main menu */
-
 .main_menu span.fa {
     float: right;
     text-align: center;
@@ -598,43 +450,32 @@ table.tile_info td p {
     color: #C4CFDA;
 }
 
-
 /* Align and margin for icons within elements with class 'active' */
-
 .active a span.fa {
     text-align: right!important;
     margin-right: 4px;
 }
 
-
 /* Reset margin for elements with class 'menu_section' in small screen mode */
-
 .nav-sm .menu_section {
     margin: 0;
 }
 
-
 /* Display inline-block for icons within 'li' elements in small screen mode */
-
 .nav-sm li li span.fa {
     display: inline-block;
 }
 
-
 /* Styling for the navigation menu */
-
 .nav_menu {
     float: left;
     background: #EDEDED;
     border-bottom: 1px solid #D9DEE4;
-    margin-bottom: 10px;
     width: 100%;
     position: relative;
 }
 
-
 /* Styling for the left column in medium screen mode */
-
 .nav-md .container.body .col-md-3.left_col {
     min-height: 100%;
     width: 230px;
@@ -645,32 +486,24 @@ table.tile_info td p {
     z-index: 1;
 }
 
-
 /* Fixed positioning for the left column in medium screen mode */
-
 .nav-md .container.body .col-md-3.left_col.menu_fixed {
     height: 100%;
     position: fixed;
 }
 
-
 /* Background for the right column */
-
 body .container.body .right_col {
     background: #F7F7F7;
 }
 
-
 /* Padding and margin for the right column in medium screen mode */
-
 .nav-md .container.body .right_col {
     padding: 10px 20px 0;
     margin-left: 230px;
 }
 
-
 /* Styling for the navigation title */
-
 .nav_title {
     width: 230px;
     float: left;
@@ -679,9 +512,7 @@ body .container.body .right_col {
     height: 57px;
 }
 
-
 /* Media query for screen width up to 991px */
-
 @media (max-width:991px) {
     /* Adjust width and margin for right column and top navigation */
     .nav-md .container.body .right_col,
@@ -704,9 +535,7 @@ body .container.body .right_col {
     }
 }
 
-
 /* Media query for screen width up to 1200px */
-
 @media (max-width:1200px) {
     /* Adjust width and font size for 'x_title h2' elements */
     .x_title h2 {
@@ -721,17 +550,13 @@ body .container.body .right_col {
     }
 }
 
-
 /* Styling for container elements */
-
 .container {
     width: 100%;
     padding: 0;
 }
 
-
 /* Styling for navigation menu items */
-
 .top_nav .nav .open>a,
 .top_nav .nav .open>a:focus,
 .top_nav .nav .open>a:hover,
@@ -740,9 +565,7 @@ body .container.body .right_col {
     background: #D9DEE4;
 }
 
-
 /* Styling for the body */
-
 body {
     color: #73879C;
     background: #2A3F54;
@@ -752,122 +575,90 @@ body {
     line-height: 1.471;
 }
 
-
 /* Display the top navigation bar below the fixed sidebar in medium screen mode */
-
 .main_container .top_nav {
     display: block;
     margin-left: 230px;
 }
 
-
 /* Remove padding for elements with class 'no-padding' */
-
 .no-padding {
     padding: 0!important;
 }
 
-
 /* Styling for page title elements */
-
 .page-title {
     width: 100%;
     height: 65px;
     padding: 10px 0;
 }
 
-
 /* Styling for left part of page title */
-
 .page-title .title_left {
     width: 45%;
     float: left;
     display: block;
 }
 
-
 /* Styling for heading within left part of page title */
-
 .page-title .title_left h3 {
     margin: 9px 0;
 }
 
-
 /* Styling for right part of page title */
-
 .page-title .title_right {
     width: 55%;
     float: left;
     display: block;
 }
 
-
 /* Styling for pull-right elements within right part of page title */
-
 .page-title .title_right .pull-right {
     margin: 10px 0;
 }
 
-
 /* Set a fixed height of 320px for elements with class 'fixed_height_320' */
-
 .fixed_height_320 {
     height: 320px;
 }
 
-
 /* Set a fixed height of 390px for elements with class 'fixed_height_390' */
-
 .fixed_height_390 {
     height: 390px;
 }
 
-
 /* Set a fixed height of 200px for elements with class 'fixed_height_200' */
-
 .fixed_height_200 {
     height: 200px;
 }
 
-
 /* Define a dark background color for elements with class 'progress-bar-dark' */
-
 .progress-bar-dark {
     background-color: #34495E!important;
 }
 
-
 /* Define a gray background color for elements with class 'progress-bar-gray' */
-
 .progress-bar-gray {
     background-color: #BDC3C7!important;
 }
 
-
 /* Remove margin bottom for progress elements within tables with class 'no-margin' */
-
 table.no-margin .progress {
     margin-bottom: 0;
 }
 
-
 /* Add padding to the main content with class 'main_content' */
-
 .main_content {
     padding: 10px 20px;
 }
 
-
 /* Set the width and margin-bottom for elements with class 'col-md-55' */
-
 .col-md-55 {
     width: 50%;
     margin-bottom: 10px;
 }
 
-
 /* Media query for screens with a minimum width of 768px */
-
 @media (min-width:768px) {
     /* Adjust the width for elements with class 'col-md-55' */
     .col-md-55 {
@@ -875,9 +666,7 @@ table.no-margin .progress {
     }
 }
 
-
 /* Media query for screens with a minimum width of 992px */
-
 @media (min-width:992px) {
     /* Adjust the width for elements with class 'col-md-55' */
     .col-md-55 {
@@ -885,9 +674,7 @@ table.no-margin .progress {
     }
 }
 
-
 /* Media query for screens with a minimum width of 1200px */
-
 @media (min-width:1200px) {
     /* Adjust the width for elements with class 'col-md-55' */
     .col-md-55 {
@@ -895,9 +682,7 @@ table.no-margin .progress {
     }
 }
 
-
 /* Media query for screens with a minimum width of 192px and a maximum width of 1270px */
-
 @media (min-width:192px) and (max-width:1270px) {
     /* Set margin-right and float for 'span.right' elements within 'table.tile_info' */
     table.tile_info span.right {
@@ -906,17 +691,15 @@ table.no-margin .progress {
     }
 }
 
-
 /* Center elements with class 'center-margin' horizontally */
-
 .center-margin {
     margin: 0 auto;
     float: none!important;
 }
 
 
-/* Margin for heading elements */
 
+/* Margin for heading elements */
 .h1,
 .h2,
 .h3,
@@ -927,55 +710,42 @@ h3 {
     margin-bottom: 10px;
 }
 
-
 /* Define the default link color */
-
 a {
     color: #5A738E;
 }
 
 
 /* Remove margin-bottom for the navbar */
-
 .navbar {
     margin-bottom: 0;
 }
 
-
 /* Styling for the navbar header */
-
 .navbar-header {
     background: #34495E;
 }
 
-
 /* Remove margin-right for elements with class 'navbar-right' */
-
 .navbar-right {
     margin-right: 0;
 }
 
-
 /* Styling for the top navigation bar with class 'top_nav' */
-
 .top_nav .navbar-right {
     margin: 0;
     width: 70%;
     float: right;
 }
 
-
 /* Styling for list items within the top navigation bar */
-
 .top_nav .navbar-right li {
     display: inline-block;
     float: right;
     position: static;
 }
 
-
 /* Media query for screens with a minimum width of 480px */
-
 @media (min-width:480px) {
     /* Set 'position: relative' for list items within 'top_nav' with class 'navbar-right' */
     .top_nav .navbar-right li {
@@ -983,62 +753,46 @@ a {
     }
 }
 
-
 /* Style for list items within the side menu */
-
 .nav.side-menu>li {
     position: relative;
     display: block;
     cursor: pointer;
 }
 
-
 /* Style for anchor elements within list items of the side menu */
-
 .nav.side-menu>li>a {
     margin-bottom: 6px;
 }
 
-
 /* Style for anchor elements within list items of the side menu on hover */
-
 .nav.side-menu>li>a:hover {
     color: #F2F5F7!important;
 }
 
-
 /* Remove text decoration for anchor elements within list items of the side menu on hover and focus */
-
 .nav.side-menu>li>a:hover,
 .nav>li>a:focus {
     text-decoration: none;
 }
 
-
 /* Hide child menu items */
-
 .nav.child_menu {
     display: none;
 }
 
-
 /* Style for active and hover child menu items */
-
 .nav.child_menu li.active,
 .nav.child_menu li:hover {
     background-color: rgba(255, 255, 255, 0.06);
 }
 
-
 /* Padding for child menu items */
-
 .nav.child_menu li {
     padding-left: 36px;
 }
 
-
 /* Style for ::before pseudo-element of child menu items in medium-sized screens */
-
 .nav-md ul.nav.child_menu li:before {
     background: #425668;
     bottom: auto;
@@ -1053,9 +807,7 @@ a {
     border-radius: 50%;
 }
 
-
 /* Style for ::after pseudo-element of child menu items in medium-sized screens */
-
 .nav-md ul.nav.child_menu li:after {
     border-left: 1px solid #425668;
     bottom: 0;
@@ -1065,66 +817,50 @@ a {
     top: 0;
 }
 
-
 /* Style for anchor elements within the top navigation menu and primary navigation menu */
-
 .nav.top_menu>li>a,
 .nav>li>a {
     position: relative;
     display: block;
 }
 
-
 /* Style for anchor elements within child menu items and side menu items */
-
 .nav.child_menu>li>a,
 .nav.side-menu>li>a {
     color: #E7E7E7;
     font-weight: 500;
 }
 
-
 /* Style for current page link within list items and child menu items */
-
 .nav li li.current-page a,
 .nav.child_menu li li a.active,
 .nav.child_menu li li a:hover {
     color: #fff;
 }
 
-
 /* Remove background for current page link within child menu items */
-
 .nav.child_menu li li.active,
 .nav.child_menu li li:hover {
     background: 0 0;
 }
 
-
 /* Set padding for anchor elements within the primary navigation menu */
-
 .nav>li>a {
     padding: 13px 15px 12px;
 }
 
-
 /* Style for active and current page list items in side menu */
-
 .nav.side-menu>li.active,
 .nav.side-menu>li.current-page {
     border-right: 5px solid #1ABB9C;
 }
 
-
 /* Style for current page list item */
-
 .nav li.current-page {
     background: rgba(255, 255, 255, .05);
 }
 
-
 /* Remove margin-left and color styles for navbar-brand, navbar-nav>li>a, and site_title */
-
 .navbar-brand,
 .navbar-nav>li>a,
 .site_title {
@@ -1132,32 +868,24 @@ a {
     margin-left: 0!important;
 }
 
-
 /* Style for anchor elements within top navigation menu and primary navigation menu */
-
 .nav.navbar-nav>li>a {
     color: #515356!important;
 }
 
-
 /* Style for anchor elements within top navigation menu */
-
 .nav.top_menu>li>a {
     padding: 10px 15px;
     color: #34495E!important;
 }
 
-
 /* Remove background color on focus and hover for anchor elements within list items */
-
 .nav>li>a:focus,
 .nav>li>a:hover {
     background-color: transparent;
 }
 
-
 /* Style for toggle elements */
-
 .toggle {
     float: left;
     margin: 0;
@@ -1165,123 +893,50 @@ a {
     width: 70px;
 }
 
-
 /* Style for anchor elements within toggle elements */
-
 .toggle a {
     padding: 15px 15px 0;
     margin: 0;
     cursor: pointer;
 }
 
-
 /* Style for 'i' elements within toggle elements */
-
 .toggle a i {
     font-size: 26px;
 }
 
-
 /* Style for anchor elements within child menu items */
-
 .nav.child_menu>li>a {
     color: rgba(255, 255, 255, .75);
     font-size: 12px;
     padding: 9px;
 }
 
-
-/* Style for panel toolbox elements */
-
-.panel_toolbox {
-    float: right;
-    min-width: 70px;
-}
-
-
-/* Style for list items within panel toolbox elements */
-
-.panel_toolbox>li {
-    float: left;
-    cursor: pointer;
-}
-
-
-/* Style for anchor elements within panel toolbox elements */
-
-.panel_toolbox>li>a {
-    padding: 5px;
-    color: #C5C7CB;
-    font-size: 14px;
-}
-
-
-/* Style for anchor elements within panel toolbox elements on hover */
-
-.panel_toolbox>li>a:hover {
-    background: #F5F7FA;
-}
-
-
 /* Set line height for elements with class 'line_30' */
-
 .line_30 {
     line-height: 30px;
 }
 
-
 /* Remove padding for elements with class 'main_menu_side' */
-
 .main_menu_side {
     padding: 0;
 }
 
-
 /* Style for anchor elements within the sidebar of Bootstrap documentation */
-
 .bs-docs-sidebar .nav>li>a {
     display: block;
     padding: 4px 6px;
 }
 
 
-/* Style for the footer */
-
-footer {
-    background: #fff;
-    padding: 15px 20px;
-    display: block;
-}
-
-
-/* Adjust margin-left for footer within elements with class 'nav-sm' */
-
-.nav-sm footer {
-    margin-left: 100px;
-}
-
-
-/* Style for the fixed footer */
-
-.footer_fixed footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-}
-
-
 /* Position 'degrees:after', 'x_content', and 'x_panel' elements relatively */
-
 .degrees:after,
 .x_content,
 .x_panel {
     position: relative;
 }
 
-
 /* Media query for screens with a minimum width of 768px */
-
 @media (min-width: 768px) {
     /* Adjust margin-left for footer within elements with class 'footer_fixed' */
     .footer_fixed .nav-sm footer,
@@ -1291,51 +946,7 @@ footer {
 }
 
 
-/* Style for elements with class 'tile-stats' and 'sparkline' */
-
-.tile-stats.sparkline {
-    padding: 10px;
-    text-align: center;
-}
-
-
-/* Style for 'jqstooltip' */
-
-.jqstooltip {
-    background: #34495E !important;
-    width: 30px !important;
-    height: 22px !important;
-}
-
-
-/* Display block for tooltips */
-
-.tooltip {
-    display: block !important;
-}
-
-
-/* Style for 'tiles' */
-
-.tiles {
-    border-top: 1px solid #ccc;
-    margin-top: 15px;
-    padding-top: 5px;
-}
-
-
-/* Style for 'h2' elements within 'top_tiles' */
-
-.top_tiles .tile h2 {
-    font-size: 30px;
-    line-height: 30px;
-    margin: 3px 0 7px;
-    font-weight: 700;
-}
-
-
 /* Apply 'box-sizing: border-box' to all elements and pseudo-elements */
-
 *,
 *:after,
 *:before {
@@ -1343,121 +954,29 @@ footer {
 }
 
 
-/* Style for elements with class 'profile_details' every 3rd occurrence */
-
-.profile_details:nth-child(3n) {
-    clear: both;
-}
-
-
-/* Style for elements with class 'profile_view' within elements with class 'profile_details' */
-
-.profile_details .profile_view {
-    display: inline-block;
-    padding: 10px 0 0;
-    background: #fff;
-}
-
-
-/* Style for elements with class 'divider' within elements with class 'profile_view' */
-
-.profile_details .profile_view .divider {
-    border-top: 1px solid #e5e5e5;
-    padding-top: 5px;
-    margin-top: 5px;
-}
-
-
-/* Style for elements with class 'ratings' within elements with class 'profile_view' */
-
-.profile_details .profile_view .ratings {
-    margin-bottom: 0;
-    text-align: left;
-    font-size: 16px;
-}
-
-
-/* Style for elements with class 'bottom' within elements with class 'profile_view' */
-
-.profile_details .profile_view .bottom {
-    background: #F2F5F7;
-    padding: 9px 0;
-    border-top: 1px solid #E6E9ED;
-}
-
-
-/* Style for elements with class 'left' within elements with class 'profile_view' */
-
-.profile_details .profile_view .left {
-    margin-top: 20px;
-}
-
-
-/* Style for 'p' elements within elements with class 'left' */
-
-.profile_details .profile_view .left p {
-    margin-bottom: 3px;
-}
-
-
-/* Style for elements with class 'right' within elements with class 'profile_view' */
-
-.profile_details .profile_view .right {
-    margin-top: 0;
-    padding: 10px;
-}
-
-
 /* Style for 'img-circle' elements within elements with class 'profile_view' */
-
 .profile_details .profile_view .img-circle {
     border: 1px solid #E6E9ED;
     padding: 2px;
 }
 
-
 /* Style for 'h2' elements within elements with class 'profile_view' */
-
 .profile_details .profile_view h2 {
     margin: 5px 0;
 }
 
-
 /* Style for elements with class 'brief' within elements with class 'profile_view' */
-
 .profile_details .profile_view .brief {
     margin: 0;
     font-weight: 300;
 }
 
-
 /* Style for elements with class 'profile_left' */
-
 .profile_details .profile_left {
     background: #fff;
 }
 
-
-/* Style for elements with class 'pagination' and 'pagination-split' */
-
-.pagination.pagination-split li {
-    display: inline-block;
-    margin-right: 3px;
-}
-
-
-/* Style for anchor elements within 'pagination-split' */
-
-.pagination.pagination-split li a {
-    border-radius: 4px;
-    color: #768399;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-}
-
-
 /* Style for 'h3', 'h4', and 'span' elements within 'table.tile' */
-
 table.tile h3,
 table.tile h4,
 table.tile span {
@@ -1465,73 +984,55 @@ table.tile span {
     vertical-align: middle !important;
 }
 
-
 /* Style for 'td' and 'th' elements within 'table.tile' */
-
 table.tile td,
 table.tile th {
     text-align: center;
 }
 
-
 /* Style for 'th' elements within 'table.tile' */
-
 table.tile th {
     border-bottom: 1px solid #E6ECEE;
 }
 
-
 /* Style for 'td' elements within 'table.tile' */
-
 table.tile td {
     padding: 5px 0;
 }
 
-
 /* Style for 'ul' elements within 'td' elements of 'table.tile' */
-
 table.tile td ul {
     text-align: left;
     padding-left: 0;
 }
 
-
 /* Style for list items within 'ul' elements within 'td' elements of 'table.tile' */
-
 table.tile td ul li {
     list-style: none;
     width: 100%;
 }
 
-
 /* Style for 'big' elements within 'a' elements within 'li' elements of 'ul' elements within 'td' elements of 'table.tile' */
-
 table.tile td ul li a big {
     right: 0;
     float: right;
     margin-right: 13px;
 }
 
-
 /* Style for 'td' elements within 'table.tile_info' */
-
 table.tile_info td {
     text-align: left;
     padding: 1px;
     font-size: 15px;
 }
 
-
 /* Style for 'p' elements within 'td' elements of 'table.tile_info' */
-
 table.tile_info td p {
     margin: 0;
     line-height: 28px;
 }
 
-
 /* Style for 'i' elements within 'td' elements of 'table.tile_info' */
-
 table.tile_info td i {
     margin-right: 8px;
     font-size: 17px;
@@ -1540,39 +1041,29 @@ table.tile_info td i {
     line-height: 28px;
 }
 
-
 /* Style for the first 'td' element within 'table.tile_info' */
-
 table.tile_info td:first-child {
     width: 83%;
 }
 
-
 /* Style for 'span' elements */
-
 td span {
     line-height: 28px;
 }
 
-
 /* Style for elements with class 'error-number' */
-
 .error-number {
     font-size: 90px;
     line-height: 90px;
     margin: 20px 0;
 }
 
-
 /* Style for elements with class 'col-middle' */
-
 .col-middle {
     margin-top: 5%;
 }
 
-
 /* Style for elements with class 'mid_center' */
-
 .mid_center {
     width: 370px;
     margin: 0 auto;
@@ -1580,247 +1071,49 @@ td span {
     padding: 10px 20px;
 }
 
-
-/* Style for 'h3' elements with class 'degrees' */
-
-h3.degrees {
-    font-size: 22px;
-    font-weight: 400;
-    text-align: center;
-}
-
-
-/* Pseudo-element for 'degrees' class */
-
-.degrees:after {
-    content: "o";
-    top: -12px;
-    font-size: 13px;
-    font-weight: 300;
-}
-
-
-/* Style for elements with class 'day' within '.daily-weather' */
-
-.daily-weather .day {
-    font-size: 14px;
-    border-top: 2px solid rgba(115, 135, 156, 0.36);
-    text-align: center;
-    border-bottom: 2px solid rgba(115, 135, 156, 0.36);
-    padding: 5px 0;
-}
-
-
 /* Style for elements with class 'col-sm-2' within '.weather-days' */
-
 .weather-days .col-sm-2 {
     width: 16.66666667%;
 }
 
-
 /* Style for elements with class 'row' within '.weather' */
-
 .weather .row {
     margin-bottom: 0;
 }
 
-
 /* Hide elements with class 'bulk-actions' */
-
 .bulk-actions {
     display: none;
 }
 
-
-/* Style for tables with class 'countries_list' */
-
-table.countries_list {
-    width: 100%;
-}
-
-
-/* Style for cells within tables with class 'countries_list' */
-
-table.countries_list td {
-    padding: 0 10px;
-    line-height: 30px;
-    border-top: 1px solid #eee;
-}
-
-
-/* Style for pagination links within '.dataTables_paginate' */
-
-.dataTables_paginate a {
-    padding: 6px 9px !important;
-    background: #ddd !important;
-    border-color: #ddd !important;
-}
-
-
-/* Style for the active pagination link within '.paging_full_numbers' */
-
-.paging_full_numbers a.paginate_active {
-    background-color: rgba(38, 185, 154, 0.59) !important;
-    border-color: rgba(38, 185, 154, 0.59) !important;
-}
-
-
-/* Style for various buttons with class '.DTTT_button' */
-
-a.DTTT_button,
-button.DTTT_button,
-div.DTTT_button {
-    border: 1px solid #E7E7E7 !important;
-    background: #E7E7E7 !important;
-    box-shadow: none !important;
-}
-
-
-/* Style for tables with class 'jambo_table' */
-
-table.jambo_table {
-    border: 1px solid rgba(221, 221, 221, 0.78);
-}
-
-
-/* Style for the header row in tables with class 'jambo_table' */
-
-table.jambo_table thead {
-    background: rgba(52, 73, 94, 0.94);
-    color: #ECF0F1;
-}
-
-
-/* Style for rows in tables with class 'jambo_table' on hover */
-
-table.jambo_table tbody tr:hover td {
-    background: rgba(38, 185, 154, 0.07);
-    border-top: 1px solid rgba(38, 185, 154, 0.11);
-    border-bottom: 1px solid rgba(38, 185, 154, 0.11);
-}
-
-
-/* Style for selected rows in tables with class 'jambo_table' */
-
-table.jambo_table tbody tr.selected {
-    background: rgba(38, 185, 154, 0.16);
-}
-
-
-/* Style for cells in selected rows in tables with class 'jambo_table' */
-
-table.jambo_table tbody tr.selected td {
-    border-top: 1px solid rgba(38, 185, 154, 0.4);
-    border-bottom: 1px solid rgba(38, 185, 154, 0.4);
-}
-
-
-/* Style for the DataTables wrapper */
-
-.dataTables_wrapper {
-    position: relative;
-    clear: both;
-    zoom: 1;
-}
-
-
-/* Style for the processing indicator */
-
-.dataTables_processing {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 250px;
-    height: 30px;
-    margin-left: -125px;
-    margin-top: -15px;
-    padding: 14px 0 2px;
-    border: 1px solid #ddd;
-    text-align: center;
-    color: #999;
-    font-size: 14px;
-    background-color: #fff;
-}
-
-
-/* Style for cells with class 'details' and 'group' */
-
-td.details,
-td.group {
-    background-color: #d1cfd0;
-}
-
-
-/* Style for the 'length' dropdown */
-
-.dataTables_length {
-    width: 40%;
-    float: left;
-}
-
-
-/* Style for the search input */
-
-.dataTables_filter {
-    width: 50%;
-    float: right;
-    text-align: right;
-}
-
-
-/* Style for the information about the number of records */
-
-.dataTables_info {
-    width: 60%;
-    float: left;
-}
-
-
-/* Style for the pagination controls */
-
-.dataTables_paginate {
-    float: right;
-    text-align: right;
-}
-
-
 /* Style for empty data tables and centered cells */
-
 .dataTables_empty,
 table.display td.center {
     text-align: center;
 }
 
-
 /* Style for focused cells and headers in data tables */
-
 table.dataTable td.focus,
 table.dataTable th.focus {
     outline: #1ABB9C solid 2px!important;
     outline-offset: -1px;
 }
 
-
 /* Remove outline on active pagination links */
-
 .paging_full_numbers a:active,
 table.display thead td:active,
 table.display thead th:active {
     outline: 0;
 }
 
-
 /* Style for data tables */
-
 table.display {
     margin: 0 auto;
     clear: both;
     width: 100%;
 }
 
-
 /* Style for header cells in data tables */
-
 table.display thead th {
     padding: 8px 18px 8px 10px;
     border-bottom: 1px solid #000;
@@ -1828,91 +1121,52 @@ table.display thead th {
     cursor: pointer;
 }
 
-
 /* Style for footer cells in data tables */
-
 table.display tfoot th {
     padding: 3px 18px 3px 10px;
     border-top: 1px solid #000;
     font-weight: 700;
 }
 
-
 /* Style for rows with class 'heading2' in data tables */
-
 table.display tr.heading2 td {
     border-bottom: 1px solid #aaa;
 }
 
-
 /* Style for cells in data tables */
-
 table.display td {
     padding: 3px 10px;
 }
 
-
-/* Style for the scrollable data tables container */
-
-.dataTables_scroll {
-    clear: both;
-}
-
-
-/* Enable touch scrolling for the data tables body */
-
-.dataTables_scrollBody {
-    -webkit-overflow-scrolling: touch;
-}
-
-
-/* Style for '.dataTables_info' within '.top' */
-
-.top .dataTables_info {
-    float: none;
-}
-
-
 /* Clear floated elements */
-
 .clear {
     clear: both;
 }
 
-
 /* Style for input elements within 'tfoot' */
-
 tfoot input {
     margin: .5em 0;
     width: 100%;
     color: #444;
 }
 
-
 /* Style for the initial search input */
-
 tfoot input.search_init {
     color: #999;
 }
 
-
 /* Style for cells with class 'group' */
-
 td.group {
     border-bottom: 2px solid #A19B9E;
     border-top: 2px solid #A19B9E;
 }
 
-
 /* Style for cells with class 'details' */
-
 td.details {
     border: 2px solid #A19B9E;
 }
 
-
 /* Style for various elements, including links and buttons */
-
 .login_content .btn-default:hover,
 .login_content a,
 .tagsinput span.tag a,
@@ -1923,23 +1177,17 @@ span.tag {
     text-decoration: none;
 }
 
-
 /* Style for even rows that are selected */
-
 table.display tr.even.row_selected td {
     background-color: #B0BED9;
 }
 
-
 /* Style for odd rows that are selected */
-
 table.display tr.odd.row_selected td {
     background-color: #9FAFD1;
 }
 
-
 /* Style for the 'box' element */
-
 div.box {
     height: 100px;
     padding: 10px;
@@ -1948,73 +1196,7 @@ div.box {
     background-color: #E5E5FF;
 }
 
-
-/* Style for list items within 'ul.msg_list' */
-
-ul.msg_list li {
-    background: #f7f7f7;
-    padding: 5px;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 6px 6px 0;
-    width: 96%!important;
-}
-
-
-/* Style for the last list item within 'ul.msg_list' */
-
-ul.msg_list li:last-child {
-    margin-bottom: 6px;
-    padding: 10px;
-}
-
-
-/* Style for anchor links within list items in 'ul.msg_list' */
-
-ul.msg_list li a {
-    padding: 3px 5px!important;
-}
-
-
-/* Style for images within 'ul.msg_list' */
-
-ul.msg_list li a .image img {
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    float: left;
-    margin-right: 10px;
-    width: 11%;
-}
-
-
-/* Style for elements with class 'time' within 'ul.msg_list' */
-
-ul.msg_list li a .time {
-    font-size: 11px;
-    font-style: italic;
-    font-weight: 700;
-    position: absolute;
-    right: 35px;
-}
-
-
-/* Style for elements with class 'message' within 'ul.msg_list' */
-
-ul.msg_list li a .message {
-    display: block!important;
-    font-size: 11px;
-}
-
-
-/* Style for spans within 'dropdown-menu.msg_list' */
-
-.dropdown-menu.msg_list span {
-    white-space: normal;
-}
-
-
 /* Style for elements with class 'tile_stats_count' and 'quick-list' */
-
 .tile_count .tile_stats_count,
 ul.quick-list li {
     white-space: nowrap;
@@ -2022,9 +1204,7 @@ ul.quick-list li {
     text-overflow: ellipsis;
 }
 
-
 /* Style for dropdown menus */
-
 .dropdown-menu {
     box-shadow: none;
     display: none;
@@ -2042,16 +1222,12 @@ ul.quick-list li {
     border-top-right-radius: 0;
 }
 
-
 /* Style for anchor links within dropdown menus */
-
 .dropdown-menu>li>a {
     color: #5A738E;
 }
 
-
 /* Style for open dropdown menus within navbar */
-
 .navbar-nav .open .dropdown-menu {
     position: absolute;
     background: #fff;
@@ -2063,16 +1239,12 @@ ul.quick-list li {
     width: 220px;
 }
 
-
 /* Style for open dropdown menus with class 'msg_list' within navbar */
-
 .navbar-nav .open .dropdown-menu.msg_list {
     width: 300px;
 }
 
-
 /* Style for elements with class 'badge' within 'info-number' */
-
 .info-number .badge {
     font-size: 10px;
     font-weight: 400;
@@ -2083,16 +1255,12 @@ ul.quick-list li {
     top: 8px;
 }
 
-
 /* Style for unordered lists with class 'to_do' */
-
 ul.to_do {
     padding: 0;
 }
 
-
 /* Style for list items within 'ul.to_do' */
-
 ul.to_do li {
     background: #f3f3f3;
     border-radius: 3px;
@@ -2102,16 +1270,12 @@ ul.to_do li {
     list-style: none;
 }
 
-
 /* Style for paragraphs within 'ul.to_do' */
-
 ul.to_do p {
     margin: 0;
 }
 
-
 /* Style for elements with class 'dashboard-widget' */
-
 .dashboard-widget {
     background: #f6f6f6;
     border-top: 5px solid #79C3DF;
@@ -2119,9 +1283,7 @@ ul.to_do p {
     padding: 5px 10px 10px;
 }
 
-
 /* Style for elements with class 'dashboard-widget-title' within 'dashboard-widget' */
-
 .dashboard-widget .dashboard-widget-title {
     font-weight: 400;
     border-bottom: 1px solid #c1cdcd;
@@ -2131,9 +1293,7 @@ ul.to_do p {
     line-height: 30px;
 }
 
-
 /* Style for 'i' elements within 'dashboard-widget-title' */
-
 .dashboard-widget .dashboard-widget-title i {
     font-size: 100%;
     margin-left: -35px;
@@ -2145,44 +1305,12 @@ ul.to_do p {
     background: #fff;
 }
 
-
-/* Style for unordered lists with class 'quick-list' */
-
-ul.quick-list {
-    width: 45%;
-    padding-left: 0;
-    display: inline-block;
-}
-
-
-/* Style for list items within 'ul.quick-list' */
-
-ul.quick-list li {
-    padding-left: 10px;
-    list-style: none;
-    margin: 0;
-    padding-bottom: 6px;
-    padding-top: 4px;
-}
-
-
-/* Style for 'i' elements within 'ul.quick-list li' */
-
-ul.quick-list li i {
-    padding-right: 10px;
-    color: #757679;
-}
-
-
 /* Style for elements with class 'dashboard-widget-content' */
-
 .dashboard-widget-content {
     padding-top: 9px;
 }
 
-
 /* Style for elements with class 'sidebar-widget' within 'dashboard-widget-content' */
-
 .dashboard-widget-content .sidebar-widget {
     width: 50%;
     display: inline-block;
@@ -2196,100 +1324,45 @@ ul.quick-list li i {
     margin-top: 10px;
 }
 
-
-/* Style for elements with class 'widget_summary' */
-
-.widget_summary {
-    width: 100%;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-}
-
-
-/* Style for elements with class 'w_left' within 'widget_summary' */
-
-.widget_summary .w_left {
-    float: left;
-    text-align: left;
-}
-
-
-/* Style for elements with class 'w_center' within 'widget_summary' */
-
-.widget_summary .w_center {
-    float: left;
-}
-
-
-/* Style for elements with class 'w_right' within 'widget_summary' */
-
-.widget_summary .w_right {
-    float: left;
-    text-align: right;
-}
-
-
-/* Style for 'span' elements within 'widget_summary .w_right' */
-
-.widget_summary .w_right span {
-    font-size: 20px;
-}
-
-
 /* Style for elements with class 'w_20' */
-
 .w_20 {
     width: 20%;
 }
 
-
 /* Style for elements with class 'w_25' */
-
 .w_25 {
     width: 25%;
 }
 
-
 /* Style for elements with class 'w_55' */
-
 .w_55 {
     width: 55%;
 }
 
-
 /* Style for 'h5' elements with class 'graph_title' */
-
 h5.graph_title {
     text-align: left;
     margin-left: 10px;
 }
 
-
 /* Style for 'i' elements within 'h5.graph_title' */
-
 h5.graph_title i {
     margin-right: 10px;
     font-size: 17px;
 }
 
-
 /* Style for 'span' elements with class 'right' */
-
 span.right {
     float: right;
     font-size: 14px!important;
 }
 
-
 /* Style for anchor links within 'tile_info' */
-
 .tile_info a {
     text-overflow: ellipsis;
 }
 
-
 /* Style for elements with class 'sidebar-footer' */
-
 .sidebar-footer {
     bottom: 0;
     clear: both;
@@ -2301,9 +1374,7 @@ span.right {
     z-index: 999;
 }
 
-
 /* Style for anchor links within 'sidebar-footer' */
-
 .sidebar-footer a {
     padding: 7px 0 3px;
     text-align: center;
@@ -2315,33 +1386,25 @@ span.right {
     cursor: pointer;
 }
 
-
 /* Style for anchor links within 'sidebar-footer' on hover */
-
 .sidebar-footer a:hover {
     background: #425567;
 }
 
-
 /* Style for elements with class 'tile_count' */
-
 .tile_count {
     margin-bottom: 20px;
     margin-top: 20px;
 }
 
-
 /* Style for elements with class 'tile_stats_count' within 'tile_count' */
-
 .tile_count .tile_stats_count {
     border-bottom: 1px solid #D9DEE4;
     padding: 0 10px 0 20px;
     position: relative;
 }
 
-
 /* Style for elements before '.tile_stats_count' within 'tile_count' */
-
 .tile_count .tile_stats_count:before {
     content: "";
     position: absolute;
@@ -2351,9 +1414,7 @@ span.right {
     margin-top: 10px;
 }
 
-
 /* Media query for larger screens */
-
 @media (min-width:992px) {
     footer {
         margin-left: 230px;
@@ -2368,82 +1429,62 @@ span.right {
     }
 }
 
-
 /* Style for elements with class 'count' within 'tile_stats_count' */
-
 .tile_count .tile_stats_count .count {
     font-size: 30px;
     line-height: 47px;
     font-weight: 600;
 }
 
-
 /* Media query for medium-sized screens */
-
 @media (min-width:768px) {
     .tile_count .tile_stats_count .count {
         font-size: 40px;
     }
 }
 
-
 /* Media query for larger screens within specific range */
-
 @media (min-width:992px) and (max-width:1100px) {
     .tile_count .tile_stats_count .count {
         font-size: 30px;
     }
 }
 
-
 /* Style for 'span' elements within 'tile_stats_count' */
-
 .tile_count .tile_stats_count span {
     font-size: 12px;
 }
 
-
 /* Media query for medium-sized screens */
-
 @media (min-width:768px) {
     .tile_count .tile_stats_count span {
         font-size: 13px;
     }
 }
 
-
 /* Style for elements with class 'count_bottom i' within 'tile_stats_count' */
-
 .tile_count .tile_stats_count .count_bottom i {
     width: 12px;
 }
 
-
 /* Style for elements with class 'dashboard_graph' */
-
 .dashboard_graph {
     background: #fff;
     padding: 7px 10px;
 }
 
-
 /* Style for columns within 'dashboard_graph' */
-
 .dashboard_graph .col-md-3,
 .dashboard_graph .col-md-9 {
     padding: 0;
 }
 
-
 /* Style for anchor links with class 'user-profile' */
-
 a.user-profile {
     color: #5E6974!important;
 }
 
-
 /* Style for images within '.user-profile' */
-
 .user-profile img {
     width: 29px;
     height: 29px;
@@ -2451,32 +1492,24 @@ a.user-profile {
     margin-right: 10px;
 }
 
-
 /* Style for unordered lists with class 'top_profiles' */
-
 ul.top_profiles {
     height: 330px;
     width: 100%;
 }
 
-
 /* Style for list items within 'ul.top_profiles' */
-
 ul.top_profiles li {
     margin: 0;
     padding: 3px 5px;
 }
 
-
 /* Style for odd list items within 'ul.top_profiles' */
-
 ul.top_profiles li:nth-child(odd) {
     background-color: #eee;
 }
 
-
 /* Style for profile thumbnails */
-
 .media .profile_thumb {
     border: 1px solid;
     width: 50px;
@@ -2486,16 +1519,12 @@ ul.top_profiles li:nth-child(odd) {
     padding: 9px 12px;
 }
 
-
 /* Style for icons within profile thumbnails */
-
 .media .profile_thumb i {
     font-size: 30px;
 }
 
-
 /* Style for date containers */
-
 .media .date {
     background: #ccc;
     width: 52px;
@@ -2504,9 +1533,7 @@ ul.top_profiles li:nth-child(odd) {
     padding: 5px;
 }
 
-
 /* Style for day and month in date containers */
-
 .media .date .day,
 .media .date .month {
     margin: 0;
@@ -2514,72 +1541,54 @@ ul.top_profiles li:nth-child(odd) {
     color: #fff;
 }
 
-
 /* Style for day in date containers */
-
 .media .date .day {
     font-size: 27px;
     line-height: 27px;
     font-weight: 700;
 }
 
-
 /* Style for event titles */
-
 .event .media-body a.title {
     font-weight: 700;
 }
 
-
 /* Style for paragraphs within event media body */
-
 .event .media-body p {
     margin-bottom: 0;
 }
 
-
 /* Style for graph titles */
-
 h4.graph_title {
     margin: 7px;
     text-align: center;
 }
 
-
 /* Style for icons within graph titles */
-
 h4.graph_title i {
     margin-right: 10px;
     font-size: 17px;
 }
 
-
 /* Style for right-aligned elements */
-
 span.right {
     float: right;
     font-size: 14px!important;
 }
 
-
 /* Style for ellipsis text in tile_info */
-
 .tile_info a {
     text-overflow: ellipsis;
 }
 
-
 /* Style for font-awesome icons on hover */
-
 .fontawesome-icon-list .fa-hover a:hover {
     background-color: #ddd;
     color: #fff;
     text-decoration: none;
 }
 
-
 /* Style for font-awesome icon links */
-
 .fontawesome-icon-list .fa-hover a {
     display: block;
     line-height: 32px;
@@ -2588,17 +1597,13 @@ span.right {
     border-radius: 4px;
 }
 
-
 /* Style for font-awesome icons on hover within links */
-
 .fontawesome-icon-list .fa-hover a:hover .fa {
     font-size: 28px;
     vertical-align: -6px;
 }
 
-
 /* Style for font-awesome icons */
-
 .fontawesome-icon-list .fa-hover a .fa {
     width: 32px;
     font-size: 16px;
@@ -2607,9 +1612,7 @@ span.right {
     margin-right: 10px;
 }
 
-
 /* Style for font-awesome icons in main menu */
-
 .main_menu .fa {
     width: 26px;
     opacity: .99;
@@ -2621,9 +1624,7 @@ span.right {
     -moz-osx-font-smoothing: grayscale;
 }
 
-
 /* Style for tile stats */
-
 .tile-stats {
     position: relative;
     display: block;
@@ -2640,9 +1641,7 @@ span.right {
     transition: all .3s ease-in-out;
 }
 
-
 /* Style for button with class 'btn_' */
-
 .button.btn_ {
     display: inline-block;
     padding: 3px 9px;
@@ -2664,18 +1663,14 @@ span.right {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
 }
 
-
 /* Style for primary button */
-
 .btn-primary {
     color: #fff;
     background-color: #428bca;
     border-color: #357ebd;
 }
 
-
 /* Style for active and hover state of primary button */
-
 .btn-primary.active,
 .btn-primary:active,
 .btn-primary:focus,
@@ -2686,18 +1681,14 @@ span.right {
     border-color: #285e8e;
 }
 
-
 /* Style for danger button */
-
 .btn-danger {
     color: #fff;
     background-color: #d9534f;
     border-color: #d43f3a;
 }
 
-
 /* Style for active and hover state of danger button */
-
 .btn-danger.active,
 .btn-danger:active,
 .btn-danger:focus,
@@ -2708,18 +1699,14 @@ span.right {
     border-color: #ac2925;
 }
 
-
 /* Style for warning button */
-
 .btn-warning {
     color: #fff;
     background-color: #f0ad4e;
     border-color: #eea236;
 }
 
-
 /* Style for active and hover state of warning button */
-
 .btn-warning.active,
 .btn-warning:active,
 .btn-warning:focus,
@@ -2730,18 +1717,14 @@ span.right {
     border-color: #d58512;
 }
 
-
 /* Style for success button */
-
 .btn-success {
     background-color: #5bc0de;
     border-color: #46b8da;
     color: #fff;
 }
 
-
 /* Style for active and hover state of success button */
-
 .btn-success.active,
 .btn-success:active,
 .btn-success:focus,
@@ -2752,18 +1735,14 @@ span.right {
     color: #fff;
 }
 
-
 /* Style for info button */
-
 .btn-info {
     background-color: #5bc0de;
     border-color: #46b8da;
     color: #fff;
 }
 
-
 /* Style for active and hover state of info button */
-
 .btn-info.active,
 .btn-info:active,
 .btn-info:focus,
@@ -2774,18 +1753,14 @@ span.right {
     color: #fff;
 }
 
-
 /* Style for light button */
-
 .btn-light {
     background-color: #f7f7f7;
     border-color: #e8e8e8;
     color: #333;
 }
 
-
 /* Style for active and hover state of light button */
-
 .btn-light.active,
 .btn-light:active,
 .btn-light:focus,
@@ -2796,9 +1771,7 @@ span.right {
     color: #333;
 }
 
-
 /* Style for link button */
-
 .btn-link {
     color: #428bca;
     font-weight: normal;
@@ -2811,9 +1784,7 @@ span.right {
     text-shadow: none;
 }
 
-
 /* Style for active and hover state of link button */
-
 .btn-link.active,
 .btn-link:active,
 .btn-link:focus,
@@ -2824,18 +1795,14 @@ span.right {
     text-decoration: underline;
 }
 
-
 /* Style for danger button with outline */
-
 .btn-danger.btn-outline {
     background-color: transparent;
     color: #d9534f;
     border: 1px solid #d9534f;
 }
 
-
 /* Style for active and hover state of danger button with outline */
-
 .btn-danger.btn-outline.active,
 .btn-danger.btn-outline:active,
 .btn-danger.btn-outline:focus,
@@ -2846,18 +1813,14 @@ span.right {
     border: 1px solid #d9534f;
 }
 
-
 /* Style for primary button with outline */
-
 .btn-primary.btn-outline {
     background-color: transparent;
     color: #428bca;
     border: 1px solid #428bca;
 }
 
-
 /* Style for active and hover state of primary button with outline */
-
 .btn-primary.btn-outline.active,
 .btn-primary.btn-outline:active,
 .btn-primary.btn-outline:focus,
@@ -2868,18 +1831,14 @@ span.right {
     border: 1px solid #428bca;
 }
 
-
 /* Style for success button with outline */
-
 .btn-success.btn-outline {
     background-color: transparent;
     color: #5bc0de;
     border: 1px solid #5bc0de;
 }
 
-
 /* Style for active and hover state of success button with outline */
-
 .btn-success.btn-outline.active,
 .btn-success.btn-outline:active,
 .btn-success.btn-outline:focus,
@@ -2890,18 +1849,14 @@ span.right {
     border: 1px solid #5bc0de;
 }
 
-
 /* Style for info button with outline */
-
 .btn-info.btn-outline {
     background-color: transparent;
     color: #5bc0de;
     border: 1px solid #5bc0de;
 }
 
-
 /* Style for active and hover state of info button with outline */
-
 .btn-info.btn-outline.active,
 .btn-info.btn-outline:active,
 .btn-info.btn-outline:focus,
@@ -2912,18 +1867,14 @@ span.right {
     border: 1px solid #5bc0de;
 }
 
-
 /* Style for warning button with outline */
-
 .btn-warning.btn-outline {
     background-color: transparent;
     color: #f0ad4e;
     border: 1px solid #f0ad4e;
 }
 
-
 /* Style for active and hover state of warning button with outline */
-
 .btn-warning.btn-outline.active,
 .btn-warning.btn-outline:active,
 .btn-warning.btn-outline:focus,
@@ -2934,18 +1885,14 @@ span.right {
     border: 1px solid #f0ad4e;
 }
 
-
 /* Style for light button with outline */
-
 .btn-light.btn-outline {
     background-color: transparent;
     color: #f7f7f7;
     border: 1px solid #f7f7f7;
 }
 
-
 /* Style for active and hover state of light button with outline */
-
 .btn-light.btn-outline.active,
 .btn-light.btn-outline:active,
 .btn-light.btn-outline:focus,
@@ -2956,9 +1903,7 @@ span.right {
     border: 1px solid #f7f7f7;
 }
 
-
 /* Styles for alert boxes */
-
 .alert {
     padding: 15px;
     margin-bottom: 20px;
@@ -2966,47 +1911,35 @@ span.right {
     border-radius: 4px;
 }
 
-
 /* Styles for the heading inside an alert box */
-
 .alert h4 {
     margin-top: 0;
     color: inherit;
 }
 
-
 /* Styles for links inside an alert box */
-
 .alert .alert-link {
     font-weight: bold;
 }
 
-
 /* Styles for paragraphs and unordered lists inside an alert box */
-
 .alert>p,
 .alert>ul {
     margin-bottom: 0;
 }
 
-
 /* Additional spacing between paragraphs inside an alert box */
-
 .alert>p+p {
     margin-top: 5px;
 }
 
-
 /* Styles for dismissable alerts */
-
 .alert-dismissable,
 .alert-dismissible {
     padding-right: 35px;
 }
 
-
 /* Styles for the close button in dismissable alerts */
-
 .alert-dismissable .close,
 .alert-dismissible .close {
     position: relative;
@@ -3015,9 +1948,7 @@ span.right {
     color: inherit;
 }
 
-
 /* Styles for close buttons */
-
 .close {
     float: right;
     font-size: 21px;
@@ -3029,9 +1960,7 @@ span.right {
     filter: alpha(opacity=20);
 }
 
-
 /* Hover and focus styles for close buttons */
-
 .close:focus,
 .close:hover {
     color: #000;
@@ -3041,9 +1970,7 @@ span.right {
     filter: alpha(opacity=50);
 }
 
-
 /* Styles for close buttons in button elements */
-
 button.close {
     padding: 0;
     cursor: pointer;
@@ -3052,9 +1979,7 @@ button.close {
     -webkit-appearance: none;
 }
 
-
 /* Adjusted position for close buttons in dismissable alerts */
-
 .alert-dismissible .close {
     position: relative;
     top: -21px;
@@ -3062,22 +1987,18 @@ button.close {
     padding: 21px;
 }
 
-
 /* Styles for progress bars */
-
 .progress {
     height: 20px;
     margin-bottom: 20px;
     overflow: hidden;
     background-color: #f5f5f5;
     border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
 }
 
-
 /* Styles for progress bars */
-
 .progress-bar {
     float: left;
     width: 0;
@@ -3087,87 +2008,14 @@ button.close {
     color: #fff;
     text-align: center;
     background-color: #428bca;
-    -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
-    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
     -webkit-transition: width .6s ease;
     -o-transition: width .6s ease;
     transition: width .6s ease;
 }
 
-
-/* Styles for glyphicons */
-
-.bs-glyphicons {
-    margin: 0 -10px 20px;
-    overflow: hidden;
-}
-
-
-/* Styles for the list of glyphicons */
-
-.bs-glyphicons-list {
-    padding-left: 0;
-    list-style: none;
-}
-
-
-/* Styles for individual glyphicons */
-
-.bs-glyphicons li {
-    float: left;
-    width: 25%;
-    height: 115px;
-    padding: 10px;
-    font-size: 10px;
-    line-height: 1.4;
-    text-align: center;
-    background-color: #f9f9f9;
-    border: 1px solid #fff;
-}
-
-
-/* Styles for the glyphicon icons */
-
-.bs-glyphicons .glyphicon {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    font-size: 24px;
-}
-
-
-/* Styles for the glyphicon class names */
-
-.bs-glyphicons .glyphicon-class {
-    display: block;
-    text-align: center;
-    word-wrap: break-word;
-}
-
-
-/* Hover style for individual glyphicons */
-
-.bs-glyphicons li:hover {
-    color: #fff;
-    background-color: #1ABB9C;
-}
-
-
-/* Media query for larger screens */
-
-@media (min-width:768px) {
-    .bs-glyphicons {
-        margin-right: 0;
-        margin-left: 0;
-    }
-    .bs-glyphicons li {
-        width: 12.5%;
-        font-size: 12px;
-    }
-}
-
-
 /* Styles for tags input */
-
 .tagsinput {
     border: 1px solid #CCC;
     background: #FFF;
@@ -3176,9 +2024,7 @@ button.close {
     overflow-y: auto;
 }
 
-
 /* Styles for individual tags */
-
 span.tag {
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -3193,223 +2039,26 @@ span.tag {
     font-family: helvetica;
 }
 
-
 /* Styles for links inside tags */
-
 span.tag a {
     color: #F1F6F7!important;
 }
 
-
 /* Styles for tags input links */
-
 .tagsinput span.tag a {
     font-weight: 700;
     color: #82ad2b;
     font-size: 11px;
 }
 
-
-/* Styles for tags input input field */
-
-.tagsinput input {
-    width: 80px;
-    margin: 0;
-    font-family: helvetica;
-    font-size: 13px;
-    border: 1px solid transparent;
-    padding: 3px;
-    background: 0 0;
-    color: #000;
-    outline: 0;
-}
-
-
-/* Styles for tags input div elements */
-
-.tagsinput div {
-    display: block;
-    float: left;
-}
-
-
-/* Styles for floating elements on the right */
-
-.social-body,
-.social-sidebar,
-ul.bar_tabs.right li {
-    float: right;
-}
-
-
-/* Clear both floated elements */
-
-.tags_clear {
-    clear: both;
-    width: 100%;
-    height: 0;
-}
-
-
-/* Styles for invalid elements */
-
-.not_valid {
-    background: #FBD8DB!important;
-    color: #90111A!important;
-}
-
-
-/* Styles for unordered list with class bar_tabs */
-
-ul.bar_tabs {
-    overflow: visible;
-    background: #F5F7FA;
-    height: 25px;
-    margin: 21px 0 14px;
-    padding-left: 14px;
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    border-bottom: 1px solid #E6E9ED;
-}
-
-
-/* Styles for list items within unordered list bar_tabs */
-
-ul.bar_tabs>li {
-    border: 1px solid #E6E9ED;
-    color: #333!important;
-    margin-top: -17px;
-    margin-left: 8px;
-    background: #fff;
-    border-bottom: none;
-    border-radius: 4px 4px 0 0;
-}
-
-
-/* Styles for active list items within unordered list bar_tabs */
-
-ul.bar_tabs>li.active {
-    border-right: 6px solid #D3D6DA;
-    border-top: 0;
-    margin-top: -15px;
-}
-
-
-/* Styles for links within list items of unordered list bar_tabs */
-
-ul.bar_tabs>li a {
-    padding: 10px 17px;
-    background: #F5F7FA;
-    margin: 0;
-    border-top-right-radius: 0;
-}
-
-
-/* Hover styles for links within list items of unordered list bar_tabs */
-
-ul.bar_tabs>li a:hover {
-    border: 1px solid transparent;
-}
-
-
-/* Styles for active links within list items of unordered list bar_tabs */
-
-ul.bar_tabs>li.active a {
-    border-bottom: none;
-}
-
-
-/* Styles for right-aligned unordered list bar_tabs */
-
-ul.bar_tabs.right {
-    padding-right: 14px;
-}
-
-
-/* Remove outline on focus */
-
-a:focus {
-    outline: 0;
-}
-
-
-/* Styles for timeline list items */
-
-ul.timeline li {
-    position: relative;
-    border-bottom: 1px solid #e8e8e8;
-    clear: both;
-}
-
-
-/* Styles for the block within timeline items */
-
-.timeline .block {
-    margin: 0 0 0 105px;
-    border-left: 3px solid #e8e8e8;
-    overflow: visible;
-    padding: 10px 15px;
-}
-
-
-/* Styles for the timeline widget */
-
-.timeline.widget {
-    min-width: 0;
-    max-width: inherit;
-}
-
-
-/* Additional styles for the block within timeline widgets */
-
-.timeline.widget .block {
-    margin-left: 5px;
-}
-
-
-/* Styles for tags within timeline items */
-
-.timeline .tags {
-    position: absolute;
-    top: 15px;
-    left: 0;
-    width: 84px;
-}
-
-
-/* Styles for individual tags within timeline items */
-
-.timeline .tag {
-    display: block;
-    height: 30px;
-    font-size: 13px;
-    padding: 8px;
-}
-
-
-/* Styles for spans within individual tags */
-
-.timeline .tag span {
-    display: block;
-    overflow: hidden;
-    width: 100%;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-
 /* Styles for tags with class "tag" */
-
 .tag {
     line-height: 1;
     background: #1ABB9C;
     color: #fff!important;
 }
 
-
 /* Pseudo-element styles for tags */
-
 .tag:after {
     content: " ";
     height: 30px;
@@ -3424,18 +2073,14 @@ ul.timeline li {
     border-left: 11px solid #1ABB9C;
 }
 
-
 /* Styles for timeline item titles */
-
 .timeline h2.title {
     position: relative;
     font-size: 16px;
     margin: 0;
 }
 
-
 /* Pseudo-element styles for timeline item titles */
-
 .timeline h2.title:before {
     content: "";
     position: absolute;
@@ -3449,441 +2094,53 @@ ul.timeline li {
     background: #f9f9f9;
 }
 
-
 /* Styles for bylines */
-
 .timeline .byline {
     padding: .25em 0;
 }
 
-
 /* Styles for generic bylines */
-
 .byline {
     font-size: .9375em;
     line-height: 1.3;
     color: #aab6aa;
 }
 
-
 /* Styles for social list items */
-
 ul.social li {
     border: 0;
 }
 
-
 /* Styles for the social sidebar */
-
 .social-sidebar {
     background: #EDEDED;
     width: 22%;
 }
 
-
 /* Styles for the social body */
-
 .social-body {
     border: 1px solid #ccc;
     width: 78%;
 }
 
-
-/* Styles for thumbnail images */
-
-.thumb img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-
-/* Additional styles for thumbnail images within chat */
-
-.chat .thumb img {
-    width: 27px;
-    height: 27px;
-    border-radius: 50%;
-}
-
-
-/* Styles for chat status elements */
-
-.chat .status {
-    float: left;
-    margin: 16px 0 0 -16px;
-    font-size: 14px;
-    font-weight: 700;
-    width: 12px;
-    height: 12px;
-    display: block;
-    border: 2px solid #FFF;
-    z-index: 12312;
-    border-radius: 50%;
-}
-
-
-/* Styles for different chat statuses */
-
-.chat .status.online {
-    background: #1ABB9C;
-}
-
-.chat .status.away {
-    background: #F39C12;
-}
-
-.chat .status.offline {
-    background: #ccc;
-}
-
-
-/* Additional styles for chat media body */
-
-.chat .media-body {
-    padding-top: 5px;
-}
-
-
 /* Styles for dashboard graph titles */
-
 .dashboard_graph .x_title {
     padding: 5px 5px 7px;
 }
 
-
 /* Styles for dashboard graph title h3 */
-
 .dashboard_graph .x_title h3 {
     margin: 0;
     font-weight: 400;
 }
 
-
-/* Styles for charts */
-
-.chart {
-    position: relative;
-    width: 110px;
-    height: 110px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-
-/* Styles for chart canvas */
-
-.chart canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-
-/* Styles for percentages */
-
-.percent {
-    line-height: 110px;
-    z-index: 2;
-    font-size: 18px;
-}
-
-
-/* Pseudo-element styles for percentages */
-
-.percent:after {
-    content: '%';
-    margin-left: .1em;
-    font-size: .8em;
-}
-
-
-/* Styles for elements with class "angular" */
-
-.angular {
-    margin-top: 100px;
-}
-
-
-/* Additional styles for chart within elements with class "angular" */
-
-.angular .chart {
-    margin-top: 0;
-}
-
-
-/* Styles for widgets */
-
-.widget {
-    min-width: 250px;
-    max-width: 310px;
-}
-
-
-/* Styles for buttons within widget tally box */
-
-.widget_tally_box .btn-group button {
-    text-align: center;
-    color: inherit;
-    font-weight: 500;
-    background-color: #f5f5f5;
-    border: 1px solid #e7e7e7;
-}
-
-
-/* Styles for widget tally lists */
-
-ul.widget_tally,
-ul.widget_tally li {
-    width: 100%;
-}
-
-
-/* Styles for individual widget tally items */
-
-ul.widget_tally li {
-    padding: 2px 10px 4px;
-    border-bottom: 1px solid #ECECEC;
-}
-
-
-/* Styles for the month within widget tally items */
-
-ul.widget_tally .month {
-    width: 70%;
-    float: left;
-}
-
-
-/* Styles for the count within widget tally items */
-
-ul.widget_tally .count {
-    width: 30%;
-    float: left;
-    text-align: right;
-}
-
-
-/* Styles for a pie background */
-
-.pie_bg {
-    border-bottom: 1px solid rgba(101, 204, 182, .16);
-    border-radius: 4px;
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
-    filter: progid: DXImageTransform.Microsoft.gradient(enabled=false);
-    padding-bottom: 10px;
-    box-shadow: 0 4px 6px -6px #222;
-}
-
-
-/* Styles for a widget tally box with class "flex" */
-
-.widget_tally_box .flex {
-    display: -ms-flexbox;
-    display: flex;
-}
-
-
-/* Styles for widget profile boxes */
-
-ul.widget_profile_box {
-    width: 100%;
-    height: 42px;
-    padding: 3px;
-    background: #ececec;
-    margin-top: 40px;
-    margin-left: 1px;
-}
-
-
-/* Styles for the first child of widget profile box list items */
-
-ul.widget_profile_box li:first-child {
-    width: 25%;
-    float: left;
-}
-
-
-/* Styles for links within the first child of widget profile box list items */
-
-ul.widget_profile_box li:first-child a {
-    float: left;
-}
-
-
-/* Styles for the last child of widget profile box list items */
-
-ul.widget_profile_box li:last-child {
-    width: 25%;
-    float: right;
-}
-
-
-/* Styles for links within the last child of widget profile box list items */
-
-ul.widget_profile_box li:last-child a {
-    float: right;
-}
-
-
-/* Styles for links within widget profile box list items */
-
-ul.widget_profile_box li a {
-    font-size: 22px;
-    text-align: center;
-    width: 35px;
-    height: 35px;
-    border: 1px solid rgba(52, 73, 94, .44);
-    display: block;
-    border-radius: 50%;
-    padding: 0;
-}
-
-
-/* Hover styles for links within widget profile box list items */
-
-ul.widget_profile_box li a:hover {
-    color: #1ABB9C!important;
-    border: 1px solid #26b99a;
-}
-
-
-/* Styles for profile images within widget profile box list items */
-
-ul.widget_profile_box li .profile_img {
-    width: 85px;
-    height: 85px;
-    margin: -28px 0 0;
-}
-
-
-/* Styles for text alignment of widget tally box paragraphs and spans */
-
-.widget_tally_box p,
-.widget_tally_box span {
-    text-align: center;
-}
-
-
-/* Styles for the name within widget tally boxes */
-
-.widget_tally_box .name {
-    text-align: center;
-    margin: 25px;
-}
-
-
-/* Styles for the name title within widget tally boxes */
-
-.widget_tally_box .name_title {
-    text-align: center;
-    margin: 5px;
-}
-
-
-/* Styles for legend lists within widget tally boxes */
-
-.widget_tally_box ul.legend {
-    margin: 0;
-}
-
-
-/* Styles for paragraphs and spans within legend lists of widget tally boxes */
-
-.widget_tally_box ul.legend p,
-.widget_tally_box ul.legend span {
-    text-align: left;
-}
-
-
-/* Styles for icons within legend lists of widget tally boxes */
-
-.widget_tally_box ul.legend li .icon {
-    font-size: 20px;
-    float: left;
-    width: 14px;
-}
-
-
-/* Styles for names within legend lists of widget tally boxes */
-
-.widget_tally_box ul.legend li .name {
-    font-size: 14px;
-    margin: 5px 0 0 14px;
-    text-overflow: ellipsis;
-    float: left;
-}
-
-
-/* Styles for inline-block paragraphs within legend lists of widget tally boxes */
-
-.widget_tally_box ul.legend p {
-    display: inline-block;
-    margin: 0;
-}
-
-
-/* Styles for vertical bars within widget tally boxes */
-
-.widget_tally_box ul.verticle_bars li {
-    height: 140px;
-    width: 23%;
-}
-
-
-/* Styles for progress bars within widget vertical bars */
-
-.widget .verticle_bars li .progress.vertical.progress_wide {
-    width: 65%;
-}
-
-
-/* Styles for count2 lists */
-
-ul.count2 {
-    width: 100%;
-    margin-left: 1px;
-    border: 1px solid #ddd;
-    border-left: 0;
-    border-right: 0;
-    padding: 10px 0;
-}
-
-
-/* Styles for list items within count2 lists */
-
-ul.count2 li {
-    width: 30%;
-    text-align: center;
-}
-
-
-/* Styles for h3 elements within count2 list items */
-
-ul.count2 li h3 {
-    font-weight: 400;
-    margin: 0;
-}
-
-
-/* Styles for span elements within count2 list items */
-
-ul.count2 li span {
-    font-weight: 300;
-}
-
-
 /* Styles for dividers */
-
 .divider {
     border-bottom: 1px solid #ddd;
     margin: 10px;
 }
 
-
 /* Styles for dashed dividers */
-
 .divider-dashed {
     border-top: 1px dashed #e7eaec;
     background-color: #fff;
@@ -3891,301 +2148,12 @@ ul.count2 li span {
     margin: 10px 0;
 }
 
-
-/* Styles for messages lists */
-
-ul.messages {
-    padding: 0;
-    list-style: none;
-}
-
-
-/* Styles for tasks and messages list items */
-
-.tasks li,
-ul.messages li {
-    border-bottom: 1px dotted #e6e6e6;
-    padding: 8px 0;
-}
-
-
-/* Styles for avatar images */
-
-img.avatar,
-ul.messages li img.avatar {
-    height: 32px;
-    width: 32px;
-    float: left;
-    display: inline-block;
-    border-radius: 2px;
-    padding: 2px;
-    background: #f7f7f7;
-    border: 1px solid #e6e6e6;
-}
-
-
-/* Styles for message dates */
-
-ul.messages li .message_date {
-    float: right;
-    text-align: right;
-}
-
-
-/* Styles for message wrappers */
-
-ul.messages li .message_wrapper {
-    margin-left: 50px;
-    margin-right: 40px;
-}
-
-
-/* Styles for heading within message wrappers */
-
-ul.messages li .message_wrapper h4.heading {
-    font-weight: 600;
-    margin: 0 0 10px;
-    cursor: pointer;
-    line-height: 100%;
-}
-
-
-/* Styles for blockquotes within message wrappers */
-
-ul.messages li .message_wrapper blockquote {
-    padding: 0 10px;
-    margin: 0;
-    border-left: 5px solid #eee;
-}
-
-
-/* Styles for user data list items */
-
-ul.user_data li {
-    margin-bottom: 6px;
-}
-
-
-/* Styles for paragraphs within user data list items */
-
-ul.user_data li p {
-    margin-bottom: 0;
-}
-
-
-/* Styles for progress bars within user data list items */
-
-ul.user_data li .progress {
-    width: 90%;
-}
-
-
-/* Override styles for progress bars within project progress */
-
-.project_progress .progress {
-    margin-bottom: 3px!important;
-    margin-top: 5px;
-}
-
-
-/* Styles for list-inline within projects */
-
-.projects .list-inline {
-    margin: 0;
-}
-
-
-/* Styles for profile title */
-
-.profile_title {
-    background: #F5F7FA;
-    border: 0;
-    padding: 7px 0;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-
-/* Styles for stats overview */
-
-ul.stats-overview {
-    border-bottom: 1px solid #e8e8e8;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-}
-
-
-/* Styles for list items within stats overview */
-
-ul.stats-overview li {
-    display: inline-block;
-    text-align: center;
-    padding: 0 15px;
-    width: 30%;
-    font-size: 14px;
-    border-right: 1px solid #e8e8e8;
-}
-
-
-/* Styles for the last child of list items within stats overview */
-
-ul.stats-overview li:last-child {
-    border-right: 0;
-}
-
-
-/* Styles for names within list items of stats overview */
-
-ul.stats-overview li .name {
-    font-size: 12px;
-}
-
-
-/* Styles for values within list items of stats overview */
-
-ul.stats-overview li .value {
-    font-size: 14px;
-    font-weight: 700;
-    display: block;
-}
-
-
-/* Remove left padding from the first child of list items within stats overview */
-
-ul.stats-overview li:first-child {
-    padding-left: 0;
-}
-
-
-/* Styles for project files list items */
-
-ul.project_files li {
-    margin-bottom: 5px;
-}
-
-
-/* Styles for icons within project files list items */
-
-ul.project_files li a i {
-    width: 20px;
-}
-
-
-/* Styles for project detail paragraphs */
-
-.project_detail p {
-    margin-bottom: 10px;
-}
-
-
-/* Styles for project detail titles */
-
-.project_detail p.title {
-    font-weight: 700;
-    margin-bottom: 0;
-}
-
-
-/* Styles for avatar images */
-
-.avatar img {
-    border-radius: 50%;
-    max-width: 45px;
-}
-
-
-/* Styles for pricing section */
-
-.pricing {
-    background: #fff;
-}
-
-
-/* Styles for pricing title */
-
-.pricing .title {
-    background: #1ABB9C;
-    height: 110px;
-    color: #fff;
-    padding: 15px 0 0;
-    text-align: center;
-}
-
-
-/* Styles for pricing title h2 */
-
-.pricing .title h2 {
-    text-transform: capitalize;
-    font-size: 18px;
-    border-radius: 5px 5px 0 0;
-    margin: 0;
-    font-weight: 400;
-}
-
-
-/* Styles for pricing title h1 */
-
-.pricing .title h1 {
-    font-size: 30px;
-    margin: 12px;
-}
-
-
-/* Styles for pricing title span */
-
-.pricing .title span {
-    background: rgba(51, 51, 51, .28);
-    padding: 2px 5px;
-}
-
-
-/* Styles for pricing features section */
-
-.pricing_features {
-    background: #FAFAFA;
-    padding: 20px 15px;
-    min-height: 230px;
-    font-size: 13.5px;
-}
-
-
-/* Styles for pricing features list items */
-
-.pricing_features ul li {
-    margin-top: 10px;
-}
-
-
-/* Styles for pricing footer section */
-
-.pricing_footer {
-    padding: 10px 15px;
-    background-color: #f5f5f5;
-    border-top: 1px solid #ddd;
-    text-align: center;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-}
-
-
-/* Styles for pricing footer paragraphs */
-
-.pricing_footer p {
-    font-size: 13px;
-    padding: 10px 0 2px;
-    display: block;
-}
-
-
 /* Styles for UI ribbon container */
-
 .ui-ribbon-container {
     position: relative;
 }
 
-
 /* Styles for UI ribbon wrapper */
-
 .ui-ribbon-container .ui-ribbon-wrapper {
     position: absolute;
     overflow: hidden;
@@ -4195,16 +2163,12 @@ ul.project_files li a i {
     right: -3px;
 }
 
-
 /* Styles for primary UI ribbon container */
-
 .ui-ribbon-container.ui-ribbon-primary .ui-ribbon {
     background-color: #5b90bf;
 }
 
-
 /* Styles for UI ribbon */
-
 .ui-ribbon-container .ui-ribbon {
     position: relative;
     display: block;
@@ -4222,26 +2186,20 @@ ul.project_files li a i {
     box-shadow: 0 0 3px rgba(0, 0, 0, .3);
 }
 
-
 /* Styles for primary UI ribbon after and before pseudo-elements */
-
 .ui-ribbon-container.ui-ribbon-primary .ui-ribbon:after,
 .ui-ribbon-container.ui-ribbon-primary .ui-ribbon:before {
     border-top: 2px solid #5b90bf;
 }
 
-
 /* Styles for UI ribbon before pseudo-element */
-
 .ui-ribbon-container .ui-ribbon:before {
     left: 0;
     bottom: -1px;
     right: 0;
 }
 
-
 /* Styles for UI ribbon after and before pseudo-elements */
-
 .ui-ribbon-container .ui-ribbon:after,
 .ui-ribbon-container .ui-ribbon:before {
     position: absolute;
@@ -4252,40 +2210,30 @@ ul.project_files li a i {
     border-right: 2px solid transparent;
 }
 
-
 /* Styles for thumbnail image */
-
 .thumbnail .image {
     height: 120px;
     overflow: hidden;
 }
 
-
 /* Styles for caption */
-
 .caption {
     padding: 9px 5px;
     background: #F7F7F7;
 }
 
-
 /* Styles for paragraph within caption */
-
 .caption p {
     margin-bottom: 5px;
 }
 
-
 /* Styles for thumbnail */
-
 .thumbnail {
     height: 190px;
     overflow: hidden;
 }
 
-
 /* Styles for view container */
-
 .view {
     overflow: hidden;
     position: relative;
@@ -4294,17 +2242,13 @@ ul.project_files li a i {
     cursor: default;
 }
 
-
 /* Styles for dropdown menu items and voice button */
-
 .dropdown-menu a,
 .voiceBtn {
     cursor: pointer;
 }
 
-
 /* Styles for content and mask within view */
-
 .view .content,
 .view .mask {
     position: absolute;
@@ -4314,9 +2258,7 @@ ul.project_files li a i {
     left: 0;
 }
 
-
 /* Styles for sideways, tools, image, and paragraphs within view */
-
 .sideways,
 .view .tools,
 .view img,
@@ -4324,16 +2266,12 @@ ul.project_files li a i {
     position: relative;
 }
 
-
 /* Styles for image within view */
-
 .view img {
     display: block;
 }
 
-
 /* Styles for tools within view */
-
 .view .tools {
     color: #fff;
     text-align: center;
@@ -4347,299 +2285,6 @@ ul.project_files li a i {
     margin: 90px 0 0;
 }
 
-.view .tools a {
-    display: inline-block;
-    color: #FFF;
-    font-size: 18px;
-    font-weight: 400;
-    padding: 0 4px;
-}
-
-.view p {
-    font-family: Georgia, serif;
-    font-size: 12px;
-    color: #fff;
-    padding: 10px 20px 20px;
-    text-align: center;
-}
-
-.view a.info {
-    display: inline-block;
-    padding: 7px 14px;
-    background: #000;
-    color: #fff;
-    box-shadow: 0 0 1px #000;
-}
-
-.view-first img {
-    transition: all .2s linear;
-}
-
-.view-first .mask {
-    opacity: 0;
-    background-color: rgba(0, 0, 0, .5);
-    transition: all .4s ease-in-out;
-}
-
-.view-first .tools {
-    transform: translateY(-100px);
-    opacity: 0;
-    transition: all .2s ease-in-out;
-}
-
-.view-first p {
-    transform: translateY(100px);
-    opacity: 0;
-    transition: all .2s linear;
-}
-
-.view-first:hover img {
-    transform: scale(1.1);
-}
-
-.view-first:hover .mask {
-    opacity: 1;
-}
-
-.view-first:hover .tools,
-.view-first:hover p {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.view-first:hover p {
-    transition-delay: .1s;
-}
-
-.form-group.has-feedback span {
-    display: block!important;
-}
-
-.form-group .btn {
-    margin-bottom: -6px;
-}
-
-.input-group-btn .btn {
-    margin-bottom: 0;
-}
-
-
-/*!
-
- * bootstrap-vertical-tabs - v1.2.1
-
- * https://dbtek.github.io/bootstrap-vertical-tabs
-
- * 2014-11-07
-
- * Copyright (c) 2014 Ä°smail Demirbilek
-
- * License: MIT
-
- */
-
-.tabs-left,
-.tabs-right {
-    border-bottom: none;
-    padding-top: 2px;
-}
-
-.tabs-left {
-    border-right: 1px solid #F7F7F7;
-}
-
-.tabs-right {
-    border-left: 1px solid #F7F7F7;
-}
-
-.tabs-left>li,
-.tabs-right>li {
-    float: none;
-    margin-bottom: 2px;
-}
-
-.alignleft,
-.left {
-    float: left;
-}
-
-.tabs-left>li {
-    margin-right: -1px;
-}
-
-.tabs-left>li>a,
-.tabs-right>li>a {
-    margin-right: 0;
-    background: #F7F7F7;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.tabs-right>li {
-    margin-left: -1px;
-}
-
-.tabs-left>li.active>a,
-.tabs-left>li.active>a:focus,
-.tabs-left>li.active>a:hover {
-    border-bottom-color: #F7F7F7;
-    border-right-color: transparent;
-}
-
-.tabs-right>li.active>a,
-.tabs-right>li.active>a:focus,
-.tabs-right>li.active>a:hover {
-    border-bottom: 1px solid #F7F7F7;
-    border-left-color: transparent;
-}
-
-.tabs-left>li>a {
-    border-radius: 4px 0 0 4px;
-    display: block;
-}
-
-.tabs-right>li>a {
-    border-radius: 0 4px 4px 0;
-}
-
-.sideways {
-    margin-top: 50px;
-    border: none;
-}
-
-.sideways>li {
-    height: 20px;
-    width: 120px;
-    margin-bottom: 100px;
-}
-
-.sideways>li>a {
-    border-bottom: 1px solid #ddd;
-    border-right-color: transparent;
-    text-align: center;
-    border-radius: 4px 4px 0 0;
-}
-
-.sideways>li.active>a,
-.sideways>li.active>a:focus,
-.sideways>li.active>a:hover {
-    border-bottom-color: transparent;
-    border-right-color: #ddd;
-    border-left-color: #ddd;
-}
-
-.sideways.tabs-left {
-    left: -50px;
-}
-
-.sideways.tabs-right {
-    right: -50px;
-}
-
-.sideways.tabs-right>li {
-    transform: rotate(90deg);
-}
-
-.sideways.tabs-left>li {
-    transform: rotate(-90deg);
-}
-
-.morris-hover {
-    position: absolute;
-    z-index: 1000;
-}
-
-.morris-hover.morris-default-style {
-    padding: 6px;
-    color: #666;
-    background: rgba(243, 242, 243, .8);
-    border: 2px solid rgba(195, 194, 196, .8);
-    font-family: sans-serif;
-    font-size: 12px;
-    text-align: center;
-}
-
-.morris-hover.morris-default-style .morris-hover-row-label {
-    font-weight: 700;
-    margin: .25em 0;
-}
-
-.morris-hover.morris-default-style .morris-hover-point {
-    white-space: nowrap;
-    margin: .1em 0;
-}
-
-.price {
-    font-size: 40px;
-    font-weight: 400;
-    color: #26B99A;
-    margin: 0;
-}
-
-.prod_title {
-    border-bottom: 1px solid #DFDFDF;
-    padding-bottom: 5px;
-    margin: 30px 0;
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.product-image img {
-    width: 90%;
-}
-
-.prod_color li {
-    margin: 0 10px;
-}
-
-.prod_color li p {
-    margin-bottom: 0;
-}
-
-.prod_size li {
-    padding: 0;
-}
-
-.prod_color .color {
-    width: 25px;
-    height: 25px;
-    border: 2px solid rgba(51, 51, 51, .28)!important;
-    padding: 2px;
-    border-radius: 50px;
-}
-
-.product_gallery a {
-    width: 100px;
-    height: 100px;
-    float: left;
-    margin: 10px;
-    border: 1px solid #e5e5e5;
-}
-
-.product_gallery a img {
-    width: 100%;
-    margin-top: 15px;
-}
-
-.product_price {
-    margin: 20px 0;
-    padding: 5px 10px;
-    background-color: #FFF;
-    text-align: left;
-    border: 2px dashed #E0E0E0;
-}
-
-.price-tax {
-    font-size: 18px;
-}
-
-.product_social {
-    margin: 20px 0;
-}
-
-.product_social ul li a i {
-    font-size: 35px;
-}
 
 .login {
     background: #F7F7F7;
@@ -4658,13 +2303,6 @@ a.hiddenanchor {
     margin: 5% auto 0;
     max-width: 350px;
     position: relative;
-}
-
-.cropper .docs-cropped .modal-body>canvas,
-.cropper .docs-cropped .modal-body>img,
-.cropper .img-container>img,
-.cropper .img-preview>img {
-    max-width: 100%
 }
 
 .login_form,
@@ -4820,10 +2458,6 @@ form:after {
     margin: 10px 15px 0 0
 }
 
-.reset_pass {
-    margin-top: 10px!important
-}
-
 .login_content div .reset_pass {
     margin-top: 13px!important;
     margin-right: 39px;
@@ -4898,308 +2532,6 @@ header {
     border-radius: 3px
 }
 
-.voiceBtn {
-    width: 20px;
-    color: transparent;
-    background-color: transparent;
-    transform: scale(2, 2);
-    -webkit-transform: scale(2, 2);
-    -moz-transform: scale(2, 2);
-    border: transparent;
-    box-shadow: none;
-    -webkit-box-shadow: none
-}
-
-div[data-role=editor-toolbar] {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none
-}
-
-.select2-container--default .select2-selection--multiple,
-.select2-container--default .select2-selection--single {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 0;
-    min-height: 38px
-}
-
-.select2-container--default .select2-selection--single .select2-selection__rendered {
-    color: #73879C;
-    padding-top: 5px
-}
-
-.select2-container--default .select2-selection--multiple .select2-selection__rendered {
-    padding-top: 3px
-}
-
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-    height: 36px
-}
-
-.select2-container--default .select2-selection--multiple .select2-selection__choice,
-.select2-container--default .select2-selection--multiple .select2-selection__clear {
-    margin-top: 2px;
-    border: none;
-    border-radius: 0;
-    padding: 3px 5px
-}
-
-.select2-container--default.select2-container--focus .select2-selection--multiple {
-    border: 1px solid #ccc
-}
-
-.switchery {
-    width: 32px;
-    height: 20px
-}
-
-.switchery>small {
-    width: 20px;
-    height: 20px
-}
-
-fieldset {
-    border: none;
-    margin: 0;
-    padding: 0
-}
-
-.cropper .img-container,
-.cropper .img-preview {
-    background-color: #f7f7f7;
-    width: 100%;
-    text-align: center
-}
-
-.cropper .img-container {
-    min-height: 200px;
-    max-height: 516px;
-    margin-bottom: 20px
-}
-
-.cropper .docs-data>.input-group,
-.cropper .docs-toggles>.btn,
-.cropper .docs-toggles>.btn-group,
-.cropper .docs-toggles>.dropdown,
-.cropper .img-preview {
-    margin-bottom: 10px
-}
-
-@media (min-width:768px) {
-    .cropper .img-container {
-        min-height: 516px
-    }
-}
-
-.cropper .docs-preview {
-    margin-right: -15px
-}
-
-.cropper .img-preview {
-    float: left;
-    margin-right: 10px;
-    overflow: hidden
-}
-
-.cropper .preview-lg {
-    width: 263px;
-    height: 148px
-}
-
-.cropper .preview-md {
-    width: 139px;
-    height: 78px
-}
-
-.cropper .preview-sm {
-    width: 69px;
-    height: 39px
-}
-
-.cropper .preview-xs {
-    width: 35px;
-    height: 20px;
-    margin-right: 0
-}
-
-.cropper .docs-data>.input-group>label {
-    min-width: 80px
-}
-
-.cropper .docs-data>.input-group>span {
-    min-width: 50px
-}
-
-.cropper .docs-buttons>.btn,
-.cropper .docs-buttons>.btn-group,
-.cropper .docs-buttons>.form-control {
-    margin-right: 5px;
-    margin-bottom: 10px
-}
-
-.cropper .docs-tooltip {
-    display: block;
-    margin: -6px -12px;
-    padding: 6px 12px
-}
-
-.cropper .docs-tooltip>.icon {
-    margin: 0 -3px;
-    vertical-align: top
-}
-
-.cropper .tooltip-inner {
-    white-space: normal
-}
-
-.cropper .btn-toggle .tooltip-inner,
-.cropper .btn-upload .tooltip-inner {
-    white-space: nowrap
-}
-
-.cropper .btn-toggle {
-    padding: 6px
-}
-
-.cropper .btn-toggle>.docs-tooltip {
-    margin: -6px;
-    padding: 6px
-}
-
-@media (max-width:400px) {
-    .cropper .btn-group-crop {
-        margin-right: -15px!important
-    }
-    .cropper .btn-group-crop>.btn {
-        padding-left: 5px;
-        padding-right: 5px
-    }
-    .cropper .btn-group-crop .docs-tooltip {
-        margin-left: -5px;
-        margin-right: -5px;
-        padding-left: 5px;
-        padding-right: 5px
-    }
-}
-
-.cropper .docs-options .dropdown-menu {
-    width: 100%;
-}
-
-.cropper .docs-options .dropdown-menu>li {
-    padding: 3px 20px;
-}
-
-.cropper .docs-options .dropdown-menu>li:hover {
-    background-color: #f7f7f7;
-}
-
-.cropper .docs-options .dropdown-menu>li>label {
-    display: block;
-}
-
-.cropper .docs-cropped .modal-body {
-    text-align: center;
-}
-
-.cropper .docs-diagram .modal-dialog {
-    max-width: 352px;
-}
-
-.cropper .docs-cropped canvas {
-    max-width: 100%;
-}
-
-.form_wizard .stepContainer {
-    display: block;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    border: 0 solid #CCC;
-    overflow-x: hidden;
-}
-
-.wizard_horizontal ul.wizard_steps {
-    display: table;
-    list-style: none;
-    position: relative;
-    width: 100%;
-    margin: 0 0 20px;
-}
-
-.wizard_horizontal ul.wizard_steps li {
-    display: table-cell;
-    text-align: center;
-}
-
-.wizard_horizontal ul.wizard_steps li a,
-.wizard_horizontal ul.wizard_steps li:hover {
-    display: block;
-    position: relative;
-    -moz-opacity: 1;
-    filter: alpha(opacity=100);
-    opacity: 1;
-    color: #666;
-}
-
-.wizard_horizontal ul.wizard_steps li a:before {
-    content: "";
-    position: absolute;
-    height: 4px;
-    background: #ccc;
-    top: 20px;
-    width: 100%;
-    z-index: 4;
-    left: 0;
-}
-
-.wizard_horizontal ul.wizard_steps li a.disabled .step_no {
-    background: #ccc;
-}
-
-.wizard_horizontal ul.wizard_steps li a .step_no {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 100px;
-    display: block;
-    margin: 0 auto 5px;
-    font-size: 16px;
-    text-align: center;
-    position: relative;
-    z-index: 5;
-}
-
-.step_no,
-.wizard_horizontal ul.wizard_steps li a.selected:before {
-    background: #34495E;
-    color: #fff;
-}
-
-.wizard_horizontal ul.wizard_steps li a.done .step_no,
-.wizard_horizontal ul.wizard_steps li a.done:before {
-    background: #1ABB9C;
-    color: #fff;
-}
-
-.wizard_horizontal ul.wizard_steps li:first-child a:before {
-    left: 50%;
-}
-
-.wizard_horizontal ul.wizard_steps li:last-child a:before {
-    right: 50%;
-    width: 50%;
-    left: auto;
-}
-
-.wizard_verticle .stepContainer {
-    width: 80%;
-    float: left;
-    padding: 0 10px;
-}
-
 .actionBar {
     width: 100%;
     border-top: 1px solid #ddd;
@@ -5218,72 +2550,6 @@ fieldset {
 
 .actionBar a {
     margin: 0 3px;
-}
-
-.wizard_verticle .wizard_content {
-    width: 80%;
-    float: left;
-    padding-left: 20px;
-}
-
-.wizard_verticle ul.wizard_steps {
-    display: table;
-    list-style: none;
-    position: relative;
-    width: 20%;
-    float: left;
-    margin: 0 0 20px;
-}
-
-.wizard_verticle ul.wizard_steps li {
-    display: list-item;
-    text-align: center;
-}
-
-.wizard_verticle ul.wizard_steps li a {
-    height: 80px;
-}
-
-.wizard_verticle ul.wizard_steps li a:first-child {
-    margin-top: 20px;
-}
-
-.wizard_verticle ul.wizard_steps li a,
-.wizard_verticle ul.wizard_steps li:hover {
-    display: block;
-    position: relative;
-    -moz-opacity: 1;
-    filter: alpha(opacity=100);
-    opacity: 1;
-    color: #666;
-}
-
-.wizard_verticle ul.wizard_steps li a:before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    background: #ccc;
-    top: 20px;
-    width: 4px;
-    z-index: 4;
-    left: 49%;
-}
-
-.wizard_verticle ul.wizard_steps li a.disabled .step_no {
-    background: #ccc;
-}
-
-.wizard_verticle ul.wizard_steps li a .step_no {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 100px;
-    display: block;
-    margin: 0 auto 5px;
-    font-size: 16px;
-    text-align: center;
-    position: relative;
-    z-index: 5;
 }
 
 .progress.progress_sm,
@@ -5338,43 +2604,6 @@ ul.verticle_bars li {
     color: #E9EDEF;
     background-color: rgba(231, 76, 60, .88);
     border-color: rgba(231, 76, 60, .88);
-}
-
-.fc-state-default {
-    background: #f5f5f5;
-    color: #73879C;
-}
-
-.fc-state-active,
-.fc-state-down {
-    color: #333;
-    background: #ccc;
-}
-
-.dropzone {
-    min-height: 300px;
-    border: 1px solid #e5e5e5;
-}
-
-.main_menu .label {
-    line-height: 11px;
-    margin-top: 4px;
-}
-
-@media (max-width:460px) {
-    .dataTables_wrapper .col-sm-6 {
-        width: 100%;
-        margin-bottom: 5px;
-    }
-    .dataTables_wrapper .col-sm-6 .dataTables_filter {
-        float: none;
-    }
-}
-
-@media (max-width:767px) {
-    .dataTables_length {
-        float: none;
-    }
 }
 
 .daterangepicker.xdisplay {
@@ -5438,70 +2667,91 @@ ul.verticle_bars li {
     color: black;
 }
 
-.box-container {
-    flex-wrap: wrap;
-    padding: 20px;
-    margin-top: -1%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 
 /* CSS for each individual box */
-
-.box {
-    height: 140px;
-    padding: 20px;
-    width: 340px;
-    margin-left: 30px;
-    margin-top: 20px;
-    border-radius: 15px;
-    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(45deg, #2A3F54 0%, #1b5757 99%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#9bc635', endColorstr='#c0ea67', GradientType=1);
+.box-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-}
-
-
-/* Box Container Header */
-
-.box-container.header {
-    display: flex;
-    max-width: 100%;
-    margin-left: -1px;
     justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    height: 200px;
+    max-width: 95%;
     margin-left: 30px;
-    margin-top: 20px;
+    margin-top: 50px;
     border-radius: 15px;
     box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(45deg, #2A3F54 0%, #1b5757 99%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#9bc635', endColorstr='#c0ea67', GradientType=1);
+    background: rgba(255, 255, 255, 0.416);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9bc635', endColorstr='#c0ea67', GradientType=1);
     padding: 10px;
     font-weight: bold;
     color: #000;
 }
 
+.box {
+    display: flex; /* Center items vertically and horizontally */
+    flex-direction: column;
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    width: 30%;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 15px;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #303c54 0%, #4c8cb6 99%);
+    color: #fff;
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
 
-/* Box Container Rows */
+.box h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.box p {
+    font-size: 24px;
+    margin: 0;
+}
+
+.box-container2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    height: 200px;
+    max-width: 95%;
+    margin-left: 30px;
+    margin-top: 50px;
+    border-radius: 15px;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.416);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9bc635', endColorstr='#c0ea67', GradientType=1);
+    padding: 10px;
+    font-weight: bold;
+    color: #000;
+}
+
+.box-container.row.box-b {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto a new line when there's not enough space */
+    justify-content: space-between;
+    padding: auto;
+    height: auto;
+}
 
 .box-container.row {
     display: flex;
     max-width: 100%;
     margin-left: -1px;
     justify-content: space-between;
-    padding: 10px;
+    padding: auto;
     color: #000;
 }
 
-
 /* Individual Columns */
-
 .column {
     flex: 1;
     text-align: center;
@@ -5516,64 +2766,113 @@ ul.verticle_bars li {
     text-align: right;
 }
 
-
 /* Actions Buttons */
-
 .action-button {
     padding: 5px 10px;
     margin: 0 5px;
-    background-color: #007bff;
-    /* Button background color */
-    color: #fff;
-    /* Button text color */
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .approve-button {
-    background-color: #26B99A;
-    /* Approve button background color */
+    background-color: #26B99A; /* Approve button background color */
 }
 
 .decline-button {
-    background-color: #A03232;
-    /* Decline button background color */
+    background-color: #A03232; /* Decline button background color */
 }
 
-
 /* CSS for the table inside .box-b */
-
 .box-b table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.box-b th,
-.box-b td {
-    border: 1px solid #ffffff3a;
-    /* Add borders to table cells */
+.box-b th, .box-b td {
+    border: 1px solid #ffffff3a; /* Add borders to table cells */
     padding: 10px;
     text-align: center;
 }
 
 .box-b th {
-    background-color: #303c54;
-    /* Header background color */
-    color: #fff;
-    /* Header text color */
+    background-color: #303c54; /* Header background color */
+    color: #fff; /* Header text color */
     text-align: center;
 }
 
 .box-b tr:nth-child(even) {
     background-color: #d6d8dd;
-    color: #000;
-    /* Background color for even rows */
+    color: #000; /* Background color for even rows */
 }
 
 .box-b tr:nth-child(odd) {
-    background-color: #eaecee;
-    /* Background color for odd rows */
-    color: #000;
-    /* Text color for odd rows */
+    background-color: #eaecee; /* Background color for odd rows */
+    color: #000; /* Text color for odd rows */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+.container.body {
+    flex: 1;
+    display: flex;
+}
+
+.main_container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#mainContent {
+    flex: 1;
+    padding: 10px;
+    background-image: url('bg3_spes.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#mainContent2 {
+    flex: 1;
+    padding: 10px;
+    background-image: url('bg3_spes.png');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+}
+
+
+#mainFooter {
+    text-align: right;
+    padding: 10px;
+    background-color: #f7f7f7; /* Set your desired background color */
+}
+
+.footer {
+    text-align: right;
+    padding: 10px;
+    background-color: #f7f7f7;
+    position: fixed;
+    bottom: 0;
+    width: 69.3%;
+}
+
+.info-span {
+    font-size: 16px; 
+}
+
+.col-form-label {
+    font-size: 16px;
+  }
+  
+.badge {
+    font-size: 23px; 
 }

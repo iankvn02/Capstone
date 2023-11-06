@@ -2,7 +2,7 @@
 $databaseHost = 'localhost';
 $databaseUsername = 'root';
 $databasePassword = '';
-$dbname = 'spes_db';
+$dbname = "spes_db";
 
 // Create a connection
 $conn = new mysqli($databaseHost, $databaseUsername, $databasePassword);
