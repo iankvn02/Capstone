@@ -1,17 +1,23 @@
 /* These styles affect the appearance of certain elements */
+
 .x_title h2,
 table.tile_info td p {
-    white-space: nowrap; /* Prevent text from wrapping */
-    text-overflow: ellipsis; /* Add an ellipsis (...) when text overflows its container */
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+    text-overflow: ellipsis;
+    /* Add an ellipsis (...) when text overflows its container */
 }
 
 .site_title,
 .x_title h2,
 table.tile_info td p {
-    text-overflow: ellipsis; /* Apply ellipsis to these elements */
+    text-overflow: ellipsis;
+    /* Apply ellipsis to these elements */
 }
 
+
 /* These styles remove text decoration (usually underlines) from links and other elements */
+
 .detail a,
 .expand,
 .jqstooltip,
@@ -21,160 +27,224 @@ table.tile_info td p {
 a,
 a:focus,
 a:hover {
-    text-decoration: none; /* Remove text decoration */
+    text-decoration: none;
+    /* Remove text decoration */
 }
 
 .byline,
 .main_menu .fa {
-    -webkit-font-smoothing: antialiased; /* Improve font rendering for readability */
+    -webkit-font-smoothing: antialiased;
+    /* Improve font rendering for readability */
 }
 
+
 /* These styles affect the appearance of date range picker elements */
+
 .daterangepicker .ranges li {
-    color: #73879C; /* Set text color */
+    color: #73879C;
+    /* Set text color */
 }
 
 .daterangepicker .ranges li.active,
 .daterangepicker .ranges li:hover {
-    background: #536A7F; /* Background color for active/hovered items */
-    border: 1px solid #536A7F; /* Border color for active/hovered items */
-    color: #fff; /* Text color for active/hovered items */
+    background: #536A7F;
+    /* Background color for active/hovered items */
+    border: 1px solid #536A7F;
+    /* Border color for active/hovered items */
+    color: #fff;
+    /* Text color for active/hovered items */
 }
 
+
 /* These styles affect the appearance of input fields within the date range picker */
+
 .daterangepicker .input-mini {
-    background-color: #eee; /* Set background color */
-    border: 1px solid #ccc; /* Set border */
-    box-shadow: none!important; /* Remove any box shadow */
+    background-color: #eee;
+    /* Set background color */
+    border: 1px solid #ccc;
+    /* Set border */
+    box-shadow: none!important;
+    /* Remove any box shadow */
 }
 
 .daterangepicker .input-mini.active {
-    border: 1px solid #ccc; /* Set border for active input */
+    border: 1px solid #ccc;
+    /* Set border for active input */
 }
 
+
 /* These styles affect the appearance of select elements within the date range picker */
+
 .daterangepicker select.ampmselect,
 .daterangepicker select.hourselect,
 .daterangepicker select.minuteselect,
 .daterangepicker select.monthselect,
 .daterangepicker select.secondselect,
 .daterangepicker select.yearselect {
-    font-size: 12px; /* Set font size */
-    padding: 1px; /* Set padding */
-    margin: 0; /* Set margin */
-    cursor: default; /* Set cursor type */
-    height: 30px; /* Set height */
-    border: 1px solid #ADB2B5; /* Set border */
-    line-height: 30px; /* Set line height */
-    border-radius: 0!important; /* Remove border-radius */
+    font-size: 12px;
+    /* Set font size */
+    padding: 1px;
+    /* Set padding */
+    margin: 0;
+    /* Set margin */
+    cursor: default;
+    /* Set cursor type */
+    height: 30px;
+    /* Set height */
+    border: 1px solid #ADB2B5;
+    /* Set border */
+    line-height: 30px;
+    /* Set line height */
+    border-radius: 0!important;
+    /* Remove border-radius */
 }
 
+
 /* Adjust margin-right for the select element with class 'monthselect' */
+
 .daterangepicker select.monthselect {
     margin-right: 2%;
 }
 
+
 /* Define styles for table cells within the date range picker */
+
 .daterangepicker td.in-range {
     background: #E4E7EA;
     color: #73879C;
 }
 
+
 /* Define styles for active table cells and their hover state within the date range picker */
+
 .daterangepicker td.active,
 .daterangepicker td.active:hover {
     background-color: #536A7F;
     color: #fff;
 }
 
+
 /* Define styles for available date header cells on hover within the date range picker */
+
 .daterangepicker th.available:hover {
     background: #eee;
     color: #34495E;
 }
 
+
 /* Remove pseudo-elements (before and after) from the date range picker */
+
 .daterangepicker:after,
 .daterangepicker:before {
     content: none;
 }
 
+
 /* Adjust margin for single-calendar mode within the date range picker */
+
 .daterangepicker .calendar.single {
     margin: 0 0 4px;
 }
 
+
 /* Define styles for the single-calendar table within the date range picker */
+
 .daterangepicker .calendar.single .calendar-table {
     width: 224px;
     padding: 0 0 4px!important;
 }
 
+
 /* Define styles for the table header row within the single-calendar table */
+
 .daterangepicker .calendar.single .calendar-table thead tr:first-child th {
     padding: 8px 5px;
 }
 
+
 /* Remove border-radius from table header cells within the single-calendar table */
+
 .daterangepicker .calendar.single .calendar-table thead th {
     border-radius: 0;
 }
 
+
 /* Define styles for the date range picker with class 'picker_1' */
+
 .daterangepicker.picker_1 {
     color: #fff;
     background: #34495E;
 }
 
+
 /* Define styles for the table within 'picker_1' date range picker */
+
 .daterangepicker.picker_1 .calendar-table {
     background: #34495E;
 }
 
+
 /* Define styles for the table header row within 'picker_1' date range picker */
+
 .daterangepicker.picker_1 .calendar-table thead tr {
     background: #213345;
 }
 
+
 /* Define styles for the first row of the table header within 'picker_1' date range picker */
+
 .daterangepicker.picker_1 .calendar-table thead tr:first-child {
     background: #1ABB9C;
 }
 
+
 /* Define styles for 'off' table cells within 'picker_1' date range picker */
+
 .daterangepicker.picker_1 .calendar-table td.off {
     background: #34495E;
     color: #999;
 }
 
+
 /* Define styles for 'available' table cells on hover within 'picker_1' date range picker */
+
 .daterangepicker.picker_1 .calendar-table td.available:hover {
     color: #34495E;
 }
 
+
 /* Define styles for the table header row within 'picker_2' date range picker */
+
 .daterangepicker.picker_2 .calendar-table thead tr {
     color: #1ABB9C;
 }
 
+
 /* Define styles for the first row of the table header within 'picker_2' date range picker */
+
 .daterangepicker.picker_2 .calendar-table thead tr:first-child {
     color: #73879C;
 }
 
+
 /* Define styles for the first row of the table header within 'picker_3' date range picker */
+
 .daterangepicker.picker_3 .calendar-table thead tr:first-child {
     color: #fff;
     background: #1ABB9C;
 }
 
+
 /* Define styles for the first row of the table header within 'picker_4' date range picker */
+
 .daterangepicker.picker_4 .calendar-table thead tr:first-child {
     color: #fff;
     background: #34495E;
 }
 
+
 /* Define styles for 'off' and 'available' table cells within 'picker_4' date range picker */
+
 .daterangepicker.picker_4 .calendar-table td,
 .daterangepicker.picker_4 .calendar-table td.off {
     background: #ECF0F1;
@@ -182,12 +252,16 @@ a:hover {
     border-radius: 0;
 }
 
+
 /* Define styles for 'active' table cells within 'picker_4' date range picker */
+
 .daterangepicker.picker_4 .calendar-table td.active {
     background: #34495E;
 }
 
+
 /* Define styles for the calendar exhibit */
+
 .calendar-exibit .show-calendar {
     float: none;
     display: block;
@@ -199,27 +273,37 @@ a:hover {
     overflow: hidden;
 }
 
+
 /* Define styles for the calendar within the calendar exhibit */
+
 .calendar-exibit .show-calendar .calendar {
     margin: 0 0 4px;
 }
 
+
 /* Define styles for 'picker_1' mode within the calendar exhibit */
+
 .calendar-exibit .show-calendar.picker_1 {
     background: #34495E;
 }
 
+
 /* Define styles for the calendar table within the calendar exhibit */
+
 .calendar-exibit .calendar-table {
     padding: 0 0 4px;
 }
 
+
 /* Define background color for 'left_col' element */
+
 .left_col {
     background: #2A3F54;
 }
 
+
 /* Adjust styling for the navigation column in small screen mode */
+
 .nav-sm .container.body .col-md-3.left_col {
     min-height: 100%;
     width: 70px;
@@ -228,19 +312,25 @@ a:hover {
     position: absolute;
 }
 
+
 /* Fix the navigation column in small screen mode */
+
 .nav-sm .container.body .col-md-3.left_col.menu_fixed {
     position: fixed;
     height: 100%;
 }
 
+
 /* Adjust overflow property for specific elements */
+
 .nav-sm .container.body .col-md-3.left_col .mCSB_container,
 .nav-sm .container.body .col-md-3.left_col .mCustomScrollBox {
     overflow: visible;
 }
 
+
 /* Set overflow property to 'hidden' for specific elements */
+
 .overflow_hidden,
 .sidebar-widget,
 .site_title,
@@ -251,49 +341,65 @@ table.tile_info td p {
     overflow: hidden;
 }
 
+
 /* Hide elements with class 'hidden-small' in small screen mode */
+
 .nav-sm .hidden-small {
     visibility: hidden;
 }
 
+
 /* Adjust padding and margin for the right column in small screen mode */
+
 .nav-sm .container.body .right_col {
     padding: 10px 20px;
     margin-left: 70px;
     z-index: 2;
 }
 
+
 /* Set the width of the navbar with class 'nav_title' to 70px in small screen mode */
+
 .nav-sm .navbar.nav_title {
     width: 70px;
 }
 
+
 /* Hide the text content of 'nav_title' anchor elements */
+
 .nav-sm .navbar.nav_title a span {
     display: none;
 }
 
+
 /* Style the icons within 'nav_title' anchor elements */
+
 .nav-sm .navbar.nav_title a i {
     font-size: 27px;
     margin: 13px 0 0 3px;
 }
 
+
 /* Style the icon within elements with class 'site_title' */
+
 .site_title i {
     border: 1px solid #EAEAEA;
     padding: 5px 6px;
     border-radius: 50%;
 }
 
+
 /* Display the top navigation bar below the fixed sidebar */
+
 .nav-sm .main_container .top_nav {
     display: block;
     margin-left: 70px;
     z-index: 2;
 }
 
+
 /* Style the links within the side menu */
+
 .nav-sm .nav.side-menu li a {
     text-align: center!important;
     font-weight: 400;
@@ -301,13 +407,17 @@ table.tile_info td p {
     padding: 10px 5px;
 }
 
+
 /* Highlight active menu items with a right border color */
+
 .nav-sm .nav.child_menu li.active,
 .nav-sm .nav.side-menu li.active-sm {
     border-right: 5px solid #1ABB9C;
 }
 
+
 /* Adjust positioning and background for sub-menus in small screen mode */
+
 .nav-sm .nav.side-menu li.active-sm ul ul,
 .nav-sm ul.nav.child_menu ul {
     position: static;
@@ -315,24 +425,32 @@ table.tile_info td p {
     background: 0 0;
 }
 
+
 /* Set the color for active menu items in small screen mode */
+
 .nav-sm>.nav.side-menu>li.active-sm>a {
     color: #1ABB9C!important;
 }
 
+
 /* Hide the 'toggle-up' icons within the side menu */
+
 .nav-sm .nav.side-menu li a i.toggle-up {
     display: none!important;
 }
 
+
 /* Hide various elements in small screen mode */
+
 .nav-sm .menu_section h3,
 .nav-sm .profile,
 .nav-sm span.fa {
     display: none;
 }
 
+
 /* Adjust the size and alignment of icons within the side menu */
+
 .nav-sm .nav.side-menu li a i {
     font-size: 25px!important;
     text-align: center;
@@ -340,7 +458,9 @@ table.tile_info td p {
     margin-bottom: 5px;
 }
 
+
 /* Style sub-menus in small screen mode */
+
 .nav-sm ul.nav.child_menu {
     left: 100%;
     position: absolute;
@@ -351,22 +471,30 @@ table.tile_info td p {
     display: none;
 }
 
+
 /* Style list items within sub-menus */
+
 .nav-sm ul.nav.child_menu li {
     padding: 0 10px;
 }
 
+
 /* Adjust text alignment within sub-menu links */
+
 .nav-sm ul.nav.child_menu li a {
     text-align: left!important;
 }
 
+
 /* Style the 'menu_section' element */
+
 .menu_section {
     margin-bottom: 35px;
 }
 
+
 /* Style the heading within the 'menu_section' element */
+
 .menu_section h3 {
     padding-left: 15px;
     color: #fff;
@@ -379,18 +507,24 @@ table.tile_info td p {
     text-shadow: 1px 1px #000;
 }
 
+
 /* Set margin-top for 'ul' elements within 'menu_section' */
+
 .menu_section>ul {
     margin-top: 10px;
 }
 
+
 /* Style the profile picture */
+
 .profile_pic {
     width: 35%;
     float: left;
 }
 
+
 /* Style the circular profile image */
+
 .img-circle.profile_img {
     width: 70%;
     background: #fff;
@@ -402,21 +536,27 @@ table.tile_info td p {
     padding: 4px;
 }
 
+
 /* Style the profile information */
+
 .profile_info {
     padding: 25px 10px 10px;
     width: 65%;
     float: left;
 }
 
+
 /* Style text within the profile information */
+
 .profile_info span {
     font-size: 13px;
     line-height: 30px;
     color: #BAB8B8;
 }
 
+
 /* Style the heading within the profile information */
+
 .profile_info h2 {
     font-size: 14px;
     color: #ECF0F1;
@@ -424,23 +564,31 @@ table.tile_info td p {
     font-weight: 300;
 }
 
+
 /* Style the profile image in a different layout */
+
 .profile.img_2 {
     text-align: center;
 }
 
+
 /* Style the profile picture within the different layout */
+
 .profile.img_2 .profile_pic {
     width: 100%;
 }
 
+
 /* Style the circular profile image within the different layout */
+
 .profile.img_2 .profile_pic .img-circle.profile_img {
     width: 50%;
     margin: 10px 0 0;
 }
 
+
 /* Adjust the floating position and styling for icons in the main menu */
+
 .main_menu span.fa {
     float: right;
     text-align: center;
@@ -450,23 +598,31 @@ table.tile_info td p {
     color: #C4CFDA;
 }
 
+
 /* Align and margin for icons within elements with class 'active' */
+
 .active a span.fa {
     text-align: right!important;
     margin-right: 4px;
 }
 
+
 /* Reset margin for elements with class 'menu_section' in small screen mode */
+
 .nav-sm .menu_section {
     margin: 0;
 }
 
+
 /* Display inline-block for icons within 'li' elements in small screen mode */
+
 .nav-sm li li span.fa {
     display: inline-block;
 }
 
+
 /* Styling for the navigation menu */
+
 .nav_menu {
     float: left;
     background: #EDEDED;
@@ -475,7 +631,9 @@ table.tile_info td p {
     position: relative;
 }
 
+
 /* Styling for the left column in medium screen mode */
+
 .nav-md .container.body .col-md-3.left_col {
     min-height: 100%;
     width: 230px;
@@ -486,24 +644,32 @@ table.tile_info td p {
     z-index: 1;
 }
 
+
 /* Fixed positioning for the left column in medium screen mode */
+
 .nav-md .container.body .col-md-3.left_col.menu_fixed {
     height: 100%;
     position: fixed;
 }
 
+
 /* Background for the right column */
+
 body .container.body .right_col {
     background: #F7F7F7;
 }
 
+
 /* Padding and margin for the right column in medium screen mode */
+
 .nav-md .container.body .right_col {
     padding: 10px 20px 0;
     margin-left: 230px;
 }
 
+
 /* Styling for the navigation title */
+
 .nav_title {
     width: 230px;
     float: left;
@@ -512,7 +678,9 @@ body .container.body .right_col {
     height: 57px;
 }
 
+
 /* Media query for screen width up to 991px */
+
 @media (max-width:991px) {
     /* Adjust width and margin for right column and top navigation */
     .nav-md .container.body .right_col,
@@ -535,7 +703,9 @@ body .container.body .right_col {
     }
 }
 
+
 /* Media query for screen width up to 1200px */
+
 @media (max-width:1200px) {
     /* Adjust width and font size for 'x_title h2' elements */
     .x_title h2 {
@@ -550,13 +720,17 @@ body .container.body .right_col {
     }
 }
 
+
 /* Styling for container elements */
+
 .container {
     width: 100%;
     padding: 0;
 }
 
+
 /* Styling for navigation menu items */
+
 .top_nav .nav .open>a,
 .top_nav .nav .open>a:focus,
 .top_nav .nav .open>a:hover,
@@ -565,7 +739,9 @@ body .container.body .right_col {
     background: #D9DEE4;
 }
 
+
 /* Styling for the body */
+
 body {
     color: #73879C;
     background: #2A3F54;
@@ -575,90 +751,122 @@ body {
     line-height: 1.471;
 }
 
+
 /* Display the top navigation bar below the fixed sidebar in medium screen mode */
+
 .main_container .top_nav {
     display: block;
     margin-left: 230px;
 }
 
+
 /* Remove padding for elements with class 'no-padding' */
+
 .no-padding {
     padding: 0!important;
 }
 
+
 /* Styling for page title elements */
+
 .page-title {
     width: 100%;
     height: 65px;
     padding: 10px 0;
 }
 
+
 /* Styling for left part of page title */
+
 .page-title .title_left {
     width: 45%;
     float: left;
     display: block;
 }
 
+
 /* Styling for heading within left part of page title */
+
 .page-title .title_left h3 {
     margin: 9px 0;
 }
 
+
 /* Styling for right part of page title */
+
 .page-title .title_right {
     width: 55%;
     float: left;
     display: block;
 }
 
+
 /* Styling for pull-right elements within right part of page title */
+
 .page-title .title_right .pull-right {
     margin: 10px 0;
 }
 
+
 /* Set a fixed height of 320px for elements with class 'fixed_height_320' */
+
 .fixed_height_320 {
     height: 320px;
 }
 
+
 /* Set a fixed height of 390px for elements with class 'fixed_height_390' */
+
 .fixed_height_390 {
     height: 390px;
 }
 
+
 /* Set a fixed height of 200px for elements with class 'fixed_height_200' */
+
 .fixed_height_200 {
     height: 200px;
 }
 
+
 /* Define a dark background color for elements with class 'progress-bar-dark' */
+
 .progress-bar-dark {
     background-color: #34495E!important;
 }
 
+
 /* Define a gray background color for elements with class 'progress-bar-gray' */
+
 .progress-bar-gray {
     background-color: #BDC3C7!important;
 }
 
+
 /* Remove margin bottom for progress elements within tables with class 'no-margin' */
+
 table.no-margin .progress {
     margin-bottom: 0;
 }
 
+
 /* Add padding to the main content with class 'main_content' */
+
 .main_content {
     padding: 10px 20px;
 }
 
+
 /* Set the width and margin-bottom for elements with class 'col-md-55' */
+
 .col-md-55 {
     width: 50%;
     margin-bottom: 10px;
 }
 
+
 /* Media query for screens with a minimum width of 768px */
+
 @media (min-width:768px) {
     /* Adjust the width for elements with class 'col-md-55' */
     .col-md-55 {
@@ -666,7 +874,9 @@ table.no-margin .progress {
     }
 }
 
+
 /* Media query for screens with a minimum width of 992px */
+
 @media (min-width:992px) {
     /* Adjust the width for elements with class 'col-md-55' */
     .col-md-55 {
@@ -674,7 +884,9 @@ table.no-margin .progress {
     }
 }
 
+
 /* Media query for screens with a minimum width of 1200px */
+
 @media (min-width:1200px) {
     /* Adjust the width for elements with class 'col-md-55' */
     .col-md-55 {
@@ -682,7 +894,9 @@ table.no-margin .progress {
     }
 }
 
+
 /* Media query for screens with a minimum width of 192px and a maximum width of 1270px */
+
 @media (min-width:192px) and (max-width:1270px) {
     /* Set margin-right and float for 'span.right' elements within 'table.tile_info' */
     table.tile_info span.right {
@@ -691,15 +905,17 @@ table.no-margin .progress {
     }
 }
 
+
 /* Center elements with class 'center-margin' horizontally */
+
 .center-margin {
     margin: 0 auto;
     float: none!important;
 }
 
 
-
 /* Margin for heading elements */
+
 .h1,
 .h2,
 .h3,
@@ -710,42 +926,55 @@ h3 {
     margin-bottom: 10px;
 }
 
+
 /* Define the default link color */
+
 a {
     color: #5A738E;
 }
 
 
 /* Remove margin-bottom for the navbar */
+
 .navbar {
     margin-bottom: 0;
 }
 
+
 /* Styling for the navbar header */
+
 .navbar-header {
     background: #34495E;
 }
 
+
 /* Remove margin-right for elements with class 'navbar-right' */
+
 .navbar-right {
     margin-right: 0;
 }
 
+
 /* Styling for the top navigation bar with class 'top_nav' */
+
 .top_nav .navbar-right {
     margin: 0;
     width: 70%;
     float: right;
 }
 
+
 /* Styling for list items within the top navigation bar */
+
 .top_nav .navbar-right li {
     display: inline-block;
     float: right;
     position: static;
 }
 
+
 /* Media query for screens with a minimum width of 480px */
+
 @media (min-width:480px) {
     /* Set 'position: relative' for list items within 'top_nav' with class 'navbar-right' */
     .top_nav .navbar-right li {
@@ -753,46 +982,62 @@ a {
     }
 }
 
+
 /* Style for list items within the side menu */
+
 .nav.side-menu>li {
     position: relative;
     display: block;
     cursor: pointer;
 }
 
+
 /* Style for anchor elements within list items of the side menu */
+
 .nav.side-menu>li>a {
     margin-bottom: 6px;
 }
 
+
 /* Style for anchor elements within list items of the side menu on hover */
+
 .nav.side-menu>li>a:hover {
     color: #F2F5F7!important;
 }
 
+
 /* Remove text decoration for anchor elements within list items of the side menu on hover and focus */
+
 .nav.side-menu>li>a:hover,
 .nav>li>a:focus {
     text-decoration: none;
 }
 
+
 /* Hide child menu items */
+
 .nav.child_menu {
     display: none;
 }
 
+
 /* Style for active and hover child menu items */
+
 .nav.child_menu li.active,
 .nav.child_menu li:hover {
     background-color: rgba(255, 255, 255, 0.06);
 }
 
+
 /* Padding for child menu items */
+
 .nav.child_menu li {
     padding-left: 36px;
 }
 
+
 /* Style for ::before pseudo-element of child menu items in medium-sized screens */
+
 .nav-md ul.nav.child_menu li:before {
     background: #425668;
     bottom: auto;
@@ -807,7 +1052,9 @@ a {
     border-radius: 50%;
 }
 
+
 /* Style for ::after pseudo-element of child menu items in medium-sized screens */
+
 .nav-md ul.nav.child_menu li:after {
     border-left: 1px solid #425668;
     bottom: 0;
@@ -817,50 +1064,66 @@ a {
     top: 0;
 }
 
+
 /* Style for anchor elements within the top navigation menu and primary navigation menu */
+
 .nav.top_menu>li>a,
 .nav>li>a {
     position: relative;
     display: block;
 }
 
+
 /* Style for anchor elements within child menu items and side menu items */
+
 .nav.child_menu>li>a,
 .nav.side-menu>li>a {
     color: #E7E7E7;
     font-weight: 500;
 }
 
+
 /* Style for current page link within list items and child menu items */
+
 .nav li li.current-page a,
 .nav.child_menu li li a.active,
 .nav.child_menu li li a:hover {
     color: #fff;
 }
 
+
 /* Remove background for current page link within child menu items */
+
 .nav.child_menu li li.active,
 .nav.child_menu li li:hover {
     background: 0 0;
 }
 
+
 /* Set padding for anchor elements within the primary navigation menu */
+
 .nav>li>a {
     padding: 13px 15px 12px;
 }
 
+
 /* Style for active and current page list items in side menu */
+
 .nav.side-menu>li.active,
 .nav.side-menu>li.current-page {
     border-right: 5px solid #1ABB9C;
 }
 
+
 /* Style for current page list item */
+
 .nav li.current-page {
     background: rgba(255, 255, 255, .05);
 }
 
+
 /* Remove margin-left and color styles for navbar-brand, navbar-nav>li>a, and site_title */
+
 .navbar-brand,
 .navbar-nav>li>a,
 .site_title {
@@ -868,24 +1131,32 @@ a {
     margin-left: 0!important;
 }
 
+
 /* Style for anchor elements within top navigation menu and primary navigation menu */
+
 .nav.navbar-nav>li>a {
     color: #515356!important;
 }
 
+
 /* Style for anchor elements within top navigation menu */
+
 .nav.top_menu>li>a {
     padding: 10px 15px;
     color: #34495E!important;
 }
 
+
 /* Remove background color on focus and hover for anchor elements within list items */
+
 .nav>li>a:focus,
 .nav>li>a:hover {
     background-color: transparent;
 }
 
+
 /* Style for toggle elements */
+
 .toggle {
     float: left;
     margin: 0;
@@ -893,36 +1164,48 @@ a {
     width: 70px;
 }
 
+
 /* Style for anchor elements within toggle elements */
+
 .toggle a {
     padding: 15px 15px 0;
     margin: 0;
     cursor: pointer;
 }
 
+
 /* Style for 'i' elements within toggle elements */
+
 .toggle a i {
     font-size: 26px;
 }
 
+
 /* Style for anchor elements within child menu items */
+
 .nav.child_menu>li>a {
     color: rgba(255, 255, 255, .75);
     font-size: 12px;
     padding: 9px;
 }
 
+
 /* Set line height for elements with class 'line_30' */
+
 .line_30 {
     line-height: 30px;
 }
 
+
 /* Remove padding for elements with class 'main_menu_side' */
+
 .main_menu_side {
     padding: 0;
 }
 
+
 /* Style for anchor elements within the sidebar of Bootstrap documentation */
+
 .bs-docs-sidebar .nav>li>a {
     display: block;
     padding: 4px 6px;
@@ -930,13 +1213,16 @@ a {
 
 
 /* Position 'degrees:after', 'x_content', and 'x_panel' elements relatively */
+
 .degrees:after,
 .x_content,
 .x_panel {
     position: relative;
 }
 
+
 /* Media query for screens with a minimum width of 768px */
+
 @media (min-width: 768px) {
     /* Adjust margin-left for footer within elements with class 'footer_fixed' */
     .footer_fixed .nav-sm footer,
@@ -947,6 +1233,7 @@ a {
 
 
 /* Apply 'box-sizing: border-box' to all elements and pseudo-elements */
+
 *,
 *:after,
 *:before {
@@ -955,28 +1242,37 @@ a {
 
 
 /* Style for 'img-circle' elements within elements with class 'profile_view' */
+
 .profile_details .profile_view .img-circle {
     border: 1px solid #E6E9ED;
     padding: 2px;
 }
 
+
 /* Style for 'h2' elements within elements with class 'profile_view' */
+
 .profile_details .profile_view h2 {
     margin: 5px 0;
 }
 
+
 /* Style for elements with class 'brief' within elements with class 'profile_view' */
+
 .profile_details .profile_view .brief {
     margin: 0;
     font-weight: 300;
 }
 
+
 /* Style for elements with class 'profile_left' */
+
 .profile_details .profile_left {
     background: #fff;
 }
 
+
 /* Style for 'h3', 'h4', and 'span' elements within 'table.tile' */
+
 table.tile h3,
 table.tile h4,
 table.tile span {
@@ -984,55 +1280,73 @@ table.tile span {
     vertical-align: middle !important;
 }
 
+
 /* Style for 'td' and 'th' elements within 'table.tile' */
+
 table.tile td,
 table.tile th {
     text-align: center;
 }
 
+
 /* Style for 'th' elements within 'table.tile' */
+
 table.tile th {
     border-bottom: 1px solid #E6ECEE;
 }
 
+
 /* Style for 'td' elements within 'table.tile' */
+
 table.tile td {
     padding: 5px 0;
 }
 
+
 /* Style for 'ul' elements within 'td' elements of 'table.tile' */
+
 table.tile td ul {
     text-align: left;
     padding-left: 0;
 }
 
+
 /* Style for list items within 'ul' elements within 'td' elements of 'table.tile' */
+
 table.tile td ul li {
     list-style: none;
     width: 100%;
 }
 
+
 /* Style for 'big' elements within 'a' elements within 'li' elements of 'ul' elements within 'td' elements of 'table.tile' */
+
 table.tile td ul li a big {
     right: 0;
     float: right;
     margin-right: 13px;
 }
 
+
 /* Style for 'td' elements within 'table.tile_info' */
+
 table.tile_info td {
     text-align: left;
     padding: 1px;
     font-size: 15px;
 }
 
+
 /* Style for 'p' elements within 'td' elements of 'table.tile_info' */
+
 table.tile_info td p {
     margin: 0;
     line-height: 28px;
 }
 
+
 /* Style for 'i' elements within 'td' elements of 'table.tile_info' */
+
 table.tile_info td i {
     margin-right: 8px;
     font-size: 17px;
@@ -1041,29 +1355,39 @@ table.tile_info td i {
     line-height: 28px;
 }
 
+
 /* Style for the first 'td' element within 'table.tile_info' */
+
 table.tile_info td:first-child {
     width: 83%;
 }
 
+
 /* Style for 'span' elements */
+
 td span {
     line-height: 28px;
 }
 
+
 /* Style for elements with class 'error-number' */
+
 .error-number {
     font-size: 90px;
     line-height: 90px;
     margin: 20px 0;
 }
 
+
 /* Style for elements with class 'col-middle' */
+
 .col-middle {
     margin-top: 5%;
 }
 
+
 /* Style for elements with class 'mid_center' */
+
 .mid_center {
     width: 370px;
     margin: 0 auto;
@@ -1071,49 +1395,65 @@ td span {
     padding: 10px 20px;
 }
 
+
 /* Style for elements with class 'col-sm-2' within '.weather-days' */
+
 .weather-days .col-sm-2 {
     width: 16.66666667%;
 }
 
+
 /* Style for elements with class 'row' within '.weather' */
+
 .weather .row {
     margin-bottom: 0;
 }
 
+
 /* Hide elements with class 'bulk-actions' */
+
 .bulk-actions {
     display: none;
 }
 
+
 /* Style for empty data tables and centered cells */
+
 .dataTables_empty,
 table.display td.center {
     text-align: center;
 }
 
+
 /* Style for focused cells and headers in data tables */
+
 table.dataTable td.focus,
 table.dataTable th.focus {
     outline: #1ABB9C solid 2px!important;
     outline-offset: -1px;
 }
 
+
 /* Remove outline on active pagination links */
+
 .paging_full_numbers a:active,
 table.display thead td:active,
 table.display thead th:active {
     outline: 0;
 }
 
+
 /* Style for data tables */
+
 table.display {
     margin: 0 auto;
     clear: both;
     width: 100%;
 }
 
+
 /* Style for header cells in data tables */
+
 table.display thead th {
     padding: 8px 18px 8px 10px;
     border-bottom: 1px solid #000;
@@ -1121,52 +1461,70 @@ table.display thead th {
     cursor: pointer;
 }
 
+
 /* Style for footer cells in data tables */
+
 table.display tfoot th {
     padding: 3px 18px 3px 10px;
     border-top: 1px solid #000;
     font-weight: 700;
 }
 
+
 /* Style for rows with class 'heading2' in data tables */
+
 table.display tr.heading2 td {
     border-bottom: 1px solid #aaa;
 }
 
+
 /* Style for cells in data tables */
+
 table.display td {
     padding: 3px 10px;
 }
 
+
 /* Clear floated elements */
+
 .clear {
     clear: both;
 }
 
+
 /* Style for input elements within 'tfoot' */
+
 tfoot input {
     margin: .5em 0;
     width: 100%;
     color: #444;
 }
 
+
 /* Style for the initial search input */
+
 tfoot input.search_init {
     color: #999;
 }
 
+
 /* Style for cells with class 'group' */
+
 td.group {
     border-bottom: 2px solid #A19B9E;
     border-top: 2px solid #A19B9E;
 }
 
+
 /* Style for cells with class 'details' */
+
 td.details {
     border: 2px solid #A19B9E;
 }
 
+
 /* Style for various elements, including links and buttons */
+
 .login_content .btn-default:hover,
 .login_content a,
 .tagsinput span.tag a,
@@ -1177,17 +1535,23 @@ span.tag {
     text-decoration: none;
 }
 
+
 /* Style for even rows that are selected */
+
 table.display tr.even.row_selected td {
     background-color: #B0BED9;
 }
 
+
 /* Style for odd rows that are selected */
+
 table.display tr.odd.row_selected td {
     background-color: #9FAFD1;
 }
 
+
 /* Style for the 'box' element */
+
 div.box {
     height: 100px;
     padding: 10px;
@@ -1196,7 +1560,9 @@ div.box {
     background-color: #E5E5FF;
 }
 
+
 /* Style for elements with class 'tile_stats_count' and 'quick-list' */
+
 .tile_count .tile_stats_count,
 ul.quick-list li {
     white-space: nowrap;
@@ -1204,7 +1570,9 @@ ul.quick-list li {
     text-overflow: ellipsis;
 }
 
+
 /* Style for dropdown menus */
+
 .dropdown-menu {
     box-shadow: none;
     display: none;
@@ -1222,12 +1590,16 @@ ul.quick-list li {
     border-top-right-radius: 0;
 }
 
+
 /* Style for anchor links within dropdown menus */
+
 .dropdown-menu>li>a {
     color: #5A738E;
 }
 
+
 /* Style for open dropdown menus within navbar */
+
 .navbar-nav .open .dropdown-menu {
     position: absolute;
     background: #fff;
@@ -1239,12 +1611,16 @@ ul.quick-list li {
     width: 220px;
 }
 
+
 /* Style for open dropdown menus with class 'msg_list' within navbar */
+
 .navbar-nav .open .dropdown-menu.msg_list {
     width: 300px;
 }
 
+
 /* Style for elements with class 'badge' within 'info-number' */
+
 .info-number .badge {
     font-size: 10px;
     font-weight: 400;
@@ -1255,12 +1631,16 @@ ul.quick-list li {
     top: 8px;
 }
 
+
 /* Style for unordered lists with class 'to_do' */
+
 ul.to_do {
     padding: 0;
 }
 
+
 /* Style for list items within 'ul.to_do' */
+
 ul.to_do li {
     background: #f3f3f3;
     border-radius: 3px;
@@ -1270,12 +1650,16 @@ ul.to_do li {
     list-style: none;
 }
 
+
 /* Style for paragraphs within 'ul.to_do' */
+
 ul.to_do p {
     margin: 0;
 }
 
+
 /* Style for elements with class 'dashboard-widget' */
+
 .dashboard-widget {
     background: #f6f6f6;
     border-top: 5px solid #79C3DF;
@@ -1283,7 +1667,9 @@ ul.to_do p {
     padding: 5px 10px 10px;
 }
 
+
 /* Style for elements with class 'dashboard-widget-title' within 'dashboard-widget' */
+
 .dashboard-widget .dashboard-widget-title {
     font-weight: 400;
     border-bottom: 1px solid #c1cdcd;
@@ -1293,7 +1679,9 @@ ul.to_do p {
     line-height: 30px;
 }
 
+
 /* Style for 'i' elements within 'dashboard-widget-title' */
+
 .dashboard-widget .dashboard-widget-title i {
     font-size: 100%;
     margin-left: -35px;
@@ -1305,12 +1693,16 @@ ul.to_do p {
     background: #fff;
 }
 
+
 /* Style for elements with class 'dashboard-widget-content' */
+
 .dashboard-widget-content {
     padding-top: 9px;
 }
 
+
 /* Style for elements with class 'sidebar-widget' within 'dashboard-widget-content' */
+
 .dashboard-widget-content .sidebar-widget {
     width: 50%;
     display: inline-block;
@@ -1324,45 +1716,61 @@ ul.to_do p {
     margin-top: 10px;
 }
 
+
 /* Style for elements with class 'w_20' */
+
 .w_20 {
     width: 20%;
 }
 
+
 /* Style for elements with class 'w_25' */
+
 .w_25 {
     width: 25%;
 }
 
+
 /* Style for elements with class 'w_55' */
+
 .w_55 {
     width: 55%;
 }
 
+
 /* Style for 'h5' elements with class 'graph_title' */
+
 h5.graph_title {
     text-align: left;
     margin-left: 10px;
 }
 
+
 /* Style for 'i' elements within 'h5.graph_title' */
+
 h5.graph_title i {
     margin-right: 10px;
     font-size: 17px;
 }
 
+
 /* Style for 'span' elements with class 'right' */
+
 span.right {
     float: right;
     font-size: 14px!important;
 }
 
+
 /* Style for anchor links within 'tile_info' */
+
 .tile_info a {
     text-overflow: ellipsis;
 }
 
+
 /* Style for elements with class 'sidebar-footer' */
+
 .sidebar-footer {
     bottom: 0;
     clear: both;
@@ -1374,7 +1782,9 @@ span.right {
     z-index: 999;
 }
 
+
 /* Style for anchor links within 'sidebar-footer' */
+
 .sidebar-footer a {
     padding: 7px 0 3px;
     text-align: center;
@@ -1386,25 +1796,33 @@ span.right {
     cursor: pointer;
 }
 
+
 /* Style for anchor links within 'sidebar-footer' on hover */
+
 .sidebar-footer a:hover {
     background: #425567;
 }
 
+
 /* Style for elements with class 'tile_count' */
+
 .tile_count {
     margin-bottom: 20px;
     margin-top: 20px;
 }
 
+
 /* Style for elements with class 'tile_stats_count' within 'tile_count' */
+
 .tile_count .tile_stats_count {
     border-bottom: 1px solid #D9DEE4;
     padding: 0 10px 0 20px;
     position: relative;
 }
 
+
 /* Style for elements before '.tile_stats_count' within 'tile_count' */
+
 .tile_count .tile_stats_count:before {
     content: "";
     position: absolute;
@@ -1414,7 +1832,9 @@ span.right {
     margin-top: 10px;
 }
 
+
 /* Media query for larger screens */
+
 @media (min-width:992px) {
     footer {
         margin-left: 230px;
@@ -1429,62 +1849,82 @@ span.right {
     }
 }
 
+
 /* Style for elements with class 'count' within 'tile_stats_count' */
+
 .tile_count .tile_stats_count .count {
     font-size: 30px;
     line-height: 47px;
     font-weight: 600;
 }
 
+
 /* Media query for medium-sized screens */
+
 @media (min-width:768px) {
     .tile_count .tile_stats_count .count {
         font-size: 40px;
     }
 }
 
+
 /* Media query for larger screens within specific range */
+
 @media (min-width:992px) and (max-width:1100px) {
     .tile_count .tile_stats_count .count {
         font-size: 30px;
     }
 }
 
+
 /* Style for 'span' elements within 'tile_stats_count' */
+
 .tile_count .tile_stats_count span {
     font-size: 12px;
 }
 
+
 /* Media query for medium-sized screens */
+
 @media (min-width:768px) {
     .tile_count .tile_stats_count span {
         font-size: 13px;
     }
 }
 
+
 /* Style for elements with class 'count_bottom i' within 'tile_stats_count' */
+
 .tile_count .tile_stats_count .count_bottom i {
     width: 12px;
 }
 
+
 /* Style for elements with class 'dashboard_graph' */
+
 .dashboard_graph {
     background: #fff;
     padding: 7px 10px;
 }
 
+
 /* Style for columns within 'dashboard_graph' */
+
 .dashboard_graph .col-md-3,
 .dashboard_graph .col-md-9 {
     padding: 0;
 }
 
+
 /* Style for anchor links with class 'user-profile' */
+
 a.user-profile {
     color: #5E6974!important;
 }
 
+
 /* Style for images within '.user-profile' */
+
 .user-profile img {
     width: 29px;
     height: 29px;
@@ -1492,24 +1932,32 @@ a.user-profile {
     margin-right: 10px;
 }
 
+
 /* Style for unordered lists with class 'top_profiles' */
+
 ul.top_profiles {
     height: 330px;
     width: 100%;
 }
 
+
 /* Style for list items within 'ul.top_profiles' */
+
 ul.top_profiles li {
     margin: 0;
     padding: 3px 5px;
 }
 
+
 /* Style for odd list items within 'ul.top_profiles' */
+
 ul.top_profiles li:nth-child(odd) {
     background-color: #eee;
 }
 
+
 /* Style for profile thumbnails */
+
 .media .profile_thumb {
     border: 1px solid;
     width: 50px;
@@ -1519,12 +1967,16 @@ ul.top_profiles li:nth-child(odd) {
     padding: 9px 12px;
 }
 
+
 /* Style for icons within profile thumbnails */
+
 .media .profile_thumb i {
     font-size: 30px;
 }
 
+
 /* Style for date containers */
+
 .media .date {
     background: #ccc;
     width: 52px;
@@ -1533,7 +1985,9 @@ ul.top_profiles li:nth-child(odd) {
     padding: 5px;
 }
 
+
 /* Style for day and month in date containers */
+
 .media .date .day,
 .media .date .month {
     margin: 0;
@@ -1541,54 +1995,72 @@ ul.top_profiles li:nth-child(odd) {
     color: #fff;
 }
 
+
 /* Style for day in date containers */
+
 .media .date .day {
     font-size: 27px;
     line-height: 27px;
     font-weight: 700;
 }
 
+
 /* Style for event titles */
+
 .event .media-body a.title {
     font-weight: 700;
 }
 
+
 /* Style for paragraphs within event media body */
+
 .event .media-body p {
     margin-bottom: 0;
 }
 
+
 /* Style for graph titles */
+
 h4.graph_title {
     margin: 7px;
     text-align: center;
 }
 
+
 /* Style for icons within graph titles */
+
 h4.graph_title i {
     margin-right: 10px;
     font-size: 17px;
 }
 
+
 /* Style for right-aligned elements */
+
 span.right {
     float: right;
     font-size: 14px!important;
 }
 
+
 /* Style for ellipsis text in tile_info */
+
 .tile_info a {
     text-overflow: ellipsis;
 }
 
+
 /* Style for font-awesome icons on hover */
+
 .fontawesome-icon-list .fa-hover a:hover {
     background-color: #ddd;
     color: #fff;
     text-decoration: none;
 }
 
+
 /* Style for font-awesome icon links */
+
 .fontawesome-icon-list .fa-hover a {
     display: block;
     line-height: 32px;
@@ -1597,13 +2069,17 @@ span.right {
     border-radius: 4px;
 }
 
+
 /* Style for font-awesome icons on hover within links */
+
 .fontawesome-icon-list .fa-hover a:hover .fa {
     font-size: 28px;
     vertical-align: -6px;
 }
 
+
 /* Style for font-awesome icons */
+
 .fontawesome-icon-list .fa-hover a .fa {
     width: 32px;
     font-size: 16px;
@@ -1612,7 +2088,9 @@ span.right {
     margin-right: 10px;
 }
 
+
 /* Style for font-awesome icons in main menu */
+
 .main_menu .fa {
     width: 26px;
     opacity: .99;
@@ -1624,7 +2102,9 @@ span.right {
     -moz-osx-font-smoothing: grayscale;
 }
 
+
 /* Style for tile stats */
+
 .tile-stats {
     position: relative;
     display: block;
@@ -1641,7 +2121,9 @@ span.right {
     transition: all .3s ease-in-out;
 }
 
+
 /* Style for button with class 'btn_' */
+
 .button.btn_ {
     display: inline-block;
     padding: 3px 9px;
@@ -1663,14 +2145,18 @@ span.right {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
 }
 
+
 /* Style for primary button */
+
 .btn-primary {
     color: #fff;
     background-color: #428bca;
     border-color: #357ebd;
 }
 
+
 /* Style for active and hover state of primary button */
+
 .btn-primary.active,
 .btn-primary:active,
 .btn-primary:focus,
@@ -1681,14 +2167,18 @@ span.right {
     border-color: #285e8e;
 }
 
+
 /* Style for danger button */
+
 .btn-danger {
     color: #fff;
     background-color: #d9534f;
     border-color: #d43f3a;
 }
 
+
 /* Style for active and hover state of danger button */
+
 .btn-danger.active,
 .btn-danger:active,
 .btn-danger:focus,
@@ -1699,14 +2189,18 @@ span.right {
     border-color: #ac2925;
 }
 
+
 /* Style for warning button */
+
 .btn-warning {
     color: #fff;
     background-color: #f0ad4e;
     border-color: #eea236;
 }
 
+
 /* Style for active and hover state of warning button */
+
 .btn-warning.active,
 .btn-warning:active,
 .btn-warning:focus,
@@ -1717,14 +2211,18 @@ span.right {
     border-color: #d58512;
 }
 
+
 /* Style for success button */
+
 .btn-success {
     background-color: #5bc0de;
     border-color: #46b8da;
     color: #fff;
 }
 
+
 /* Style for active and hover state of success button */
+
 .btn-success.active,
 .btn-success:active,
 .btn-success:focus,
@@ -1735,14 +2233,18 @@ span.right {
     color: #fff;
 }
 
+
 /* Style for info button */
+
 .btn-info {
     background-color: #5bc0de;
     border-color: #46b8da;
     color: #fff;
 }
 
+
 /* Style for active and hover state of info button */
+
 .btn-info.active,
 .btn-info:active,
 .btn-info:focus,
@@ -1753,14 +2255,18 @@ span.right {
     color: #fff;
 }
 
+
 /* Style for light button */
+
 .btn-light {
     background-color: #f7f7f7;
     border-color: #e8e8e8;
     color: #333;
 }
 
+
 /* Style for active and hover state of light button */
+
 .btn-light.active,
 .btn-light:active,
 .btn-light:focus,
@@ -1771,7 +2277,9 @@ span.right {
     color: #333;
 }
 
+
 /* Style for link button */
+
 .btn-link {
     color: #428bca;
     font-weight: normal;
@@ -1784,7 +2292,9 @@ span.right {
     text-shadow: none;
 }
 
+
 /* Style for active and hover state of link button */
+
 .btn-link.active,
 .btn-link:active,
 .btn-link:focus,
@@ -1795,14 +2305,18 @@ span.right {
     text-decoration: underline;
 }
 
+
 /* Style for danger button with outline */
+
 .btn-danger.btn-outline {
     background-color: transparent;
     color: #d9534f;
     border: 1px solid #d9534f;
 }
 
+
 /* Style for active and hover state of danger button with outline */
+
 .btn-danger.btn-outline.active,
 .btn-danger.btn-outline:active,
 .btn-danger.btn-outline:focus,
@@ -1813,14 +2327,18 @@ span.right {
     border: 1px solid #d9534f;
 }
 
+
 /* Style for primary button with outline */
+
 .btn-primary.btn-outline {
     background-color: transparent;
     color: #428bca;
     border: 1px solid #428bca;
 }
 
+
 /* Style for active and hover state of primary button with outline */
+
 .btn-primary.btn-outline.active,
 .btn-primary.btn-outline:active,
 .btn-primary.btn-outline:focus,
@@ -1831,14 +2349,18 @@ span.right {
     border: 1px solid #428bca;
 }
 
+
 /* Style for success button with outline */
+
 .btn-success.btn-outline {
     background-color: transparent;
     color: #5bc0de;
     border: 1px solid #5bc0de;
 }
 
+
 /* Style for active and hover state of success button with outline */
+
 .btn-success.btn-outline.active,
 .btn-success.btn-outline:active,
 .btn-success.btn-outline:focus,
@@ -1849,14 +2371,18 @@ span.right {
     border: 1px solid #5bc0de;
 }
 
+
 /* Style for info button with outline */
+
 .btn-info.btn-outline {
     background-color: transparent;
     color: #5bc0de;
     border: 1px solid #5bc0de;
 }
 
+
 /* Style for active and hover state of info button with outline */
+
 .btn-info.btn-outline.active,
 .btn-info.btn-outline:active,
 .btn-info.btn-outline:focus,
@@ -1867,14 +2393,18 @@ span.right {
     border: 1px solid #5bc0de;
 }
 
+
 /* Style for warning button with outline */
+
 .btn-warning.btn-outline {
     background-color: transparent;
     color: #f0ad4e;
     border: 1px solid #f0ad4e;
 }
 
+
 /* Style for active and hover state of warning button with outline */
+
 .btn-warning.btn-outline.active,
 .btn-warning.btn-outline:active,
 .btn-warning.btn-outline:focus,
@@ -1885,14 +2415,18 @@ span.right {
     border: 1px solid #f0ad4e;
 }
 
+
 /* Style for light button with outline */
+
 .btn-light.btn-outline {
     background-color: transparent;
     color: #f7f7f7;
     border: 1px solid #f7f7f7;
 }
 
+
 /* Style for active and hover state of light button with outline */
+
 .btn-light.btn-outline.active,
 .btn-light.btn-outline:active,
 .btn-light.btn-outline:focus,
@@ -1903,7 +2437,9 @@ span.right {
     border: 1px solid #f7f7f7;
 }
 
+
 /* Styles for alert boxes */
+
 .alert {
     padding: 15px;
     margin-bottom: 20px;
@@ -1911,35 +2447,47 @@ span.right {
     border-radius: 4px;
 }
 
+
 /* Styles for the heading inside an alert box */
+
 .alert h4 {
     margin-top: 0;
     color: inherit;
 }
 
+
 /* Styles for links inside an alert box */
+
 .alert .alert-link {
     font-weight: bold;
 }
 
+
 /* Styles for paragraphs and unordered lists inside an alert box */
+
 .alert>p,
 .alert>ul {
     margin-bottom: 0;
 }
 
+
 /* Additional spacing between paragraphs inside an alert box */
+
 .alert>p+p {
     margin-top: 5px;
 }
 
+
 /* Styles for dismissable alerts */
+
 .alert-dismissable,
 .alert-dismissible {
     padding-right: 35px;
 }
 
+
 /* Styles for the close button in dismissable alerts */
+
 .alert-dismissable .close,
 .alert-dismissible .close {
     position: relative;
@@ -1948,7 +2496,9 @@ span.right {
     color: inherit;
 }
 
+
 /* Styles for close buttons */
+
 .close {
     float: right;
     font-size: 21px;
@@ -1960,7 +2510,9 @@ span.right {
     filter: alpha(opacity=20);
 }
 
+
 /* Hover and focus styles for close buttons */
+
 .close:focus,
 .close:hover {
     color: #000;
@@ -1970,7 +2522,9 @@ span.right {
     filter: alpha(opacity=50);
 }
 
+
 /* Styles for close buttons in button elements */
+
 button.close {
     padding: 0;
     cursor: pointer;
@@ -1979,7 +2533,9 @@ button.close {
     -webkit-appearance: none;
 }
 
+
 /* Adjusted position for close buttons in dismissable alerts */
+
 .alert-dismissible .close {
     position: relative;
     top: -21px;
@@ -1987,18 +2543,22 @@ button.close {
     padding: 21px;
 }
 
+
 /* Styles for progress bars */
+
 .progress {
     height: 20px;
     margin-bottom: 20px;
     overflow: hidden;
     background-color: #f5f5f5;
     border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
-    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
 }
 
+
 /* Styles for progress bars */
+
 .progress-bar {
     float: left;
     width: 0;
@@ -2008,14 +2568,16 @@ button.close {
     color: #fff;
     text-align: center;
     background-color: #428bca;
-    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
-    box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
     -webkit-transition: width .6s ease;
     -o-transition: width .6s ease;
     transition: width .6s ease;
 }
 
+
 /* Styles for tags input */
+
 .tagsinput {
     border: 1px solid #CCC;
     background: #FFF;
@@ -2024,7 +2586,9 @@ button.close {
     overflow-y: auto;
 }
 
+
 /* Styles for individual tags */
+
 span.tag {
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -2039,26 +2603,34 @@ span.tag {
     font-family: helvetica;
 }
 
+
 /* Styles for links inside tags */
+
 span.tag a {
     color: #F1F6F7!important;
 }
 
+
 /* Styles for tags input links */
+
 .tagsinput span.tag a {
     font-weight: 700;
     color: #82ad2b;
     font-size: 11px;
 }
 
+
 /* Styles for tags with class "tag" */
+
 .tag {
     line-height: 1;
     background: #1ABB9C;
     color: #fff!important;
 }
 
+
 /* Pseudo-element styles for tags */
+
 .tag:after {
     content: " ";
     height: 30px;
@@ -2073,14 +2645,18 @@ span.tag a {
     border-left: 11px solid #1ABB9C;
 }
 
+
 /* Styles for timeline item titles */
+
 .timeline h2.title {
     position: relative;
     font-size: 16px;
     margin: 0;
 }
 
+
 /* Pseudo-element styles for timeline item titles */
+
 .timeline h2.title:before {
     content: "";
     position: absolute;
@@ -2094,53 +2670,71 @@ span.tag a {
     background: #f9f9f9;
 }
 
+
 /* Styles for bylines */
+
 .timeline .byline {
     padding: .25em 0;
 }
 
+
 /* Styles for generic bylines */
+
 .byline {
     font-size: .9375em;
     line-height: 1.3;
     color: #aab6aa;
 }
 
+
 /* Styles for social list items */
+
 ul.social li {
     border: 0;
 }
 
+
 /* Styles for the social sidebar */
+
 .social-sidebar {
     background: #EDEDED;
     width: 22%;
 }
 
+
 /* Styles for the social body */
+
 .social-body {
     border: 1px solid #ccc;
     width: 78%;
 }
 
+
 /* Styles for dashboard graph titles */
+
 .dashboard_graph .x_title {
     padding: 5px 5px 7px;
 }
 
+
 /* Styles for dashboard graph title h3 */
+
 .dashboard_graph .x_title h3 {
     margin: 0;
     font-weight: 400;
 }
 
+
 /* Styles for dividers */
+
 .divider {
     border-bottom: 1px solid #ddd;
     margin: 10px;
 }
 
+
 /* Styles for dashed dividers */
+
 .divider-dashed {
     border-top: 1px dashed #e7eaec;
     background-color: #fff;
@@ -2148,12 +2742,16 @@ ul.social li {
     margin: 10px 0;
 }
 
+
 /* Styles for UI ribbon container */
+
 .ui-ribbon-container {
     position: relative;
 }
 
+
 /* Styles for UI ribbon wrapper */
+
 .ui-ribbon-container .ui-ribbon-wrapper {
     position: absolute;
     overflow: hidden;
@@ -2163,12 +2761,16 @@ ul.social li {
     right: -3px;
 }
 
+
 /* Styles for primary UI ribbon container */
+
 .ui-ribbon-container.ui-ribbon-primary .ui-ribbon {
     background-color: #5b90bf;
 }
 
+
 /* Styles for UI ribbon */
+
 .ui-ribbon-container .ui-ribbon {
     position: relative;
     display: block;
@@ -2186,20 +2788,26 @@ ul.social li {
     box-shadow: 0 0 3px rgba(0, 0, 0, .3);
 }
 
+
 /* Styles for primary UI ribbon after and before pseudo-elements */
+
 .ui-ribbon-container.ui-ribbon-primary .ui-ribbon:after,
 .ui-ribbon-container.ui-ribbon-primary .ui-ribbon:before {
     border-top: 2px solid #5b90bf;
 }
 
+
 /* Styles for UI ribbon before pseudo-element */
+
 .ui-ribbon-container .ui-ribbon:before {
     left: 0;
     bottom: -1px;
     right: 0;
 }
 
+
 /* Styles for UI ribbon after and before pseudo-elements */
+
 .ui-ribbon-container .ui-ribbon:after,
 .ui-ribbon-container .ui-ribbon:before {
     position: absolute;
@@ -2210,30 +2818,40 @@ ul.social li {
     border-right: 2px solid transparent;
 }
 
+
 /* Styles for thumbnail image */
+
 .thumbnail .image {
     height: 120px;
     overflow: hidden;
 }
 
+
 /* Styles for caption */
+
 .caption {
     padding: 9px 5px;
     background: #F7F7F7;
 }
 
+
 /* Styles for paragraph within caption */
+
 .caption p {
     margin-bottom: 5px;
 }
 
+
 /* Styles for thumbnail */
+
 .thumbnail {
     height: 190px;
     overflow: hidden;
 }
 
+
 /* Styles for view container */
+
 .view {
     overflow: hidden;
     position: relative;
@@ -2242,13 +2860,17 @@ ul.social li {
     cursor: default;
 }
 
+
 /* Styles for dropdown menu items and voice button */
+
 .dropdown-menu a,
 .voiceBtn {
     cursor: pointer;
 }
 
+
 /* Styles for content and mask within view */
+
 .view .content,
 .view .mask {
     position: absolute;
@@ -2258,7 +2880,9 @@ ul.social li {
     left: 0;
 }
 
+
 /* Styles for sideways, tools, image, and paragraphs within view */
+
 .sideways,
 .view .tools,
 .view img,
@@ -2266,12 +2890,16 @@ ul.social li {
     position: relative;
 }
 
+
 /* Styles for image within view */
+
 .view img {
     display: block;
 }
 
+
 /* Styles for tools within view */
+
 .view .tools {
     color: #fff;
     text-align: center;
@@ -2284,7 +2912,6 @@ ul.social li {
 .mask.no-caption .tools {
     margin: 90px 0 0;
 }
-
 
 .login {
     background: #F7F7F7;
@@ -2668,12 +3295,13 @@ ul.verticle_bars li {
 }
 
 
-
 /* CSS for each individual box */
+
 .box-container {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Center items vertically */
+    align-items: center;
+    /* Center items vertically */
     height: 200px;
     max-width: 95%;
     margin-left: 30px;
@@ -2681,17 +3309,20 @@ ul.verticle_bars li {
     border-radius: 15px;
     box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
     background: rgba(255, 255, 255, 0.416);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9bc635', endColorstr='#c0ea67', GradientType=1);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#9bc635', endColorstr='#c0ea67', GradientType=1);
     padding: 10px;
     font-weight: bold;
     color: #000;
 }
 
 .box {
-    display: flex; /* Center items vertically and horizontally */
+    display: flex;
+    /* Center items vertically and horizontally */
     flex-direction: column;
-    justify-content: center; /* Center text horizontally */
-    align-items: center; /* Center text vertically */
+    justify-content: center;
+    /* Center text horizontally */
+    align-items: center;
+    /* Center text vertically */
     width: 30%;
     margin-right: 20px;
     margin-left: 20px;
@@ -2720,7 +3351,8 @@ ul.verticle_bars li {
 .box-container2 {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Center items vertically */
+    align-items: center;
+    /* Center items vertically */
     height: 200px;
     max-width: 95%;
     margin-left: 30px;
@@ -2728,7 +3360,7 @@ ul.verticle_bars li {
     border-radius: 15px;
     box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
     background: rgba(255, 255, 255, 0.416);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9bc635', endColorstr='#c0ea67', GradientType=1);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#9bc635', endColorstr='#c0ea67', GradientType=1);
     padding: 10px;
     font-weight: bold;
     color: #000;
@@ -2736,7 +3368,8 @@ ul.verticle_bars li {
 
 .box-container.row.box-b {
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap onto a new line when there's not enough space */
+    flex-wrap: wrap;
+    /* Allow items to wrap onto a new line when there's not enough space */
     justify-content: space-between;
     padding: auto;
     height: auto;
@@ -2751,7 +3384,9 @@ ul.verticle_bars li {
     color: #000;
 }
 
+
 /* Individual Columns */
+
 .column {
     flex: 1;
     text-align: center;
@@ -2766,51 +3401,66 @@ ul.verticle_bars li {
     text-align: right;
 }
 
+
 /* Actions Buttons */
+
 .action-button {
     padding: 5px 10px;
     margin: 0 5px;
-    background-color: #007bff; /* Button background color */
-    color: #fff; /* Button text color */
+    background-color: #007bff;
+    /* Button background color */
+    color: #fff;
+    /* Button text color */
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .approve-button {
-    background-color: #26B99A; /* Approve button background color */
+    background-color: #26B99A;
+    /* Approve button background color */
 }
 
 .decline-button {
-    background-color: #A03232; /* Decline button background color */
+    background-color: #A03232;
+    /* Decline button background color */
 }
 
+
 /* CSS for the table inside .box-b */
+
 .box-b table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.box-b th, .box-b td {
-    border: 1px solid #ffffff3a; /* Add borders to table cells */
+.box-b th,
+.box-b td {
+    border: 1px solid #ffffff3a;
+    /* Add borders to table cells */
     padding: 10px;
     text-align: center;
 }
 
 .box-b th {
-    background-color: #303c54; /* Header background color */
-    color: #fff; /* Header text color */
+    background-color: #303c54;
+    /* Header background color */
+    color: #fff;
+    /* Header text color */
     text-align: center;
 }
 
 .box-b tr:nth-child(even) {
     background-color: #d6d8dd;
-    color: #000; /* Background color for even rows */
+    color: #000;
+    /* Background color for even rows */
 }
 
 .box-b tr:nth-child(odd) {
-    background-color: #eaecee; /* Background color for odd rows */
-    color: #000; /* Text color for odd rows */
+    background-color: #eaecee;
+    /* Background color for odd rows */
+    color: #000;
+    /* Text color for odd rows */
 }
 
 body {
@@ -2845,15 +3495,15 @@ body {
     padding: 10px;
     background-image: url('bg3_spes.png');
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
     background-position: center;
 }
-
 
 #mainFooter {
     text-align: right;
     padding: 10px;
-    background-color: #f7f7f7; /* Set your desired background color */
+    background-color: #f7f7f7;
+    /* Set your desired background color */
 }
 
 .footer {
@@ -2866,13 +3516,61 @@ body {
 }
 
 .info-span {
-    font-size: 16px; 
+    font-size: 16px;
 }
 
 .col-form-label {
     font-size: 16px;
-  }
-  
+}
+
 .badge {
-    font-size: 23px; 
+    font-size: 23px;
+}
+
+
+/* Style for the search bar form */
+
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: #f8f8f8;
+    /* Add a background color for the search bar */
+    padding: 10px 0;
+    /* Add vertical padding for better spacing */
+}
+
+
+/* Style for the search input field */
+
+.search-input {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    /* Set the input field width to 100% */
+}
+
+
+/* Style for the search button (icon) */
+
+.search-button {
+    background-color: #007bff;
+    /* Change this to your desired button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+/* Hover effect for the search button */
+
+.search-button:hover {
+    background-color: #0056b3;
+    /* Change this to a darker shade for hover effect */
 }

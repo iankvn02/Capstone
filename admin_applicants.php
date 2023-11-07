@@ -32,6 +32,7 @@ if (!$result) {
     <link href="custom.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <link rel="shortcut icon" type="x-icon" href="spes_logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <?php include('header.php'); ?>
@@ -88,6 +89,41 @@ if (!$result) {
             <div id="mainContent" class="right_col" role="main">
               <h2> SPES Admin </h2>
 
+              
+              <?php
+include("conn.php");
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $search = $_POST["search"]; // Get the search term from the form
+
+    // Create a connection to the database
+    $conn = new mysqli($databaseHost, $databaseUsername, $databasePassword, $dbname);
+
+    // Query to search applicants based on name or email
+    $sql = "SELECT * FROM applicants WHERE first_Name LIKE '%$search%' OR email LIKE '%$search%' OR id LIKE '%$search%' OR type_Application LIKE '%$search%' OR status LIKE '%$search%'";
+    $result = $conn->query($sql);
+
+    if (!$result) {
+        die("Error in SQL query: " . $conn->error);
+    }
+} else {
+    // Query to fetch all applicants when the form is not submitted
+    $sql = "SELECT * FROM applicants";
+    $result = $conn->query($sql);
+
+    if (!$result) {
+        die("Error in SQL query: " . $conn->error);
+    }
+}
+?>
+
+
+<form class="search-form" method="POST" action="">
+  <input class="search-input" type="text" name="search" placeholder="Search by name or email">
+  <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+</form>
+
       <!-- Box Container Rows with Table -->
       <div class="box-container row box-b"> 
       <?php if ($result->num_rows > 0) : ?>
@@ -130,7 +166,7 @@ if (!$result) {
                                              
 
 <!-- Applicants Documents -->
-<div class="modal fade" id="details2<?php echo $row['user_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="details2<?php echo $row['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -155,14 +191,14 @@ if (!$result) {
                             $conn = new mysqli($databaseHost, $databaseUsername, $databasePassword, $dbname);
 
                             // Query to select documents for a specific user
-                            $user_id = $row['user_id'];
-                            $sql = "SELECT * FROM applicant_documents WHERE user_id = $user_id";
+                            $id = $row['id'];
+                            $sql = "SELECT * FROM applicant_documents WHERE id = $id";
                             $query = $conn->query($sql);
 
                             while ($doc_row = $query->fetch_array()) {
                             ?>
                                 <tr>
-                                    <td><?php echo $doc_row['user_id']; ?></td>
+                                    <td><?php echo $doc_row['id']; ?></td>
                                     <td><a href="<?php echo $doc_row['birth_certificate']; ?>">View PDF</a></td>
                                     <td><a href="<?php echo $doc_row['birth_certificate']; ?>">View PDF</a></td>
                                 </tr>
