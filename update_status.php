@@ -17,12 +17,26 @@ if (isset($_POST['applicantID']) && isset($_POST['newStatus'])) {
     $applicantID = $_POST['applicantID'];
     $newStatus = $_POST['newStatus'];
 
+    // Get the current status before updating
+    $getCurrentStatusQuery = "SELECT status FROM applicants WHERE id = $applicantID";
+    $result = $conn->query($getCurrentStatusQuery);
+    $row = $result->fetch_assoc();
+    $oldStatus = $row['status'];
+
     // Update the 'status' in the database
-    $sql = "UPDATE applicants SET status = '$newStatus' WHERE id = $applicantID";
-    if ($conn->query($sql) === TRUE) {
-        echo 'success';
+    $updateStatusQuery = "UPDATE applicants SET status = '$newStatus' WHERE id = $applicantID";
+    if ($conn->query($updateStatusQuery) === TRUE) {
+        // Log the change into the history table
+        $logHistoryQuery = "INSERT INTO history (user_id, action, status, date) VALUES ('$applicantID', 'Status is set to $newStatus', '$newStatus', NOW())";
+   
+
+        if ($conn->query($logHistoryQuery) === TRUE) {
+            echo 'success';
+        } else {
+            echo 'error logging history';
+        }
     } else {
-        echo 'error';
+        echo 'error updating status';
     }
 
     // Close the database connection
@@ -30,3 +44,4 @@ if (isset($_POST['applicantID']) && isset($_POST['newStatus'])) {
 } else {
     echo 'Invalid parameters';
 }
+?>

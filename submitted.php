@@ -84,9 +84,10 @@ $selectStmt->close();
                 <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                 <h3>SPES Applicant Menu</h3>
 	            <ul class="nav side-menu">
-	            <li><a id="menu_toggle"><i class="fa fa-bars"></i> My Profile</a>
-                <li><a id="menu_toggle"><i class="fa fa-bars"></i> Required Docs. </a>
-                <li><a id="menu_toggle"><i class="fa fa-bars"></i> Submitted. </a>
+	            <li><a href= "#" id="menu_toggle"><i class="fa fa-bars"></i> My Profile</a>
+                <li><a href= "#" id="menu_toggle"><i class="fa fa-bars"></i> Required Docs. </a>
+                <li><a href= "#" id="menu_toggle"><i class="fa fa-bars"></i> Submitted. </a>
+                <li><a href="history.php" id="menu_toggle"><i class="#"></i> History </a>
 		            </ul>
 	            </li>
 	          </ul>
@@ -109,6 +110,13 @@ $selectStmt->close();
         <!-- /top navigation -->
         
         <div id="mainContent2" class="right_col " role="main">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item "><a href="spes_profile.php">My Profile</a></li>
+            <li class="breadcrumb-item " ><a href="pre_emp_doc.php">Required Docs</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Submitted</li>
+          </ol>
+        </nav>
           <h2 style="font-size: 20px;" >SPES Applicant</h2>
             <div class="separator my-10"></div>
 
@@ -161,7 +169,7 @@ $selectStmt->close();
           </div>
                   <br>
                   <div class="separator my-10"></div>
-                  <br>
+                  <br><br>
 
                   <div class="text-center mb-10">
                   <h1 class="fs-2tx fw-bolder mb-5" style="font-size: 24px;">Your application has been submitted!
@@ -172,7 +180,7 @@ $selectStmt->close();
               We will reach out to you <span class="fw-bolder text-gray-900">via email (<span id="email">
                   <?php echo isset($userData['email']) ? $userData['email'] : 'N/A'; ?>
               </span>)</span> as soon as we have processed your application. Thank you!
-          <br><br><br><br><br><br><br><br><br>
+          <br><br><br><br><br><br><br><br><br><br><br>
           </div>
         </div>
       </div>
@@ -183,9 +191,11 @@ $selectStmt->close();
 
         <!-- footer content -->
         <footer id="mainFooter">
-          <div class="pull-right">
-             &copy; Copyright 2023 | Online Special Program for Employment of Student (SPES)
-          </div>
+            <!-- footer content -->
+        <footer id="mainFooter" style="position: fixed; bottom: 0; left: 0; width: 88%">
+            &copy; Copyright 2023 | Online Special Program for Employment of Student (SPES)
+        </footer>
+
           <div class="clearfix"></div>
         </footer>
         <!-- /footer content -->

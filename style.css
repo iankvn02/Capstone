@@ -145,3 +145,13 @@
 			width: 50%;
 			margin: 10px 0 0;
 		}
+		
+		.modal-content {
+			background-image: url('bg3_spes.png');
+			background-size: cover; 
+			background-repeat: no-repeat;
+			background-position: center center;
+			color: rgb(0, 0, 0); 
+		  }
+
+		  

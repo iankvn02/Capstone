@@ -1446,6 +1446,7 @@ table.display thead th:active {
 /* Style for data tables */
 
 table.display {
+    font-weight:normal;
     margin: 0 auto;
     clear: both;
     width: 100%;
@@ -3502,7 +3503,6 @@ body {
 #mainFooter {
     text-align: right;
     padding: 10px;
-    background-color: #f7f7f7;
     /* Set your desired background color */
 }
 
